@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bw8-Tq-2ax">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="eQK-V8-omb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bw8-Tq-2ax" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vlx-NQ-fUI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ey6-qy-1wO" kind="relationship" relationship="rootViewController" id="c7O-34-SZA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6Y-jg-XTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="1002"/>
+        </scene>
+        <!--Album-->
+        <scene sceneID="ztB-zf-thf">
+            <objects>
+                <tableViewController id="ey6-qy-1wO" customClass="albumTableViewController" customModule="photoTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ar-iv-aRd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="catgeory" rowHeight="52" id="llb-q8-pyl" customClass="categoryTableViewCell" customModule="photoTag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="llb-q8-pyl" id="kLW-AL-mED">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="9sJ-nb-ksb">
+                                            <rect key="frame" x="8" y="0.0" width="587" height="51"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="section.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-mb-QDW">
+                                                    <rect key="frame" x="0.0" y="1" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="09P-6d-xvt"/>
+                                                        <constraint firstAttribute="height" constant="50" id="nnj-4U-JZQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-0G-tFt">
+                                                    <rect key="frame" x="59" y="15" width="489" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="59" y="15" width="289" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDown.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-0a-ZT5">
+                                                    <rect key="frame" x="557" y="11" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="FaL-7r-dVq"/>
+                                                        <constraint firstAttribute="height" constant="30" id="juU-dr-bBk"/>
+                                                    </constraints>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="357" y="11" width="30" height="30"/>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="0.0" width="387" height="51"/>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9sJ-nb-ksb" firstAttribute="top" secondItem="kLW-AL-mED" secondAttribute="top" id="IDf-ue-wwu"/>
+                                        <constraint firstAttribute="bottom" secondItem="9sJ-nb-ksb" secondAttribute="bottom" id="nuD-pd-N4r"/>
+                                        <constraint firstItem="9sJ-nb-ksb" firstAttribute="leading" secondItem="kLW-AL-mED" secondAttribute="leadingMargin" id="zOT-Er-nQD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9sJ-nb-ksb" secondAttribute="trailing" constant="5" id="BHz-9Q-6Wr"/>
+                                </constraints>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="album" rowHeight="180" id="zgK-7X-3TO" customClass="albumTableViewCell" customModule="photoTag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144" width="600" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zgK-7X-3TO" id="8OJ-xQ-2e3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="baR-bK-yIu">
+                                            <rect key="frame" x="8" y="8" width="584" height="163"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-aL-Xr9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="163"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="163" id="Cgf-wJ-EP6"/>
+                                                        <constraint firstAttribute="width" constant="160" id="QHD-Kg-H53"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-OG-ERM">
+                                                    <rect key="frame" x="163" y="56" width="388" height="51"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-RB-tii">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="24"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Title">
+                                                                    <attributes>
+                                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <font key="NSFont" size="22" name="MarkerFelt-Thin"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-cc-dS5">
+                                                            <rect key="frame" x="0.0" y="27" width="50" height="24"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="subtitle">
+                                                                    <attributes>
+                                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <font key="NSFont" size="15" name="Papyrus"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="163" y="56" width="188" height="51"/>
+                                                    </variation>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="star_male.png" translatesAutoresizingMaskIntoConstraints="NO" id="avm-Qf-dl8">
+                                                    <rect key="frame" x="554" y="67" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="kWK-rg-XUf"/>
+                                                        <constraint firstAttribute="height" constant="30" id="xGb-Gf-89R"/>
+                                                    </constraints>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="354" y="67" width="30" height="30"/>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Wid-aL-Xr9" secondAttribute="bottom" id="2SU-3z-zh7"/>
+                                                <constraint firstItem="Wid-aL-Xr9" firstAttribute="top" secondItem="baR-bK-yIu" secondAttribute="top" id="DDL-BZ-1Dh"/>
+                                                <constraint firstItem="Wid-aL-Xr9" firstAttribute="leading" secondItem="baR-bK-yIu" secondAttribute="leading" id="V8m-9c-K3b"/>
+                                                <constraint firstAttribute="trailing" secondItem="avm-Qf-dl8" secondAttribute="trailing" id="kJB-zU-s93"/>
+                                            </constraints>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="8" width="384" height="163"/>
+                                            </variation>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="baR-bK-yIu" secondAttribute="bottom" id="GRc-yJ-d2p"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="baR-bK-yIu" secondAttribute="trailing" id="ckb-ZP-kW1"/>
+                                        <constraint firstItem="Wid-aL-Xr9" firstAttribute="leading" secondItem="8OJ-xQ-2e3" secondAttribute="leadingMargin" constant="10" id="hyT-PM-e0N"/>
+                                        <constraint firstItem="baR-bK-yIu" firstAttribute="top" secondItem="8OJ-xQ-2e3" secondAttribute="topMargin" id="uPx-fG-hbT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewAlbum" rowHeight="53" id="7qs-C9-aeV" customClass="addNewAlbumTableViewCell" customModule="photoTag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144" width="600" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7qs-C9-aeV" id="xMV-3c-aoA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-Br-Nhl">
+                                            <rect key="frame" x="1" y="-4" width="312" height="97"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusSign.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-WO-Rin">
+                                                    <rect key="frame" x="20" y="20" width="66" height="57"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="RTA-sl-ADY"/>
+                                                        <constraint firstAttribute="width" constant="40" id="eWD-LH-79R"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="RTA-sl-ADY"/>
+                                                            <exclude reference="eWD-LH-79R"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular">
+                                                        <mask key="constraints">
+                                                            <include reference="RTA-sl-ADY"/>
+                                                            <include reference="eWD-LH-79R"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-9e-8du">
+                                                    <rect key="frame" x="169" y="31" width="123" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <variation key="heightClass=regular" alignment="center"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="top" secondItem="xMV-3c-aoA" secondAttribute="top" id="1Ez-AE-4o5"/>
+                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="leading" secondItem="xMV-3c-aoA" secondAttribute="leading" constant="10" id="6cQ-Jz-PqH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ech-Br-Nhl" secondAttribute="trailing" id="I5e-Ff-bDH"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ech-Br-Nhl" secondAttribute="bottom" id="IzN-84-bXa"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="1Ez-AE-4o5"/>
+                                            <exclude reference="6cQ-Jz-PqH"/>
+                                            <exclude reference="I5e-Ff-bDH"/>
+                                            <exclude reference="IzN-84-bXa"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="1Ez-AE-4o5"/>
+                                            <include reference="6cQ-Jz-PqH"/>
+                                            <include reference="I5e-Ff-bDH"/>
+                                            <include reference="IzN-84-bXa"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ey6-qy-1wO" id="ObB-vq-6Ta"/>
+                            <outlet property="delegate" destination="ey6-qy-1wO" id="KLA-tx-mJW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Album" id="1YJ-eo-5Te">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wCk-aK-5BB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="f8h-qz-vHf">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Album">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Add Category">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="Herculanum"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7J-gP-gIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="993"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0.png" width="166" height="165"/>
+        <image name="dropDown.png" width="45" height="31"/>
+        <image name="plusSign.png" width="272" height="259"/>
+        <image name="section.png" width="59" height="56"/>
+        <image name="star_male.png" width="86" height="86"/>
+    </resources>
+</document>
