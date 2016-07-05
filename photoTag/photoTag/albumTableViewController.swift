@@ -11,16 +11,13 @@ import UIKit
 class albumTableViewController: UITableViewController {
     
 
+    var allDataSets = loadDataFromPlist(addNewAlbumCellImageName: nil)
+    var expandCell = flagType.needCloseCell
+    var adjustNumOfCells = 0
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +29,25 @@ class albumTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+
+        return allDataSets.categoryCellSets.count + adjustNumOfCells
+
     }
+    //configure each cell
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("catgeory", forIndexPath: indexPath) as! categoryTableViewCell
+        cell.leftImage.image = allDataSets.categoryCellSets[0].leftImage
+        cell.categoryTitle.text = allDataSets.categoryCellSets[0].categoryTitle
+        cell.rightImage.image = allDataSets.categoryCellSets[0].rightImage
+        return cell
+    }
+    
 
   }

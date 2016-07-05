@@ -3,16 +3,25 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>likeImageName</key>
-		<string>star_male.png</string>
-		<key>builtDate</key>
-		<date>2016-07-04T21:52:27Z</date>
-		<key>albumTitle</key>
-		<string>Test</string>
-		<key>albumSubtitle</key>
-		<string>testaubtitle</string>
-		<key>coverImageData</key>
+		<key>categoryImageData</key>
 		<data></data>
+		<key>categoryTitle</key>
+		<string></string>
+		<key>albumSets</key>
+		<array>
+			<dict>
+				<key>albumRatingImage</key>
+				<string>star_male.png</string>
+				<key>albumSubtitle</key>
+				<string></string>
+				<key>albumTitle</key>
+				<string></string>
+				<key>albumCoverImageData</key>
+				<data></data>
+				<key>albumCoverImageName</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

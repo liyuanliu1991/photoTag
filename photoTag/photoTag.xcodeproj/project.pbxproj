@@ -30,6 +30,8 @@
 		ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3320A1D2B24B100AF4F94 /* addNewAlbumCellModel.swift */; };
 		ECF3320D1D2B24C700AF4F94 /* categoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3320C1D2B24C700AF4F94 /* categoryCellModel.swift */; };
 		ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */; };
+		ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332141D2C32FD00AF4F94 /* rightArrow.png */; };
+		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		ECF3320A1D2B24B100AF4F94 /* addNewAlbumCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewAlbumCellModel.swift; sourceTree = "<group>"; };
 		ECF3320C1D2B24C700AF4F94 /* categoryCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCellModel.swift; sourceTree = "<group>"; };
 		ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaulNewAlbumCoverImage.png; sourceTree = "<group>"; };
+		ECF332141D2C32FD00AF4F94 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 				ECF331BD1D2B0BF000AF4F94 /* Main.storyboard */,
 				ECF331C31D2B0BF000AF4F94 /* Assets.xcassets */,
 				ECF331C51D2B0BF000AF4F94 /* LaunchScreen.storyboard */,
+				ECF332181D2C37C800AF4F94 /* Common */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF332001D2B1CA400AF4F94 /* dropDown.png */,
+				ECF332141D2C32FD00AF4F94 /* rightArrow.png */,
 				ECF331FE1D2B1C0000AF4F94 /* section.png */,
 				ECF331F41D2B12DB00AF4F94 /* star_male.png */,
 				ECF331F61D2B12E100AF4F94 /* star_female.png */,
@@ -211,6 +217,14 @@
 				ECF331EA1D2B0D2100AF4F94 /* albumList.plist */,
 			);
 			name = pListData;
+			sourceTree = "<group>";
+		};
+		ECF332181D2C37C800AF4F94 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ECF332161D2C37BF00AF4F94 /* enumCommon.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 				ECF332051D2B204100AF4F94 /* plusSign.png in Resources */,
 				ECF331EB1D2B0D2100AF4F94 /* albumList.plist in Resources */,
 				ECF332011D2B1CA400AF4F94 /* dropDown.png in Resources */,
+				ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */,
 				ECF331BF1D2B0BF000AF4F94 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +373,7 @@
 				ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */,
 				ECF332091D2B248B00AF4F94 /* albumCellModel.swift in Sources */,
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
+				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,
 				ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */,
 				ECF331FB1D2B177D00AF4F94 /* albumTableViewController.swift in Sources */,

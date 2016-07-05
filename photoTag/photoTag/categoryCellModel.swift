@@ -13,7 +13,8 @@ class categoryCellModel: NSObject {
     var leftImage: UIImage?
     var categoryTitle:String?
     var rightImage: UIImage?
-    init(leftImageName:String?,categoryTitle:String?,rightImageName:String?)
+    var albumSets = [albumCellModel]()
+    init(leftImageName:String?,categoryTitle:String?,rightImageName:String?, albumset : [albumCellModel])
     {
         if let leftImageName = leftImageName{
             self.leftImage = UIImage(named: leftImageName)
@@ -23,6 +24,10 @@ class categoryCellModel: NSObject {
         }
         if let rightImageName = rightImageName{
             self.rightImage = UIImage(named: rightImageName)
+        }
+        if albumset.count != 0
+        {
+            albumSets = albumset
         }
     }
     
