@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+class loadDataFromPlist:NSObject{
+    var albumCellSets = [albumCellModel]()
+    var categoryCellSets = [categoryCellModel]()
+    
+    
+}
