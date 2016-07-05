@@ -9,7 +9,12 @@
 import UIKit
 
 class addNewAlbumTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var leftImage: UIImageView!
+    
+    @IBOutlet weak var addNewAlbumLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

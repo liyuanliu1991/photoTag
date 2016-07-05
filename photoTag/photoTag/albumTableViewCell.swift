@@ -9,7 +9,16 @@
 import UIKit
 
 class albumTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var albumCoverImage: UIImageView!
+    
+    @IBOutlet weak var albumTitle: UILabel!
+    
+    @IBOutlet weak var albumSubtitle: UILabel!
+    
+    @IBOutlet weak var ratingImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

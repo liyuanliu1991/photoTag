@@ -84,6 +84,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="9sJ-nb-ksb" secondAttribute="trailing" constant="5" id="BHz-9Q-6Wr"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="categoryTitle" destination="1XY-0G-tFt" id="d01-CY-fZL"/>
+                                    <outlet property="leftImage" destination="hzx-mb-QDW" id="1ia-dg-a7K"/>
+                                    <outlet property="rightImage" destination="Oz0-0a-ZT5" id="gBh-X3-x2D"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="album" rowHeight="180" id="zgK-7X-3TO" customClass="albumTableViewCell" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="144" width="600" height="180"/>
@@ -163,6 +168,12 @@
                                         <constraint firstItem="baR-bK-yIu" firstAttribute="top" secondItem="8OJ-xQ-2e3" secondAttribute="topMargin" id="uPx-fG-hbT"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumCoverImage" destination="Wid-aL-Xr9" id="cZt-XX-913"/>
+                                    <outlet property="albumSubtitle" destination="eMz-cc-dS5" id="DR8-YI-RJt"/>
+                                    <outlet property="albumTitle" destination="Ug2-RB-tii" id="HrB-pd-lVl"/>
+                                    <outlet property="ratingImage" destination="avm-Qf-dl8" id="wSs-lh-ufE"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewAlbum" rowHeight="53" id="7qs-C9-aeV" customClass="addNewAlbumTableViewCell" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="144" width="600" height="180"/>
@@ -193,11 +204,20 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-9e-8du">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-9e-8du">
                                                     <rect key="frame" x="169" y="31" width="123" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Add New Album">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="17" name="Herculanum"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="45" y="18" width="545" height="17"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <variation key="heightClass=regular" alignment="center"/>
@@ -226,6 +246,10 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addNewAlbumLabel" destination="zgB-9e-8du" id="ORy-dc-dEP"/>
+                                    <outlet property="leftImage" destination="E9G-WO-Rin" id="h4Z-tK-Ia1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
