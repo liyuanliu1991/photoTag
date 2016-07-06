@@ -34,7 +34,9 @@ class albumTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return allDataSets.categoryCellSets[section].albumSets.count
+        
+            return allDataSets.categoryCellSets[section].albumSets.count + 1
+
 
     }
     
@@ -59,19 +61,32 @@ class albumTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("album", forIndexPath: indexPath) as! albumTableViewCell
-        let album = allDataSets.categoryCellSets[indexPath.section].albumSets[indexPath.row]
-        cell.albumCoverImage.image = album.albumCoverImage
-        cell.albumSubtitle.text = album.albumSubtitle
-        cell.albumTitle.text = album.albumTitle
-        cell.ratingImage.image = album.ratingImage
-        return cell
+        if indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count
+        {
+            let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
+            cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
+            cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[0].addNewAlbumLabel!
+            
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCellWithIdentifier("album", forIndexPath: indexPath) as! albumTableViewCell
+            let album = allDataSets.categoryCellSets[indexPath.section].albumSets[indexPath.row]
+            cell.albumCoverImage.image = album.albumCoverImage
+            cell.albumSubtitle.text = album.albumSubtitle
+            cell.albumTitle.text = album.albumTitle
+            cell.ratingImage.image = album.ratingImage
+            
+            
+            
+            return cell
+            
+        }
+
         
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-    }
+   
     
     //for section header and footer
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -103,22 +118,20 @@ class albumTableViewController: UITableViewController {
         {
             expandCell.append(whichSectionTapped)
         }
-        
-        
         tableView.endUpdates()
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+  /*  override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
         cell.leftImage.image = allDataSets.addNewAlbumCellSets[section].leftImage
         cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[section].addNewAlbumLabel!
-        return cell
+        
+        return cell.contentView
         
     }
-    
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if expandCell.contains(section)
@@ -129,11 +142,11 @@ class albumTableViewController: UITableViewController {
         {
             return 0
         }
-    }
+    }*/
     
   }
 
-
+//还是把footer做成一个真正的cell吧
 
 
 
