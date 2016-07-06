@@ -133,6 +133,7 @@
 		ECF331B81D2B0BF000AF4F94 /* photoTag */ = {
 			isa = PBXGroup;
 			children = (
+				ECF332181D2C37C800AF4F94 /* Common */,
 				ECF331F31D2B10E300AF4F94 /* pListData */,
 				ECF331F21D2B10CB00AF4F94 /* Resource */,
 				ECF331F01D2B10B200AF4F94 /* Controller */,
@@ -197,7 +198,6 @@
 				ECF331BD1D2B0BF000AF4F94 /* Main.storyboard */,
 				ECF331C31D2B0BF000AF4F94 /* Assets.xcassets */,
 				ECF331C51D2B0BF000AF4F94 /* LaunchScreen.storyboard */,
-				ECF332181D2C37C800AF4F94 /* Common */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -604,6 +604,7 @@
 				ECF331E31D2B0BF100AF4F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECF331E41D2B0BF100AF4F94 /* Build configuration list for PBXNativeTarget "photoTagTests" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +613,7 @@
 				ECF331E61D2B0BF100AF4F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECF331E71D2B0BF100AF4F94 /* Build configuration list for PBXNativeTarget "photoTagUITests" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +622,7 @@
 				ECF331E91D2B0BF100AF4F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum flagType : Int{
-    case needExpand
-    case needCloseCell
+    case expanded
+    case closed
     
 }

@@ -33,15 +33,24 @@ class albumTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        var adjustNumOfCells = 0
-        var i = 0
-        for index in expandCell{
-            adjustNumOfCells += allDataSets.categoryCellSets[index].albumSets.count
-            i += 1
+        
+        if(expandCell.count == 0)
+        {
+            return allDataSets.categoryCellSets.count
         }
-        adjustNumOfCells += i
-        return allDataSets.categoryCellSets.count + adjustNumOfCells
+        else
+        {
+            var adjustNumOfCells = 0
+           
+            for index in expandCell{
+                adjustNumOfCells += allDataSets.categoryCellSets[index].albumSets.count
+               
+            }
+            return allDataSets.categoryCellSets.count + expandCell.count + adjustNumOfCells
+            
+        }
+
+        
 
     }
     //configure each cell
@@ -60,11 +69,14 @@ class albumTableViewController: UITableViewController {
             var i = 1
             for index in expandCell{
                 adjust += allDataSets.categoryCellSets[index].albumSets.count
-                if(indexPath.row != adjust + i && indexPath.row != adjust + i - 1)
+                
+                let addNewAlbumCellIndex = index + adjust + 1
+                let categoryIndex = index + adjust + 2*i
+                if(indexPath.row !=  addNewAlbumCellIndex/*this one is the add new album cell*/ && indexPath.row != categoryIndex)
                 {
                     return 150
                 }
-                else if(indexPath.row == adjust + i - 1)
+                else if(indexPath.row == addNewAlbumCellIndex || indexPath.row == categoryIndex)
                 {
                     return 50
                 }
@@ -98,7 +110,10 @@ class albumTableViewController: UITableViewController {
             var i = 1
             for index in expandCell{
                 adjust += allDataSets.categoryCellSets[index].albumSets.count
-                if(indexPath.row != adjust + i && indexPath.row != adjust + i - 1)
+                let addNewAlbumCellIndex = index + adjust + 1
+                let categoryIndex = index + adjust + 2*i
+                
+                if(indexPath.row != addNewAlbumCellIndex && indexPath.row != categoryIndex)
                 {
                     let cell = tableView.dequeueReusableCellWithIdentifier("album", forIndexPath: indexPath) as! albumTableViewCell
                     let album = allDataSets.categoryCellSets[index].albumSets[indexPath.row - index - 1]
@@ -108,7 +123,7 @@ class albumTableViewController: UITableViewController {
                     cell.ratingImage.image = album.ratingImage
                     return cell
                 }
-                else if(indexPath.row == adjust + i - 1)
+                else if(indexPath.row == addNewAlbumCellIndex || indexPath.row == categoryIndex)
                 {
                     let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum", forIndexPath: indexPath) as! addNewAlbumTableViewCell
                     cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
@@ -126,6 +141,74 @@ class albumTableViewController: UITableViewController {
         return cell
         
     }
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if(expandCell.count==0)
+        {
+            expandCell.append(indexPath.row)
+            tableView.beginUpdates()
+            var insertRow = [NSIndexPath]()
+            
+            
+            for i in 1 ... allDataSets.categoryCellSets[indexPath.row].albumSets.count
+            {
+                let temp = NSIndexPath(forRow: i + indexPath.row, inSection: 0)
+               
+                insertRow.append(temp)
+                
+            }
+            let temp = NSIndexPath(forRow: allDataSets.categoryCellSets[indexPath.row].albumSets.count + 1, inSection: 0)
+            insertRow.append(temp)
+            tableView.insertRowsAtIndexPaths(insertRow, withRowAnimation: .Automatic)
+            
+            
+            
+        }
+        else
+        {
+            tableView.beginUpdates()
+            
+            for index in expandCell{
+                
+            }
+            
+            //tableView.endUpdates()
+            
+        }
+        tableView.endUpdates()
+    }
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

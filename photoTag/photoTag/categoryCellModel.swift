@@ -14,8 +14,10 @@ class categoryCellModel: NSObject {
     var categoryTitle:String?
     var rightImage: UIImage?
     var albumSets = [albumCellModel]()
+    var expand: flagType
     init(leftImageName:String?,categoryTitle:String?,rightImageName:String?, albumset : [albumCellModel])
     {
+        self.expand = .closed
         if let leftImageName = leftImageName{
             self.leftImage = UIImage(named: leftImageName)
         }
