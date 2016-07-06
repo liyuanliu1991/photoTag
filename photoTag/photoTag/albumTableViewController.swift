@@ -50,7 +50,15 @@ class albumTableViewController: UITableViewController {
         {
             if expandCell.contains(indexPath.section)
             {
-                return 150
+                if indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count
+                {
+                    return 50
+                }
+                else
+                {
+                    return 150
+                }
+                
             }
             else
             {
@@ -77,8 +85,6 @@ class albumTableViewController: UITableViewController {
             cell.albumSubtitle.text = album.albumSubtitle
             cell.albumTitle.text = album.albumTitle
             cell.ratingImage.image = album.ratingImage
-            
-            
             
             return cell
             
