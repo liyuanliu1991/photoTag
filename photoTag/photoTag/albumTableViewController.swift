@@ -13,7 +13,7 @@ class albumTableViewController: UITableViewController {
 
     var allDataSets = loadDataFromPlist(addNewAlbumCellImageName: nil)
     var expandCell = [Int]()
-    
+    var whichSectionTapped = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,155 +29,108 @@ class albumTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return allDataSets.categoryCellSets.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if(expandCell.count == 0)
-        {
-            return allDataSets.categoryCellSets.count
-        }
-        else
-        {
-            var adjustNumOfCells = 0
-           
-            for index in expandCell{
-                adjustNumOfCells += allDataSets.categoryCellSets[index].albumSets.count
-               
-            }
-            return allDataSets.categoryCellSets.count + expandCell.count + adjustNumOfCells
-            
-        }
-
-        
+        return allDataSets.categoryCellSets[section].albumSets.count
 
     }
+    
     //configure each cell
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(expandCell.count == 0)
         {
-            return 50
+            return 0
         }
         else
         {
-            if(indexPath.row == 0 )
+            if expandCell.contains(indexPath.section)
             {
-                return 50
+                return 150
             }
-            var adjust = 0
-            var i = 1
-            for index in expandCell{
-                adjust += allDataSets.categoryCellSets[index].albumSets.count
-                
-                let addNewAlbumCellIndex = index + adjust + 1
-                let categoryIndex = index + adjust + 2*i
-                if(indexPath.row !=  addNewAlbumCellIndex/*this one is the add new album cell*/ && indexPath.row != categoryIndex)
-                {
-                    return 150
-                }
-                else if(indexPath.row == addNewAlbumCellIndex || indexPath.row == categoryIndex)
-                {
-                    return 50
-                }
-                i += 1
+            else
+            {
+                return 0
             }
-            
         }
-        return 50
         
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if(expandCell.count == 0)
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier("catgeory", forIndexPath: indexPath) as! categoryTableViewCell
-            cell.leftImage.image = allDataSets.categoryCellSets[indexPath.row].leftImage
-            cell.categoryTitle.text = allDataSets.categoryCellSets[indexPath.row].categoryTitle
-            cell.rightImage.image = allDataSets.categoryCellSets[indexPath.row].rightImage
-            return cell
-        }
-        else
-        {
-            if(indexPath.row == 0 )
-            {
-                let cell = tableView.dequeueReusableCellWithIdentifier("catgeory", forIndexPath: indexPath) as! categoryTableViewCell
-                cell.leftImage.image = allDataSets.categoryCellSets[indexPath.row].leftImage
-                cell.categoryTitle.text = allDataSets.categoryCellSets[indexPath.row].categoryTitle
-                cell.rightImage.image = allDataSets.categoryCellSets[indexPath.row].rightImage
-                return cell
-            }
-            var adjust = 0
-            var i = 1
-            for index in expandCell{
-                adjust += allDataSets.categoryCellSets[index].albumSets.count
-                let addNewAlbumCellIndex = index + adjust + 1
-                let categoryIndex = index + adjust + 2*i
-                
-                if(indexPath.row != addNewAlbumCellIndex && indexPath.row != categoryIndex)
-                {
-                    let cell = tableView.dequeueReusableCellWithIdentifier("album", forIndexPath: indexPath) as! albumTableViewCell
-                    let album = allDataSets.categoryCellSets[index].albumSets[indexPath.row - index - 1]
-                    cell.albumCoverImage.image = album.albumCoverImage
-                    cell.albumSubtitle.text = album.albumSubtitle
-                    cell.albumTitle.text = album.albumTitle
-                    cell.ratingImage.image = album.ratingImage
-                    return cell
-                }
-                else if(indexPath.row == addNewAlbumCellIndex || indexPath.row == categoryIndex)
-                {
-                    let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum", forIndexPath: indexPath) as! addNewAlbumTableViewCell
-                    cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
-                    cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[0].addNewAlbumLabel!
-                    return cell
-                }
-                i += 1
-            }
-            
-        }
-        let cell = tableView.dequeueReusableCellWithIdentifier("catgeory", forIndexPath: indexPath) as! categoryTableViewCell
-        cell.leftImage.image = allDataSets.categoryCellSets[indexPath.row].leftImage
-        cell.categoryTitle.text = allDataSets.categoryCellSets[indexPath.row].categoryTitle
-        cell.rightImage.image = allDataSets.categoryCellSets[indexPath.row].rightImage
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("album", forIndexPath: indexPath) as! albumTableViewCell
+        let album = allDataSets.categoryCellSets[indexPath.section].albumSets[indexPath.row]
+        cell.albumCoverImage.image = album.albumCoverImage
+        cell.albumSubtitle.text = album.albumSubtitle
+        cell.albumTitle.text = album.albumTitle
+        cell.ratingImage.image = album.ratingImage
         return cell
         
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if(expandCell.count==0)
+        
+    }
+    
+    //for section header and footer
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("catgeory") as! categoryTableViewCell
+        cell.leftImage.image = allDataSets.categoryCellSets[section].leftImage
+        cell.categoryTitle.text = allDataSets.categoryCellSets[section].categoryTitle
+        cell.rightImage.image = allDataSets.categoryCellSets[section].rightImage
+        
+        cell.rightImage.userInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("expandCellTap:"))
+        
+        whichSectionTapped = section
+        
+        cell.rightImage.addGestureRecognizer(tapRecognizer)
+       
+        
+        return cell
+    }
+    
+    func expandCellTap(gesture: UITapGestureRecognizer)
+    {
+        tableView.beginUpdates()
+        
+        if expandCell.contains(whichSectionTapped)
         {
-            expandCell.append(indexPath.row)
-            tableView.beginUpdates()
-            var insertRow = [NSIndexPath]()
-            
-            
-            for i in 1 ... allDataSets.categoryCellSets[indexPath.row].albumSets.count
-            {
-                let temp = NSIndexPath(forRow: i + indexPath.row, inSection: 0)
-               
-                insertRow.append(temp)
-                
-            }
-            let temp = NSIndexPath(forRow: allDataSets.categoryCellSets[indexPath.row].albumSets.count + 1, inSection: 0)
-            insertRow.append(temp)
-            tableView.insertRowsAtIndexPaths(insertRow, withRowAnimation: .Automatic)
-            
-            
-            
+            expandCell.removeObject(whichSectionTapped)
         }
         else
         {
-            tableView.beginUpdates()
-            
-            for index in expandCell{
-                
-            }
-            
-            //tableView.endUpdates()
-            
+            expandCell.append(whichSectionTapped)
         }
+        
+        
         tableView.endUpdates()
     }
-
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
+        cell.leftImage.image = allDataSets.addNewAlbumCellSets[section].leftImage
+        cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[section].addNewAlbumLabel!
+        return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if expandCell.contains(section)
+        {
+            return 50
+        }
+        else
+        {
+            return 0
+        }
+    }
+    
   }
 
 

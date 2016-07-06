@@ -21,7 +21,7 @@ class loadDataFromPlist:NSObject{
         self.loadAddNewAlbumCellSets(addNewAlbumCellImageName)
         
     }
-
+    
     func loadCategoryCellSets()
     {
         var albumSets = [albumCellModel]()
