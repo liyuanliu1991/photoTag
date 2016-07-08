@@ -119,10 +119,17 @@ class albumTableViewController: UITableViewController {
         if expandCell.contains(whichSectionTapped)
         {
             expandCell.removeObject(whichSectionTapped)
+            let tapView = gesture.view! as? UIImageView
+            tapView?.image = UIImage(named: "rightArrow.png")
+            
+           
         }
         else
         {
             expandCell.append(whichSectionTapped)
+            let tapView = gesture.view! as? UIImageView
+            tapView?.image = UIImage(named: "dropDown.png")
+            
         }
         tableView.endUpdates()
     }

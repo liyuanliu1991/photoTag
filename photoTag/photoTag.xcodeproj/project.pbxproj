@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ECF20A6B1D2F7A4A00C90687 /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF20A6A1D2F7A4A00C90687 /* dropDown.png */; };
 		ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF331B91D2B0BF000AF4F94 /* AppDelegate.swift */; };
 		ECF331BF1D2B0BF000AF4F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF331BD1D2B0BF000AF4F94 /* Main.storyboard */; };
 		ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECF331C01D2B0BF000AF4F94 /* photoTag.xcdatamodeld */; };
@@ -22,7 +23,6 @@
 		ECF331FB1D2B177D00AF4F94 /* albumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF331FA1D2B177D00AF4F94 /* albumTableViewController.swift */; };
 		ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF331FC1D2B182D00AF4F94 /* albumTableViewCell.swift */; };
 		ECF331FF1D2B1C0000AF4F94 /* section.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF331FE1D2B1C0000AF4F94 /* section.png */; };
-		ECF332011D2B1CA400AF4F94 /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332001D2B1CA400AF4F94 /* dropDown.png */; };
 		ECF332031D2B1EA400AF4F94 /* categoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332021D2B1EA400AF4F94 /* categoryTableViewCell.swift */; };
 		ECF332051D2B204100AF4F94 /* plusSign.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332041D2B204100AF4F94 /* plusSign.png */; };
 		ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332061D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift */; };
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ECF20A6A1D2F7A4A00C90687 /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
 		ECF331B61D2B0BF000AF4F94 /* photoTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF331B91D2B0BF000AF4F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF331BE1D2B0BF000AF4F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		ECF331FA1D2B177D00AF4F94 /* albumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = albumTableViewController.swift; sourceTree = "<group>"; };
 		ECF331FC1D2B182D00AF4F94 /* albumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = albumTableViewCell.swift; sourceTree = "<group>"; };
 		ECF331FE1D2B1C0000AF4F94 /* section.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = section.png; sourceTree = "<group>"; };
-		ECF332001D2B1CA400AF4F94 /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
 		ECF332021D2B1EA400AF4F94 /* categoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = categoryTableViewCell.swift; path = ../categoryTableViewCell.swift; sourceTree = "<group>"; };
 		ECF332041D2B204100AF4F94 /* plusSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusSign.png; sourceTree = "<group>"; };
 		ECF332061D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewAlbumTableViewCell.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		ECF331F31D2B10E300AF4F94 /* pListData */ = {
 			isa = PBXGroup;
 			children = (
-				ECF332001D2B1CA400AF4F94 /* dropDown.png */,
+				ECF20A6A1D2F7A4A00C90687 /* dropDown.png */,
 				ECF332141D2C32FD00AF4F94 /* rightArrow.png */,
 				ECF331FE1D2B1C0000AF4F94 /* section.png */,
 				ECF331F41D2B12DB00AF4F94 /* star_male.png */,
@@ -335,12 +335,12 @@
 				ECF331F51D2B12DB00AF4F94 /* star_male.png in Resources */,
 				ECF331C41D2B0BF000AF4F94 /* Assets.xcassets in Resources */,
 				ECF331FF1D2B1C0000AF4F94 /* section.png in Resources */,
+				ECF20A6B1D2F7A4A00C90687 /* dropDown.png in Resources */,
 				ECF331F91D2B138D00AF4F94 /* 0.png in Resources */,
 				ECF331F71D2B12E100AF4F94 /* star_female.png in Resources */,
 				ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */,
 				ECF332051D2B204100AF4F94 /* plusSign.png in Resources */,
 				ECF331EB1D2B0D2100AF4F94 /* albumList.plist in Resources */,
-				ECF332011D2B1CA400AF4F94 /* dropDown.png in Resources */,
 				ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */,
 				ECF331BF1D2B0BF000AF4F94 /* Main.storyboard in Resources */,
 			);
