@@ -249,6 +249,17 @@ class albumTableViewController: UITableViewController {
         
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if(indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count)
+        {
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+    
 }
 
 
