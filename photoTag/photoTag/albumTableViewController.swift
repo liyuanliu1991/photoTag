@@ -137,8 +137,6 @@ class albumTableViewController: UITableViewController {
             cell.albumSubtitle.text = album.albumSubtitle
             cell.albumTitle.text = album.albumTitle
             cell.ratingImage.image = album.ratingImage
-            
-            
             let ratingTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("ratingClick:"))
             
             cell.ratingImage.userInteractionEnabled = true
@@ -274,14 +272,30 @@ class albumTableViewController: UITableViewController {
         return 50
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if(indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count)
+        {
+            self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
+        }
+    }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
+        if(editingStyle == .Delete)
+        {
+            allDataSets.categoryCellSets[indexPath.section].albumSets.removeAtIndex(indexPath.row)
+            let index = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)
+            
+            tableView.deleteRowsAtIndexPaths([index], withRowAnimation: .Automatic)
+        }
+        else if(editingStyle == .Insert)
+        {
+            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "New Album", albumSubtitle: "Time", ratingImageName: "star_male.png", albumCoverImageData: nil)
+            allDataSets.categoryCellSets[indexPath.section].albumSets.append(newAlbum)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
         
-        allDataSets.categoryCellSets[indexPath.section].albumSets.removeAtIndex(indexPath.row)
-        let index = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)
-        
-        tableView.deleteRowsAtIndexPaths([index], withRowAnimation: .Automatic)
         
         
     }
