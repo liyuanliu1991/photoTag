@@ -13,6 +13,7 @@ class albumCellModel: NSObject {
     var albumTitle: String?
     var albumSubtitle: String?
     var ratingImage: UIImage?
+    var ratingImageNameString:String?
     var albumCoverImageData: NSData?
     init(albumCoverImageName: String?, alubumTitle:String?, albumSubtitle: String?,ratingImageName: String?, albumCoverImageData: NSData?)
     {
@@ -31,6 +32,7 @@ class albumCellModel: NSObject {
         self.albumSubtitle = albumSubtitle ?? "date"
         if let ratingImageName = ratingImageName{
             self.ratingImage = UIImage(named: ratingImageName)
+            self.ratingImageNameString = ratingImageName
         }
         else
         {

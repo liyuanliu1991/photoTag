@@ -138,11 +138,48 @@ class albumTableViewController: UITableViewController {
             cell.albumTitle.text = album.albumTitle
             cell.ratingImage.image = album.ratingImage
             
+            
+            let ratingTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("ratingClick:"))
+            
+            cell.ratingImage.userInteractionEnabled = true
+            cell.ratingImage.addGestureRecognizer(ratingTapRecognizer)
             return cell
             
         }
         
         
+    }
+    func ratingClick(gesture:UITapGestureRecognizer)
+    {
+       // tableView.beginUpdates()
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped: Int?
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+
+        if(allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].ratingImageNameString == "star_male.png")
+        {
+            allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].ratingImage = UIImage(named: "star_female.png")
+            allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].ratingImageNameString = "star_female.png"
+        }
+        else
+        {
+            allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].ratingImage = UIImage(named: "star_male.png")
+            allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].ratingImageNameString = "star_male.png"
+        }
+        
+       
+        let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
+        tableView.reloadRowsAtIndexPaths([NSindexPath], withRowAnimation: .None)
+    
     }
     
     

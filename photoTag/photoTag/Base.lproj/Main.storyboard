@@ -226,12 +226,8 @@
                                     <constraints>
                                         <constraint firstItem="Ech-Br-Nhl" firstAttribute="top" secondItem="xMV-3c-aoA" secondAttribute="top" id="1Ez-AE-4o5"/>
                                         <constraint firstItem="Ech-Br-Nhl" firstAttribute="leading" secondItem="xMV-3c-aoA" secondAttribute="leading" constant="10" id="6cQ-Jz-PqH"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ech-Br-Nhl" secondAttribute="trailing" constant="287" id="Dzu-bx-qVH"/>
                                         <constraint firstAttribute="trailing" secondItem="Ech-Br-Nhl" secondAttribute="trailing" id="I5e-Ff-bDH"/>
                                         <constraint firstAttribute="bottom" secondItem="Ech-Br-Nhl" secondAttribute="bottom" id="IzN-84-bXa"/>
-                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="leading" secondItem="xMV-3c-aoA" secondAttribute="leadingMargin" constant="-7" id="ViF-YP-D3H"/>
-                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="top" secondItem="xMV-3c-aoA" secondAttribute="topMargin" constant="-12" id="Xkw-aw-RVs"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ech-Br-Nhl" secondAttribute="bottom" constant="-48.5" id="hEx-ba-L3e"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -245,12 +241,8 @@
                                         <mask key="constraints">
                                             <include reference="1Ez-AE-4o5"/>
                                             <include reference="6cQ-Jz-PqH"/>
-                                            <exclude reference="Dzu-bx-qVH"/>
                                             <include reference="I5e-Ff-bDH"/>
                                             <include reference="IzN-84-bXa"/>
-                                            <exclude reference="ViF-YP-D3H"/>
-                                            <exclude reference="Xkw-aw-RVs"/>
-                                            <exclude reference="hEx-ba-L3e"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
