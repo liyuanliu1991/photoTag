@@ -198,8 +198,65 @@ class albumTableViewController: UITableViewController {
         let deleteTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("deleteSectionTap:"))
         cell.leftImage.addGestureRecognizer((deleteTapRecognizer))
         
-        //return cell
+        
+        cell.categoryTitle.userInteractionEnabled = true
+        let editCategoryTitle = UITapGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
+        cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
+        
         return cell.contentView
+    }
+    func editCategoryTitle(gesture:UITapGestureRecognizer)
+    {
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+       
+        var newName: String?
+        let alert = UIAlertController(title: "Category",
+            message: "Input Name",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                
+                
+                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                    newName = alertTextField.text
+             
+                    
+                    self.allDataSets.categoryCellSets[whichSectionTapped!].categoryTitle = newName
+                
+                    let indexSet = NSIndexSet(index: whichSectionTapped!)
+                    
+                    self.tableView.reloadSections(indexSet, withRowAnimation: .Automatic)
+                }
+                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+            style: UIAlertActionStyle.Cancel,
+            handler: nil)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
+            
+            textField.placeholder = "Name here"
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+
     }
     
     func deleteSectionTap(gesture:UITapGestureRecognizer)
