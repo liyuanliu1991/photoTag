@@ -44,46 +44,15 @@ class albumTableViewController: UITableViewController {
     
     @IBAction func addCategory(sender: AnyObject) {
         
-        var newName: String?
-        let alert = UIAlertController(title: "New Category",
-            message: "Input Name",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let ok = UIAlertAction(title: "OK",
-            style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
-                
-                
-                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
-                    newName = alertTextField.text
-                    self.tableView.beginUpdates()
-                    
-                    let albums = [albumCellModel]()
-                    let newCategory = categoryCellModel(leftImageName: "delete.png", categoryTitle: newName, rightImageName: "rightArrow.png", albumset: albums)
-                    self.allDataSets.categoryCellSets.append(newCategory)
-                    let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
-                    self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
-                    self.tableView.endUpdates()
-                    self.tableView.reloadData()
-                }
-                
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel",
-            style: UIAlertActionStyle.Cancel,
-            handler: nil)
-        
-        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
-            
-            textField.placeholder = "Name here"
-            
-        }
-        
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-        
-        
+        self.tableView.beginUpdates()
+        let albums = [albumCellModel]()
+        let newCategory = categoryCellModel(leftImageName: "delete.png", categoryTitle: "Click to change title", rightImageName: "rightArrow.png", albumset: albums)
+        self.allDataSets.categoryCellSets.append(newCategory)
+        let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
+        self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
+        //self.tableView.reloadData()
+
         
     }
     
@@ -141,11 +110,122 @@ class albumTableViewController: UITableViewController {
             
             cell.ratingImage.userInteractionEnabled = true
             cell.ratingImage.addGestureRecognizer(ratingTapRecognizer)
+            
+            
+            cell.albumTitle.userInteractionEnabled = true
+            let albumTitleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("editAlbumTitle:"))
+            cell.albumTitle.addGestureRecognizer(albumTitleTapRecognizer)
+            
+            cell.albumSubtitle.userInteractionEnabled = true
+            let albumSubtitleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
+            cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
+            
+            
             return cell
             
         }
         
         
+    }
+    func editAlbumSubtitle(gesture:UITapGestureRecognizer)
+    {
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+        
+        var newName: String?
+        let alert = UIAlertController(title: "Album Subtitle",
+            message: "Input Name",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                
+                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                    newName = alertTextField.text
+                    
+                    self.allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].albumSubtitle = newName
+                    
+                    let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
+                    
+                    self.tableView.reloadRowsAtIndexPaths([NSindexPath], withRowAnimation: .None)
+                }
+                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+            style: UIAlertActionStyle.Cancel,
+            handler: nil)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
+            
+            textField.placeholder = "Name here"
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    func editAlbumTitle(gesture:UITapGestureRecognizer)
+    {
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+        
+        var newName: String?
+        let alert = UIAlertController(title: "Album",
+            message: "Input Name",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                
+                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                    newName = alertTextField.text
+                    
+                    self.allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].albumTitle = newName
+                    
+                    let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
+                    
+                    self.tableView.reloadRowsAtIndexPaths([NSindexPath], withRowAnimation: .None)
+                }
+                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+            style: UIAlertActionStyle.Cancel,
+            handler: nil)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
+            
+            textField.placeholder = "Name here"
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     func ratingClick(gesture:UITapGestureRecognizer)
     {
@@ -228,10 +308,8 @@ class albumTableViewController: UITableViewController {
         let ok = UIAlertAction(title: "OK",
             style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
                 
-                
                 if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
                     newName = alertTextField.text
-             
                     
                     self.allDataSets.categoryCellSets[whichSectionTapped!].categoryTitle = newName
                 
@@ -348,7 +426,7 @@ class albumTableViewController: UITableViewController {
         }
         else if(editingStyle == .Insert)
         {
-            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "New Album", albumSubtitle: "Time", ratingImageName: "star_male.png", albumCoverImageData: nil)
+            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "Click to change title", albumSubtitle: "click to change subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil)
             allDataSets.categoryCellSets[indexPath.section].albumSets.append(newAlbum)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }

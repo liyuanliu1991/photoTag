@@ -28,7 +28,7 @@ class albumCellModel: NSObject {
             self.albumCoverImage = UIImage(named: "defaulNewAlbumCoverImage.png")
         }
         
-        self.albumTitle = albumTitle ?? "New Album"
+        self.albumTitle = albumTitle ?? "Click to change title"
         self.albumSubtitle = albumSubtitle ?? "date"
         if let ratingImageName = ratingImageName{
             self.ratingImage = UIImage(named: ratingImageName)
