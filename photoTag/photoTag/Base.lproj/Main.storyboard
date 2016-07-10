@@ -55,6 +55,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="59" y="15" width="489" height="21"/>
+                                                    </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="59" y="15" width="289" height="21"/>
                                                     </variation>
@@ -65,11 +68,17 @@
                                                         <constraint firstAttribute="width" constant="30" id="FaL-7r-dVq"/>
                                                         <constraint firstAttribute="height" constant="30" id="juU-dr-bBk"/>
                                                     </constraints>
+                                                    <variation key="heightClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="557" y="11" width="30" height="30"/>
+                                                    </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="357" y="11" width="30" height="30"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
+                                            <variation key="heightClass=regular" misplaced="YES">
+                                                <rect key="frame" x="8" y="0.0" width="587" height="51"/>
+                                            </variation>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="8" y="0.0" width="387" height="51"/>
                                             </variation>
@@ -268,6 +277,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="addCategory:" destination="ey6-qy-1wO" eventType="touchUpInside" id="y1R-ux-N4c"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

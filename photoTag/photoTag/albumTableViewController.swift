@@ -63,7 +63,7 @@ class albumTableViewController: UITableViewController {
                     let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
                     self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
                     self.tableView.endUpdates()
-                    
+                    self.tableView.reloadData()
                 }
                 
         }
@@ -156,7 +156,6 @@ class albumTableViewController: UITableViewController {
         cell.rightImage.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("expandCellTap:"))
         
-        whichSectionTapped = section
         
         cell.rightImage.addGestureRecognizer(tapRecognizer)
         
@@ -167,6 +166,19 @@ class albumTableViewController: UITableViewController {
     func expandCellTap(gesture: UITapGestureRecognizer)
     {
         tableView.beginUpdates()
+        
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+        
         
         if expandCell.contains(whichSectionTapped)
         {
