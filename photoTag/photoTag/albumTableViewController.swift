@@ -13,7 +13,7 @@ class albumTableViewController: UITableViewController {
     
     var allDataSets = loadDataFromPlist(addNewAlbumCellImageName: nil)
     var expandCell = [Int]()
-    var whichSectionTapped = 0
+    //var whichSectionTapped = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ class albumTableViewController: UITableViewController {
                     self.tableView.beginUpdates()
                     
                     let albums = [albumCellModel]()
-                    let newCategory = categoryCellModel(leftImageName: "section.png", categoryTitle: newName, rightImageName: "rightArrow.png", albumset: albums)
+                    let newCategory = categoryCellModel(leftImageName: "delete.png", categoryTitle: newName, rightImageName: "rightArrow.png", albumset: albums)
                     self.allDataSets.categoryCellSets.append(newCategory)
                     let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
                     self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
@@ -159,8 +159,42 @@ class albumTableViewController: UITableViewController {
         
         cell.rightImage.addGestureRecognizer(tapRecognizer)
         
+        cell.leftImage.userInteractionEnabled = true
+        let deleteTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("deleteSectionTap:"))
+        cell.leftImage.addGestureRecognizer((deleteTapRecognizer))
+        
         //return cell
         return cell.contentView
+    }
+    
+    func deleteSectionTap(gesture:UITapGestureRecognizer)
+    {
+        tableView.beginUpdates()
+        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+        if indexPath == nil
+        {
+            whichSectionTapped = 0
+        }
+        else
+        {
+            whichSectionTapped = (indexPath?.section)!
+        }
+        if expandCell.contains(whichSectionTapped!)
+        {
+            expandCell.removeObject(whichSectionTapped!)
+            let tapView = gesture.view! as? UIImageView
+            tapView?.image = UIImage(named: "rightArrow.png")
+            
+            
+        }
+        allDataSets.categoryCellSets.removeAtIndex(whichSectionTapped!)
+        let section = NSIndexSet(index: whichSectionTapped!)
+        tableView.deleteSections(section, withRowAnimation: .Automatic)
+        tableView.endUpdates()
+        
     }
     
     func expandCellTap(gesture: UITapGestureRecognizer)
@@ -170,6 +204,7 @@ class albumTableViewController: UITableViewController {
         let tapLocation = gesture.locationInView(self.tableView)
         
         let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
         if indexPath == nil
         {
             whichSectionTapped = 0
@@ -180,9 +215,9 @@ class albumTableViewController: UITableViewController {
         }
         
         
-        if expandCell.contains(whichSectionTapped)
+        if expandCell.contains(whichSectionTapped!)
         {
-            expandCell.removeObject(whichSectionTapped)
+            expandCell.removeObject(whichSectionTapped!)
             let tapView = gesture.view! as? UIImageView
             tapView?.image = UIImage(named: "rightArrow.png")
             
@@ -190,7 +225,7 @@ class albumTableViewController: UITableViewController {
         }
         else
         {
-            expandCell.append(whichSectionTapped)
+            expandCell.append(whichSectionTapped!)
             let tapView = gesture.view! as? UIImageView
             tapView?.image = UIImage(named: "dropDown.png")
             
@@ -202,6 +237,17 @@ class albumTableViewController: UITableViewController {
         return 50
     }
     
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        allDataSets.categoryCellSets[indexPath.section].albumSets.removeAtIndex(indexPath.row)
+        let index = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)
+        
+        tableView.deleteRowsAtIndexPaths([index], withRowAnimation: .Automatic)
+        
+        
+    }
     
 }
 

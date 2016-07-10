@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ECF20A6B1D2F7A4A00C90687 /* dropDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF20A6A1D2F7A4A00C90687 /* dropDown.png */; };
+		ECF20A6D1D322CD400C90687 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF20A6C1D322CD400C90687 /* delete.png */; };
 		ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF331B91D2B0BF000AF4F94 /* AppDelegate.swift */; };
 		ECF331BF1D2B0BF000AF4F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF331BD1D2B0BF000AF4F94 /* Main.storyboard */; };
 		ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECF331C01D2B0BF000AF4F94 /* photoTag.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		ECF20A6A1D2F7A4A00C90687 /* dropDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDown.png; sourceTree = "<group>"; };
+		ECF20A6C1D322CD400C90687 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		ECF331B61D2B0BF000AF4F94 /* photoTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF331B91D2B0BF000AF4F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF331BE1D2B0BF000AF4F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		ECF331F31D2B10E300AF4F94 /* pListData */ = {
 			isa = PBXGroup;
 			children = (
+				ECF20A6C1D322CD400C90687 /* delete.png */,
 				ECF20A6A1D2F7A4A00C90687 /* dropDown.png */,
 				ECF332141D2C32FD00AF4F94 /* rightArrow.png */,
 				ECF331FE1D2B1C0000AF4F94 /* section.png */,
@@ -337,6 +340,7 @@
 				ECF331FF1D2B1C0000AF4F94 /* section.png in Resources */,
 				ECF20A6B1D2F7A4A00C90687 /* dropDown.png in Resources */,
 				ECF331F91D2B138D00AF4F94 /* 0.png in Resources */,
+				ECF20A6D1D322CD400C90687 /* delete.png in Resources */,
 				ECF331F71D2B12E100AF4F94 /* star_female.png in Resources */,
 				ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */,
 				ECF332051D2B204100AF4F94 /* plusSign.png in Resources */,

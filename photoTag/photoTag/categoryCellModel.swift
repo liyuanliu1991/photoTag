@@ -31,6 +31,7 @@ class categoryCellModel: NSObject {
         {
             albumSets = albumset
         }
+        
     }
     
 }

@@ -17,9 +17,12 @@ class categoryTableViewCell: UITableViewCell {
     @IBOutlet weak var rightImage: UIImageView!
     
     
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryTitle.adjustsFontSizeToFitWidth = true
+        categoryTitle.minimumScaleFactor = 0.5
         // Initialization code
     }
 

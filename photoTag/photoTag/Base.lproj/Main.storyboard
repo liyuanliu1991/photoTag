@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bw8-Tq-2ax">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bw8-Tq-2ax">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -40,45 +41,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="9sJ-nb-ksb">
-                                            <rect key="frame" x="8" y="0.0" width="587" height="51"/>
+                                        <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9sJ-nb-ksb">
+                                            <rect key="frame" x="8" y="0.0" width="592" height="51"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="section.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-mb-QDW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-mb-QDW">
                                                     <rect key="frame" x="0.0" y="1" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="09P-6d-xvt"/>
                                                         <constraint firstAttribute="height" constant="50" id="nnj-4U-JZQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-0G-tFt">
-                                                    <rect key="frame" x="59" y="15" width="489" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Category Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-0G-tFt">
+                                                    <rect key="frame" x="55" y="1" width="363" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="59" y="15" width="489" height="21"/>
-                                                    </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="59" y="15" width="289" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-0a-ZT5">
-                                                    <rect key="frame" x="557" y="11" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="FaL-7r-dVq"/>
-                                                        <constraint firstAttribute="height" constant="30" id="juU-dr-bBk"/>
-                                                    </constraints>
-                                                    <variation key="heightClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="557" y="11" width="30" height="30"/>
-                                                    </variation>
+                                                    <rect key="frame" x="423" y="13" width="169" height="25"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="357" y="11" width="30" height="30"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
-                                            <variation key="heightClass=regular" misplaced="YES">
-                                                <rect key="frame" x="8" y="0.0" width="587" height="51"/>
-                                            </variation>
+                                            <constraints>
+                                                <constraint firstItem="1XY-0G-tFt" firstAttribute="height" secondItem="hzx-mb-QDW" secondAttribute="height" id="JRD-2k-QQA"/>
+                                                <constraint firstItem="hzx-mb-QDW" firstAttribute="width" secondItem="Oz0-0a-ZT5" secondAttribute="height" multiplier="2:1" id="Sdr-13-qRm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oz0-0a-ZT5" secondAttribute="trailing" id="w1c-rW-QL7"/>
+                                            </constraints>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="8" y="0.0" width="387" height="51"/>
                                             </variation>
@@ -86,13 +79,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9sJ-nb-ksb" firstAttribute="top" secondItem="kLW-AL-mED" secondAttribute="top" id="IDf-ue-wwu"/>
+                                        <constraint firstAttribute="trailing" secondItem="9sJ-nb-ksb" secondAttribute="trailing" id="LR4-hA-uEf"/>
                                         <constraint firstAttribute="bottom" secondItem="9sJ-nb-ksb" secondAttribute="bottom" id="nuD-pd-N4r"/>
                                         <constraint firstItem="9sJ-nb-ksb" firstAttribute="leading" secondItem="kLW-AL-mED" secondAttribute="leadingMargin" id="zOT-Er-nQD"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="9sJ-nb-ksb" secondAttribute="trailing" constant="5" id="BHz-9Q-6Wr"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="categoryTitle" destination="1XY-0G-tFt" id="d01-CY-fZL"/>
                                     <outlet property="leftImage" destination="hzx-mb-QDW" id="1ia-dg-a7K"/>
@@ -124,7 +115,7 @@
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Title">
                                                                     <attributes>
-                                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <font key="NSFont" size="22" name="MarkerFelt-Thin"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -136,7 +127,7 @@
                                                             <attributedString key="attributedText">
                                                                 <fragment content="subtitle">
                                                                     <attributes>
-                                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <font key="NSFont" size="15" name="Papyrus"/>
                                                                     </attributes>
                                                                 </fragment>
@@ -191,11 +182,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-Br-Nhl">
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-Br-Nhl">
                                             <rect key="frame" x="1" y="-4" width="312" height="97"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="plusSign.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-WO-Rin">
-                                                    <rect key="frame" x="0.0" y="0.0" width="272" height="259"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusSign.png" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-WO-Rin">
+                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="97"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="RTA-sl-ADY"/>
                                                         <constraint firstAttribute="width" constant="40" id="eWD-LH-79R"/>
@@ -213,12 +204,15 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-9e-8du">
-                                                    <rect key="frame" x="277" y="121" width="104" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-9e-8du">
+                                                    <rect key="frame" x="208" y="40" width="104" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="DhH-eV-2bW"/>
+                                                    </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Add New Album">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="17" name="Herculanum"/>
                                                             </attributes>
                                                         </fragment>
@@ -232,8 +226,12 @@
                                     <constraints>
                                         <constraint firstItem="Ech-Br-Nhl" firstAttribute="top" secondItem="xMV-3c-aoA" secondAttribute="top" id="1Ez-AE-4o5"/>
                                         <constraint firstItem="Ech-Br-Nhl" firstAttribute="leading" secondItem="xMV-3c-aoA" secondAttribute="leading" constant="10" id="6cQ-Jz-PqH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ech-Br-Nhl" secondAttribute="trailing" constant="287" id="Dzu-bx-qVH"/>
                                         <constraint firstAttribute="trailing" secondItem="Ech-Br-Nhl" secondAttribute="trailing" id="I5e-Ff-bDH"/>
                                         <constraint firstAttribute="bottom" secondItem="Ech-Br-Nhl" secondAttribute="bottom" id="IzN-84-bXa"/>
+                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="leading" secondItem="xMV-3c-aoA" secondAttribute="leadingMargin" constant="-7" id="ViF-YP-D3H"/>
+                                        <constraint firstItem="Ech-Br-Nhl" firstAttribute="top" secondItem="xMV-3c-aoA" secondAttribute="topMargin" constant="-12" id="Xkw-aw-RVs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ech-Br-Nhl" secondAttribute="bottom" constant="-48.5" id="hEx-ba-L3e"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -247,8 +245,12 @@
                                         <mask key="constraints">
                                             <include reference="1Ez-AE-4o5"/>
                                             <include reference="6cQ-Jz-PqH"/>
+                                            <exclude reference="Dzu-bx-qVH"/>
                                             <include reference="I5e-Ff-bDH"/>
                                             <include reference="IzN-84-bXa"/>
+                                            <exclude reference="ViF-YP-D3H"/>
+                                            <exclude reference="Xkw-aw-RVs"/>
+                                            <exclude reference="hEx-ba-L3e"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -291,9 +293,9 @@
     </scenes>
     <resources>
         <image name="0.png" width="166" height="165"/>
+        <image name="delete.png" width="225" height="244"/>
         <image name="plusSign.png" width="272" height="259"/>
         <image name="rightArrow.png" width="138" height="118"/>
-        <image name="section.png" width="59" height="56"/>
         <image name="star_male.png" width="86" height="86"/>
     </resources>
 </document>
