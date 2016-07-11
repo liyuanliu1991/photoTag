@@ -272,7 +272,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="addCategory:" destination="ey6-qy-1wO" eventType="touchUpInside" id="y1R-ux-N4c"/>
+                                    <action selector="addCategory:" destination="ey6-qy-1wO" eventType="touchUpInside" id="HLj-0p-aVv"/>
                                 </connections>
                             </button>
                         </barButtonItem>

@@ -13,18 +13,125 @@ class albumTableViewController: UITableViewController {
     
     var allDataSets = loadDataFromPlist(addNewAlbumCellImageName: nil)
     var expandCell = [Int]()
+    var initPath: NSIndexPath?
     //var whichSectionTapped = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
+            }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
+    func longPressGestureRecognized(gesture:UILongPressGestureRecognizer)
+    {
+        let longPress = gesture as UILongPressGestureRecognizer
+        let state = longPress.state
+        var locationInView = longPress.locationInView(tableView)
+        var indexPath = tableView.indexPathForRowAtPoint(locationInView)
+        
+        switch state{
+        case UIGestureRecognizerState.Began:
+            if indexPath != nil{
+                initPath = indexPath
+            }
+            else
+            {
+                initPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: 0)
+            }
+        case UIGestureRecognizerState.Changed:
+            if(initPath?.section == nil)
+            {
+                if(initPath?.row == nil)
+                {
+                    initPath = NSIndexPath(forRow: 0, inSection: 0)
+                }
+                else
+                {
+                    initPath = NSIndexPath(forRow: (initPath?.row)!, inSection: 0)
+                }
+                
+            }
+            if (initPath?.row == nil)
+            {
+                initPath = NSIndexPath(forRow: 0, inSection: (initPath?.section)!)
+            }
+            if(indexPath?.section == nil)
+            {
+                if(indexPath?.row == nil)
+                {
+                    indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                }
+                else
+                {
+                    indexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: 0)
+                }
+                
+            }
+            if (indexPath?.row == nil)
+            {
+                indexPath = NSIndexPath(forRow: 0, inSection: indexPath!.section)
+            }
+            if (initPath?.section)! >= allDataSets.categoryCellSets.count && (initPath?.section)! != 0
+            {
+                initPath = NSIndexPath(forRow: (initPath?.row)!, inSection: allDataSets.categoryCellSets.count - 1)
+            }
+            if (initPath?.row)! >= allDataSets.categoryCellSets[initPath!.section].albumSets.count && (initPath?.row)! != 0{
+                initPath = NSIndexPath(forRow: allDataSets.categoryCellSets[initPath!.section].albumSets.count - 1, inSection: (initPath?.section)!)
+                
+            }
+            if (indexPath?.section)! >= allDataSets.categoryCellSets.count && (indexPath?.section)! != 0{
+                indexPath = NSIndexPath(forRow: indexPath!.row, inSection: allDataSets.categoryCellSets.count - 1)
+            }
+            if (indexPath?.row)! >= allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.count && (indexPath?.row)! != 0{
+                indexPath = NSIndexPath(forRow: allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.count - 1, inSection: indexPath!.section)
+            }
+            
+            
+            
+            let third = allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!]
+            
+            
+            allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.insert(allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!], atIndex: (indexPath?.row)!)
+            
+            allDataSets.categoryCellSets[initPath!.section].albumSets.removeAtIndex(initPath!.row)
+            
+            tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
+            initPath = indexPath
+            
+            //self.tableView(self.tableView, targetIndexPathForMoveFromRowAtIndexPath: <#T##NSIndexPath#>, toProposedIndexPath: <#T##NSIndexPath#>)
+          /*  if((indexPath != nil) && (indexPath != initPath)){
+                
+                
+                if(allDataSets.categoryCellSets[(indexPath?.section)!].categoryTitle  == allDataSets.categoryCellSets[(initPath?.row)!].categoryTitle)
+                {
+                    
+                    if(indexPath?.row != initPath?.row)
+                    {
+                        swap(&allDataSets.categoryCellSets[(indexPath?.section)!].albumSets[(indexPath?.row)!], &allDataSets.categoryCellSets[(initPath?.section)!].albumSets[(initPath?.row)!])
+                    }
+                    
+                }
+                else
+                {
+                    allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.insert(allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!], atIndex: (indexPath?.row)!)
+                    allDataSets.categoryCellSets[initPath!.section].albumSets.removeAtIndex(initPath!.row)
+                }
+                
+                tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
+                initPath = indexPath
+            }*/
+        default:
+            break
+        }
+        
+    }
+   
+
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -120,6 +227,9 @@ class albumTableViewController: UITableViewController {
             let albumSubtitleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
             cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
             
+            let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
+            cell.addGestureRecognizer(longpress)
+
             
             return cell
             
@@ -371,6 +481,8 @@ class albumTableViewController: UITableViewController {
     {
         tableView.beginUpdates()
         
+        
+        
         let tapLocation = gesture.locationInView(self.tableView)
         
         let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
@@ -398,6 +510,7 @@ class albumTableViewController: UITableViewController {
             expandCell.append(whichSectionTapped!)
             let tapView = gesture.view! as? UIImageView
             tapView?.image = UIImage(named: "dropDown.png")
+            
             
         }
         tableView.endUpdates()
@@ -445,6 +558,40 @@ class albumTableViewController: UITableViewController {
             return true
         }
     }
+ //-------------------------move ? --------------------------------------------------------------
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count{
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let sourceSet = allDataSets.categoryCellSets[sourceIndexPath.section]
+        let destinationSet = allDataSets.categoryCellSets[destinationIndexPath.section]
+        let cellToMove = sourceSet.albumSets[sourceIndexPath.row]
+        
+        if sourceSet.categoryTitle == destinationSet.categoryTitle{
+            if destinationIndexPath.row != sourceIndexPath.row{
+                swap(&destinationSet.albumSets[destinationIndexPath.row], &sourceSet.albumSets[sourceIndexPath.row])
+            }
+            
+        } else {
+            destinationSet.albumSets.insert(cellToMove, atIndex: destinationIndexPath.row)
+            sourceSet.albumSets.removeAtIndex(sourceIndexPath.row)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
+        let set = allDataSets.categoryCellSets[proposedDestinationIndexPath.section]
+        if proposedDestinationIndexPath.row >= set.albumSets.count {
+            return NSIndexPath(forRow: set.albumSets.count-1, inSection: proposedDestinationIndexPath.section)
+        }
+        return proposedDestinationIndexPath
+    }
+
+    
     
 }
 
