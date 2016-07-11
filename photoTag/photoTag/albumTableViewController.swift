@@ -558,40 +558,7 @@ class albumTableViewController: UITableViewController {
             return true
         }
     }
- //-------------------------move ? --------------------------------------------------------------
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count{
-            return false
-        }
-        else{
-            return true
-        }
-    }
-    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let sourceSet = allDataSets.categoryCellSets[sourceIndexPath.section]
-        let destinationSet = allDataSets.categoryCellSets[destinationIndexPath.section]
-        let cellToMove = sourceSet.albumSets[sourceIndexPath.row]
-        
-        if sourceSet.categoryTitle == destinationSet.categoryTitle{
-            if destinationIndexPath.row != sourceIndexPath.row{
-                swap(&destinationSet.albumSets[destinationIndexPath.row], &sourceSet.albumSets[sourceIndexPath.row])
-            }
-            
-        } else {
-            destinationSet.albumSets.insert(cellToMove, atIndex: destinationIndexPath.row)
-            sourceSet.albumSets.removeAtIndex(sourceIndexPath.row)
-        }
-    }
-    
-    override func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
-        let set = allDataSets.categoryCellSets[proposedDestinationIndexPath.section]
-        if proposedDestinationIndexPath.row >= set.albumSets.count {
-            return NSIndexPath(forRow: set.albumSets.count-1, inSection: proposedDestinationIndexPath.section)
-        }
-        return proposedDestinationIndexPath
-    }
-
-    
+ 
     
 }
 
