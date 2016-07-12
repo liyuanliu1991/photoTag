@@ -10,6 +10,8 @@
 		<key>albumSets</key>
 		<array>
 			<dict>
+				<key>photos</key>
+				<data></data>
 				<key>albumRatingImage</key>
 				<string>star_male.png</string>
 				<key>albumSubtitle</key>

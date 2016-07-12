@@ -26,6 +26,19 @@ class albumTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier{
+        case .Some("photoSegue"):
+            let photoController = segue.destinationViewController as! imageCollectionViewController
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let mid = allDataSets.categoryCellSets[indexPath.section]
+                photoController.photos = mid.albumSets[indexPath.row]
+            }
+        default:
+            break
+            
+        }
+    }
 
     func longPressGestureRecognized(gesture:UILongPressGestureRecognizer)
     {
@@ -517,7 +530,7 @@ class albumTableViewController: UITableViewController {
         }
         else if(editingStyle == .Insert)
         {
-            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "Long press to change title", albumSubtitle: "Long press to change subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil)
+            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "Long press to change title", albumSubtitle: "Long press to change subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil,photos: nil)
             allDataSets.categoryCellSets[indexPath.section].albumSets.append(newAlbum)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }

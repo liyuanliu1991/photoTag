@@ -173,7 +173,7 @@
                                     <outlet property="albumSubtitle" destination="eMz-cc-dS5" id="DR8-YI-RJt"/>
                                     <outlet property="albumTitle" destination="Ug2-RB-tii" id="HrB-pd-lVl"/>
                                     <outlet property="ratingImage" destination="avm-Qf-dl8" id="wSs-lh-ufE"/>
-                                    <segue destination="U5l-E8-4cU" kind="show" id="YWJ-r4-dHf"/>
+                                    <segue destination="U5l-E8-4cU" kind="show" identifier="photoSegue" id="YWJ-r4-dHf"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewAlbum" rowHeight="53" id="7qs-C9-aeV" customClass="addNewAlbumTableViewCell" customModule="photoTag" customModuleProvider="target">
@@ -283,27 +283,97 @@
             </objects>
             <point key="canvasLocation" x="1129" y="993"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Image Collection View Controller-->
         <scene sceneID="Fey-OK-Ygw">
             <objects>
-                <collectionViewController id="U5l-E8-4cU" sceneMemberID="viewController">
+                <collectionViewController id="U5l-E8-4cU" customClass="imageCollectionViewController" customModule="photoTag" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6hw-XN-fwF">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wyT-vt-XAi">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qiD-1n-dn4">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aVM-yg-jVh">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="aVM-yg-jVh" customClass="imageCollectionViewCell" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="600-Aj-2r1">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="heightClass=regular" misplaced="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="132"/>
+                                            </variation>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gat-zZ-Nlk">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="8F9-F5-DJw"/>
+                                                <constraint firstAttribute="height" constant="22" id="SA6-AE-NOI"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8F9-F5-DJw"/>
+                                                    <exclude reference="SA6-AE-NOI"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular" misplaced="YES">
+                                                <rect key="frame" x="75" y="114" width="22" height="22"/>
+                                                <mask key="constraints">
+                                                    <include reference="8F9-F5-DJw"/>
+                                                    <include reference="SA6-AE-NOI"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="600-Aj-2r1" firstAttribute="leading" secondItem="aVM-yg-jVh" secondAttribute="leading" id="9a7-ed-BGn"/>
+                                    <constraint firstAttribute="trailing" secondItem="600-Aj-2r1" secondAttribute="trailing" id="C4T-Cb-jTf"/>
+                                    <constraint firstItem="Gat-zZ-Nlk" firstAttribute="centerX" secondItem="aVM-yg-jVh" secondAttribute="centerX" id="TAp-RM-esw"/>
+                                    <constraint firstAttribute="bottom" secondItem="600-Aj-2r1" secondAttribute="bottom" id="Yst-Po-fys"/>
+                                    <constraint firstItem="600-Aj-2r1" firstAttribute="top" secondItem="aVM-yg-jVh" secondAttribute="top" id="ZEu-XB-PYH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gat-zZ-Nlk" secondAttribute="bottom" constant="4" id="yml-uv-Fcc"/>
+                                </constraints>
+                                <size key="customSize" width="170" height="140"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="600-Aj-2r1"/>
+                                        <exclude reference="Gat-zZ-Nlk"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="9a7-ed-BGn"/>
+                                        <exclude reference="C4T-Cb-jTf"/>
+                                        <exclude reference="Yst-Po-fys"/>
+                                        <exclude reference="ZEu-XB-PYH"/>
+                                        <exclude reference="TAp-RM-esw"/>
+                                        <exclude reference="yml-uv-Fcc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="600-Aj-2r1"/>
+                                        <include reference="Gat-zZ-Nlk"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="9a7-ed-BGn"/>
+                                        <include reference="C4T-Cb-jTf"/>
+                                        <include reference="Yst-Po-fys"/>
+                                        <include reference="ZEu-XB-PYH"/>
+                                        <include reference="TAp-RM-esw"/>
+                                        <include reference="yml-uv-Fcc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="checkIconView" destination="Gat-zZ-Nlk" id="K0x-Vu-ipP"/>
+                                    <outlet property="imageView" destination="600-Aj-2r1" id="ve2-gQ-rR0"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -311,6 +381,12 @@
                             <outlet property="delegate" destination="U5l-E8-4cU" id="nYk-H3-5aq"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Tuc-Lk-bz0"/>
+                        <barButtonItem systemItem="trash" id="Rtt-f5-ruc"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="N38-wS-R6e"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNa-o8-wqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -319,6 +395,7 @@
     </scenes>
     <resources>
         <image name="0.png" width="166" height="165"/>
+        <image name="1.png" width="182" height="164"/>
         <image name="delete.png" width="225" height="244"/>
         <image name="plusSign.png" width="272" height="259"/>
         <image name="rightArrow.png" width="138" height="118"/>

@@ -15,7 +15,8 @@ class albumCellModel: NSObject {
     var ratingImage: UIImage?
     var ratingImageNameString:String?
     var albumCoverImageData: NSData?
-    init(albumCoverImageName: String?, alubumTitle:String?, albumSubtitle: String?,ratingImageName: String?, albumCoverImageData: NSData?)
+    var photoSet = [imageCellModel]()
+    init(albumCoverImageName: String?, alubumTitle:String?, albumSubtitle: String?,ratingImageName: String?, albumCoverImageData: NSData?, photos: [imageCellModel]?)
     {
         if let albumCoverImageName = albumCoverImageName{
             self.albumCoverImage = UIImage(named: albumCoverImageName)
@@ -38,6 +39,11 @@ class albumCellModel: NSObject {
         {
             self.ratingImage = UIImage(named: "star_male.png")
         }
+        if let photos = photos
+        {
+            self.photoSet = photos
+        }
+        
         
     }
 }
