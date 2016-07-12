@@ -103,29 +103,7 @@ class albumTableViewController: UITableViewController {
             tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
             initPath = indexPath
             
-            //self.tableView(self.tableView, targetIndexPathForMoveFromRowAtIndexPath: <#T##NSIndexPath#>, toProposedIndexPath: <#T##NSIndexPath#>)
-          /*  if((indexPath != nil) && (indexPath != initPath)){
-                
-                
-                if(allDataSets.categoryCellSets[(indexPath?.section)!].categoryTitle  == allDataSets.categoryCellSets[(initPath?.row)!].categoryTitle)
-                {
-                    
-                    if(indexPath?.row != initPath?.row)
-                    {
-                        swap(&allDataSets.categoryCellSets[(indexPath?.section)!].albumSets[(indexPath?.row)!], &allDataSets.categoryCellSets[(initPath?.section)!].albumSets[(initPath?.row)!])
-                    }
-                    
-                }
-                else
-                {
-                    allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.insert(allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!], atIndex: (indexPath?.row)!)
-                    allDataSets.categoryCellSets[initPath!.section].albumSets.removeAtIndex(initPath!.row)
-                }
-                
-                tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
-                initPath = indexPath
-            }*/
-        default:
+            default:
             break
         }
         
@@ -220,11 +198,11 @@ class albumTableViewController: UITableViewController {
             
             
             cell.albumTitle.userInteractionEnabled = true
-            let albumTitleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("editAlbumTitle:"))
+            let albumTitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("editAlbumTitle:"))
             cell.albumTitle.addGestureRecognizer(albumTitleTapRecognizer)
             
             cell.albumSubtitle.userInteractionEnabled = true
-            let albumSubtitleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
+            let albumSubtitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
             cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
             
             let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
@@ -237,7 +215,7 @@ class albumTableViewController: UITableViewController {
         
         
     }
-    func editAlbumSubtitle(gesture:UITapGestureRecognizer)
+    func editAlbumSubtitle(gesture:UILongPressGestureRecognizer)
     {
         let tapLocation = gesture.locationInView(self.tableView)
         
@@ -287,7 +265,7 @@ class albumTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    func editAlbumTitle(gesture:UITapGestureRecognizer)
+    func editAlbumTitle(gesture:UILongPressGestureRecognizer)
     {
         let tapLocation = gesture.locationInView(self.tableView)
         
@@ -390,12 +368,12 @@ class albumTableViewController: UITableViewController {
         
         
         cell.categoryTitle.userInteractionEnabled = true
-        let editCategoryTitle = UITapGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
+        let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
         cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
         
         return cell.contentView
     }
-    func editCategoryTitle(gesture:UITapGestureRecognizer)
+    func editCategoryTitle(gesture:UILongPressGestureRecognizer)
     {
         let tapLocation = gesture.locationInView(self.tableView)
         
@@ -539,7 +517,7 @@ class albumTableViewController: UITableViewController {
         }
         else if(editingStyle == .Insert)
         {
-            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "Click to change title", albumSubtitle: "click to change subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil)
+            let newAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "Long press to change title", albumSubtitle: "Long press to change subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil)
             allDataSets.categoryCellSets[indexPath.section].albumSets.append(newAlbum)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
