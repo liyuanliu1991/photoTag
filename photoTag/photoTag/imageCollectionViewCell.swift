@@ -12,6 +12,10 @@ class imageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+   // @IBOutlet weak var upLabel: UILabel!
+    
+   // @IBOutlet weak var rightLabel: UILabel!
       
+   // @IBOutlet weak var downLabel: UILabel!
     
 }

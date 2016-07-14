@@ -12,6 +12,9 @@ class imageCellModel{
     var image:UIImage?
     var checkIcon:UIImage?
     
+    var hiddenImage: UIImage?
+    
+    var showHidenImage: Bool
     init(imageName: String?, checkIconName:String?)
     {
         if let imageName = imageName{
@@ -20,6 +23,9 @@ class imageCellModel{
         if let checkIconName = checkIconName{
             self.checkIcon = UIImage(named: checkIconName)
         }
+        showHidenImage = false
+        
+        hiddenImage = UIImage(named: "1.png")
     }
     
 }

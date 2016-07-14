@@ -41,7 +41,16 @@ class imageCollectionViewController: UICollectionViewController {
         if segue.identifier == "showDetail"{
             let detail = segue.destinationViewController as! detailViewController
             let cell = collectionView?.indexPathsForSelectedItems()
-            detail.detailImage = photos?.photoSet[cell![0].row].image
+            
+            if photos?.photoSet[cell![0].row].showHidenImage == true
+            {
+                detail.detailImage = photos?.photoSet[cell![0].row].hiddenImage
+            }
+            else
+            {
+                detail.detailImage = photos?.photoSet[cell![0].row].image
+            }
+            
             
         }
     }
@@ -67,9 +76,28 @@ class imageCollectionViewController: UICollectionViewController {
         
         cell.imageView.image = photos?.photoSet[indexPath.row].image
         
+     //   cell.upLabel.text = photos?.photoSet[indexPath.row].upLabel
+      //  cell.rightLabel.text = photos?.photoSet[indexPath.row].rightLabel
+        //cell.downLabel.text = photos?.photoSet[indexPath.row].downLabel
+       // cell.upLabel.hidden = true
+       // cell.rightLabel.hidden = true
+       // cell.downLabel.hidden = true
+        
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+      /*  let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)*/
 
         // Configure the cell
     
@@ -90,9 +118,47 @@ class imageCollectionViewController: UICollectionViewController {
                 photos?.photoSet.removeAtIndex(indexPath!.row)
                 
                 collectionView?.deleteItemsAtIndexPaths([indexPath!])
+            case UISwipeGestureRecognizerDirection.Right:
                 
+                let swipe = gesture as! UISwipeGestureRecognizer
+                var locationInView = swipe.locationInView(collectionView)
+                var indexPath = collectionView?.indexPathForItemAtPoint(locationInView)
+                if(indexPath == nil)
+                {
+                    indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                }
+                print("right")
                 
-            default:
+                let cell = collectionView?.cellForItemAtIndexPath(indexPath!) as! imageCollectionViewCell
+                
+                if photos?.photoSet[indexPath!.row].showHidenImage == true
+                {
+                    photos?.photoSet[indexPath!.row].showHidenImage = false
+                    let toImage = photos?.photoSet[indexPath!.row].image
+                    UIView.transitionWithView(cell.imageView ,
+                        duration:2,
+                        options: UIViewAnimationOptions.TransitionCrossDissolve,
+                        animations: { cell.imageView.image = toImage },
+                        completion: nil)
+                }
+                else
+                {
+                    photos?.photoSet[indexPath!.row].showHidenImage = true
+                    
+                    let toImage = photos?.photoSet[indexPath!.row].hiddenImage
+                    UIView.transitionWithView(cell.imageView ,
+                        duration:1,
+                        options: UIViewAnimationOptions.TransitionFlipFromRight ,
+                        animations: { cell.imageView.image = toImage },
+                        completion: nil)
+                    
+                    
+                }
+                
+                cell.reloadInputViews()
+            
+                
+                default:
                 break
             }
         }

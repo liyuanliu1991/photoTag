@@ -328,11 +328,7 @@
                             <outlet property="delegate" destination="U5l-E8-4cU" id="nYk-H3-5aq"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Tuc-Lk-bz0"/>
-                        <barButtonItem systemItem="trash" id="Rtt-f5-ruc"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="N38-wS-R6e"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNa-o8-wqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,6 +344,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ybx-WG-3xV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q9p-YT-qll">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CnX-um-T1I">
@@ -366,10 +363,10 @@
                                 <exclude reference="CnX-um-T1I"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="H1u-Kx-owf"/>
                                 <exclude reference="cEd-Gi-joN"/>
                                 <exclude reference="qaB-60-bJf"/>
                                 <exclude reference="zYY-M3-M6o"/>
-                                <exclude reference="H1u-Kx-owf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -377,10 +374,10 @@
                                 <include reference="CnX-um-T1I"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="H1u-Kx-owf"/>
                                 <include reference="cEd-Gi-joN"/>
                                 <include reference="qaB-60-bJf"/>
                                 <include reference="zYY-M3-M6o"/>
-                                <include reference="H1u-Kx-owf"/>
                             </mask>
                         </variation>
                     </view>
