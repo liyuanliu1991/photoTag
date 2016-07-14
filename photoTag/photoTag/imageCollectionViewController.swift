@@ -35,6 +35,14 @@ class imageCollectionViewController: UICollectionViewController {
     }
 
   
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail"{
+            let detail = segue.destinationViewController as! detailViewController
+            let cell = collectionView?.indexPathsForSelectedItems()
+            detail.detailImage = photos?.photoSet[cell![0].row].image
+            
+        }
+    }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections

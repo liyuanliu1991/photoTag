@@ -319,6 +319,7 @@
                                 <size key="customSize" width="170" height="140"/>
                                 <connections>
                                     <outlet property="imageView" destination="MJJ-Qj-Vxn" id="Jcu-Cx-pGf"/>
+                                    <segue destination="IK3-ER-0Qh" kind="show" identifier="showDetail" id="xKC-wq-nHO"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -337,6 +338,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNa-o8-wqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1821" y="993"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="S5U-uf-EJp">
+            <objects>
+                <viewController id="IK3-ER-0Qh" customClass="detailViewController" customModule="photoTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1aS-jK-v4S"/>
+                        <viewControllerLayoutGuide type="bottom" id="ybx-WG-3xV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q9p-YT-qll">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CnX-um-T1I">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" id="H1u-Kx-owf"/>
+                            <constraint firstItem="CnX-um-T1I" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="cEd-Gi-joN"/>
+                            <constraint firstItem="CnX-um-T1I" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="qaB-60-bJf"/>
+                            <constraint firstAttribute="trailing" secondItem="CnX-um-T1I" secondAttribute="trailing" id="zYY-M3-M6o"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CnX-um-T1I"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="cEd-Gi-joN"/>
+                                <exclude reference="qaB-60-bJf"/>
+                                <exclude reference="zYY-M3-M6o"/>
+                                <exclude reference="H1u-Kx-owf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="CnX-um-T1I"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="cEd-Gi-joN"/>
+                                <include reference="qaB-60-bJf"/>
+                                <include reference="zYY-M3-M6o"/>
+                                <include reference="H1u-Kx-owf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="CnX-um-T1I" id="ZAd-Ly-n85"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4f-mV-pSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2503" y="993"/>
         </scene>
     </scenes>
     <resources>
