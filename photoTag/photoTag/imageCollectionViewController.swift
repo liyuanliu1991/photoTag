@@ -76,12 +76,7 @@ class imageCollectionViewController: UICollectionViewController {
         
         cell.imageView.image = photos?.photoSet[indexPath.row].image
         
-     //   cell.upLabel.text = photos?.photoSet[indexPath.row].upLabel
-      //  cell.rightLabel.text = photos?.photoSet[indexPath.row].rightLabel
-        //cell.downLabel.text = photos?.photoSet[indexPath.row].downLabel
-       // cell.upLabel.hidden = true
-       // cell.rightLabel.hidden = true
-       // cell.downLabel.hidden = true
+     
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
@@ -90,16 +85,7 @@ class imageCollectionViewController: UICollectionViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
-        
-      /*  let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
-        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
-        self.view.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
-        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
-        self.view.addGestureRecognizer(swipeDown)*/
-
-        // Configure the cell
+      
     
         return cell
     }
@@ -127,17 +113,24 @@ class imageCollectionViewController: UICollectionViewController {
                 {
                     indexPath = NSIndexPath(forRow: 0, inSection: 0)
                 }
-                print("right")
+              
                 
                 let cell = collectionView?.cellForItemAtIndexPath(indexPath!) as! imageCollectionViewCell
                 
+                var effect = [ UIViewAnimationOptions.TransitionCrossDissolve,UIViewAnimationOptions.TransitionCurlDown,UIViewAnimationOptions.TransitionCurlUp, UIViewAnimationOptions.TransitionFlipFromBottom, UIViewAnimationOptions.TransitionFlipFromLeft, UIViewAnimationOptions.TransitionFlipFromRight,UIViewAnimationOptions.TransitionFlipFromTop,UIViewAnimationOptions.TransitionNone]
+                
+
+            
+
                 if photos?.photoSet[indexPath!.row].showHidenImage == true
                 {
                     photos?.photoSet[indexPath!.row].showHidenImage = false
                     let toImage = photos?.photoSet[indexPath!.row].image
+                    
+                    
                     UIView.transitionWithView(cell.imageView ,
-                        duration:2,
-                        options: UIViewAnimationOptions.TransitionCrossDissolve,
+                        duration:1,
+                        options: effect[indexPath!.row % 8],
                         animations: { cell.imageView.image = toImage },
                         completion: nil)
                 }
@@ -148,11 +141,10 @@ class imageCollectionViewController: UICollectionViewController {
                     let toImage = photos?.photoSet[indexPath!.row].hiddenImage
                     UIView.transitionWithView(cell.imageView ,
                         duration:1,
-                        options: UIViewAnimationOptions.TransitionFlipFromRight ,
+                        options: effect[7 - indexPath!.row % 8] ,
                         animations: { cell.imageView.image = toImage },
                         completion: nil)
-                    
-                    
+
                 }
                 
                 cell.reloadInputViews()
