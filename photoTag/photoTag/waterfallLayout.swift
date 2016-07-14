@@ -33,6 +33,7 @@ class WaterfallLayout: UICollectionViewLayout {
     
     override func prepareLayout() {
         
+        cache.removeAll()
         if cache.isEmpty {
             
             let columnWidth = width / CGFloat(numberOfColums)
