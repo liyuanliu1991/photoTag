@@ -31,7 +31,7 @@ class loadDataFromPlist:NSObject{
         let secondPhoto = imageCellModel(imageName: "10.png", checkIconName: "unchecked.png")
         let thridPhoto = imageCellModel(imageName: "11.png", checkIconName: "unchecked.png")
         let fourthPhoto = imageCellModel(imageName: "12.png", checkIconName: "unchecked.png")
-        let fifthPhoto = imageCellModel(imageName: "tree1.png", checkIconName: "unchecked.png")
+        let fifthPhoto = imageCellModel(imageName: "1.png", checkIconName: "unchecked.png")
         let sixPhoto = imageCellModel(imageName: "18.png", checkIconName: "unchecked.png")
         let seventhPhoto = imageCellModel(imageName: "17.png", checkIconName: "unchecked.png")
         let eighthPhoto = imageCellModel(imageName: "19.png", checkIconName: "unchecked.png")
