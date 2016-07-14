@@ -71,9 +71,12 @@ extension imageCollectionViewController: WaterfallLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        //return 100
-        let random = arc4random_uniform(5) + 1
-        return CGFloat(random * 100)
+        let width = CGRectGetWidth(collectionView.bounds) / 2
+        let ratio =  (photos?.photoSet[indexPath.row].image?.size.height)! / (photos?.photoSet[indexPath.row].image?.size.width)!
+        
+        let result = width * ratio
+        return result
+        
     }
     
     
