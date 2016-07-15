@@ -19,6 +19,8 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var clickShowTextView: UITextView!
     
+    @IBOutlet weak var slider: UISlider!
+    
     
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
     
@@ -32,6 +34,8 @@ class detailViewController: UIViewController {
         detailImageView.image = detailImage
         
         detailImageView.alpha = 1.0
+        
+       // slider.hidden = true
         
         shadow.hidden = true
         // Do any additional setup after loading the view.
@@ -68,6 +72,7 @@ class detailViewController: UIViewController {
                 animations: {
                     self.shadow.hidden = true
                     self.detailImageView.alpha = 1.0
+                   // self.slider.hidden = true
                     
                 },
                 completion: nil)
@@ -80,6 +85,9 @@ class detailViewController: UIViewController {
                 animations: {
                     self.detailImageView.alpha = 0.5
                     self.clickShowTextView.text = "clickShowTextView"
+                    
+                    self.slider.hidden = false
+                    self.shadow.hidden = true
                 },
                 completion: nil)
         }
@@ -88,6 +96,7 @@ class detailViewController: UIViewController {
     }
     func respondToSwipe(gesture: UIGestureRecognizer)
     {
+        self.detailImageView.alpha = 1.0
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
@@ -137,6 +146,15 @@ class detailViewController: UIViewController {
         
     }
     
+    @IBAction func sliderChange(sender: UISlider) {
+        let selectedValue = Float(sender.value)
+        let result = selectedValue / Float(10)
+        detailImageView.alpha = CGFloat(result)
+        
+        clickShowTextView.text = slideHiddenInforation[Int(selectedValue)]
+        
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
