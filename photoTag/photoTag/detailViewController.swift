@@ -72,7 +72,8 @@ class detailViewController: UIViewController {
                 animations: {
                     self.shadow.hidden = true
                     self.detailImageView.alpha = 1.0
-                   // self.slider.hidden = true
+                    self.clickShowTextView.text = "clickShowTextView"
+                   
                     
                 },
                 completion: nil)
