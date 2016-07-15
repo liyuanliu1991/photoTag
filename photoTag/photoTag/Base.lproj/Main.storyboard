@@ -350,39 +350,107 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CnX-um-T1I">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-zb-0qq" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Hk-cad">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="KJo-Xi-3kt"/>
+                                            <constraint firstAttribute="width" constant="240" id="wXp-6F-2uf"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="KJo-Xi-3kt"/>
+                                                <exclude reference="wXp-6F-2uf"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="KJo-Xi-3kt"/>
+                                                <include reference="wXp-6F-2uf"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qJW-Hk-cad" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="5e4-pS-2fr"/>
+                                    <constraint firstItem="qJW-Hk-cad" firstAttribute="centerY" secondItem="QW3-zb-0qq" secondAttribute="centerY" id="Y9y-eF-6nA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="qJW-Hk-cad"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="5e4-pS-2fr"/>
+                                        <exclude reference="Y9y-eF-6nA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="qJW-Hk-cad"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="5e4-pS-2fr"/>
+                                        <include reference="Y9y-eF-6nA"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="QW3-zb-0qq" secondAttribute="bottom" id="9kJ-sm-Rqp"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" id="H1u-Kx-owf"/>
+                            <constraint firstItem="QW3-zb-0qq" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="ZEg-oV-ntc"/>
                             <constraint firstItem="CnX-um-T1I" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="cEd-Gi-joN"/>
+                            <constraint firstAttribute="trailing" secondItem="QW3-zb-0qq" secondAttribute="trailing" id="hES-Df-sTR"/>
+                            <constraint firstItem="QW3-zb-0qq" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="q7M-2Q-WhQ"/>
                             <constraint firstItem="CnX-um-T1I" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="qaB-60-bJf"/>
                             <constraint firstAttribute="trailing" secondItem="CnX-um-T1I" secondAttribute="trailing" id="zYY-M3-M6o"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="CnX-um-T1I"/>
+                                <exclude reference="QW3-zb-0qq"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9kJ-sm-Rqp"/>
                                 <exclude reference="H1u-Kx-owf"/>
                                 <exclude reference="cEd-Gi-joN"/>
                                 <exclude reference="qaB-60-bJf"/>
                                 <exclude reference="zYY-M3-M6o"/>
+                                <exclude reference="ZEg-oV-ntc"/>
+                                <exclude reference="hES-Df-sTR"/>
+                                <exclude reference="q7M-2Q-WhQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="CnX-um-T1I"/>
+                                <include reference="QW3-zb-0qq"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9kJ-sm-Rqp"/>
                                 <include reference="H1u-Kx-owf"/>
                                 <include reference="cEd-Gi-joN"/>
                                 <include reference="qaB-60-bJf"/>
                                 <include reference="zYY-M3-M6o"/>
+                                <include reference="ZEg-oV-ntc"/>
+                                <include reference="hES-Df-sTR"/>
+                                <include reference="q7M-2Q-WhQ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="detailImageView" destination="CnX-um-T1I" id="ZAd-Ly-n85"/>
+                        <outlet property="information" destination="qJW-Hk-cad" id="gSJ-Vk-eyl"/>
+                        <outlet property="shadow" destination="QW3-zb-0qq" id="Oaq-4L-BLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4f-mV-pSc" userLabel="First Responder" sceneMemberID="firstResponder"/>

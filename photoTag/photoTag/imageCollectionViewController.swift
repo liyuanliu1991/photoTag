@@ -64,7 +64,6 @@ class imageCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let photos = photos
         {
-            let  k = photos.photoSet.count
             return photos.photoSet.count
         }
         // #warning Incomplete implementation, return the number of items
@@ -95,7 +94,7 @@ class imageCollectionViewController: UICollectionViewController {
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
                 let swipe = gesture as! UISwipeGestureRecognizer
-                var locationInView = swipe.locationInView(collectionView)
+                let locationInView = swipe.locationInView(collectionView)
                 var indexPath = collectionView?.indexPathForItemAtPoint(locationInView)
                 if(indexPath == nil)
                 {
@@ -107,7 +106,7 @@ class imageCollectionViewController: UICollectionViewController {
             case UISwipeGestureRecognizerDirection.Right:
                 
                 let swipe = gesture as! UISwipeGestureRecognizer
-                var locationInView = swipe.locationInView(collectionView)
+                let locationInView = swipe.locationInView(collectionView)
                 var indexPath = collectionView?.indexPathForItemAtPoint(locationInView)
                 if(indexPath == nil)
                 {

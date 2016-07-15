@@ -54,7 +54,7 @@ class loadDataFromPlist:NSObject{
         
         let firstAlbum = albumCellModel(albumCoverImageName: "defaulNewAlbumCoverImage.png", alubumTitle: "default new album name", albumSubtitle: "default new album subtitle", ratingImageName: "star_male.png", albumCoverImageData: nil,photos: photoSets)
         albumSets.append(firstAlbum)
-        let test = categoryCellModel(leftImageName: "delete.png", categoryTitle: "default category title", rightImageName: "rightArrow.png", albumset: albumSets)
+        let test = categoryCellModel(leftImageName: "section.png", categoryTitle: "default category title", rightImageName: "rightArrow.png", albumset: albumSets)
         
         categoryCellSets.append(test)
     }

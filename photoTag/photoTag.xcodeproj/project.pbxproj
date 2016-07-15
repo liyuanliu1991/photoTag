@@ -75,6 +75,7 @@
 		ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */; };
 		ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332141D2C32FD00AF4F94 /* rightArrow.png */; };
 		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
+		ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaulNewAlbumCoverImage.png; sourceTree = "<group>"; };
 		ECF332141D2C32FD00AF4F94 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
+		ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradiantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 				ECF331FC1D2B182D00AF4F94 /* albumTableViewCell.swift */,
 				ECF332061D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift */,
 				ECBC62C01D34C1FA00E9C9C2 /* imageCollectionViewCell.swift */,
+				ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				ECBC62C11D34C1FA00E9C9C2 /* imageCollectionViewCell.swift in Sources */,
 				ECBC62BD1D34C15900E9C9C2 /* imageCollectionViewController.swift in Sources */,
 				ECF3320D1D2B24C700AF4F94 /* categoryCellModel.swift in Sources */,
+				ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */,
 				ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */,
 				ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */,
 				ECBC62E51D3731AB00E9C9C2 /* detailViewController.swift in Sources */,

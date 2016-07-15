@@ -26,6 +26,7 @@ class albumTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier{
         case .Some("photoSegue"):
@@ -44,7 +45,7 @@ class albumTableViewController: UITableViewController {
     {
         let longPress = gesture as UILongPressGestureRecognizer
         let state = longPress.state
-        var locationInView = longPress.locationInView(tableView)
+        let locationInView = longPress.locationInView(tableView)
         var indexPath = tableView.indexPathForRowAtPoint(locationInView)
         
         switch state{
@@ -144,7 +145,7 @@ class albumTableViewController: UITableViewController {
         
         self.tableView.beginUpdates()
         let albums = [albumCellModel]()
-        let newCategory = categoryCellModel(leftImageName: "delete.png", categoryTitle: "Click to change title", rightImageName: "rightArrow.png", albumset: albums)
+        let newCategory = categoryCellModel(leftImageName: "section.png", categoryTitle: "Click to change title", rightImageName: "rightArrow.png", albumset: albums)
         self.allDataSets.categoryCellSets.append(newCategory)
         let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
         self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
@@ -154,11 +155,7 @@ class albumTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
+
     //configure each cell
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(expandCell.count == 0)
