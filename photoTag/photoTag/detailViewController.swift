@@ -8,7 +8,7 @@
 
 import UIKit
 
-class detailViewController: UIViewController {
+class detailViewController: UIViewController, UITextViewDelegate {
 
     
     @IBOutlet weak var detailImageView: UIImageView!
@@ -21,12 +21,13 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
     
+    @IBOutlet weak var switchHaveFun: UISwitch!
     
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
     
     var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
     
-    var tapTimes = 1
+    var tapTimes = 0
     var detailImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,16 @@ class detailViewController: UIViewController {
         detailImageView.image = detailImage
         
         detailImageView.alpha = 1.0
+        clickShowTextView.hidden = true
         
+        switchHaveFun.setOn(false, animated: true)
        // slider.hidden = true
+        
+        clickShowTextView.delegate = self
+        information.delegate = self
+        
+        
+        
         
         shadow.hidden = true
         // Do any additional setup after loading the view.
@@ -61,30 +70,29 @@ class detailViewController: UIViewController {
         self.view.addGestureRecognizer(tapReconginzer)
         
     }
+    
+    @IBAction func switchAction(sender: AnyObject) {
+        self.shadow.hidden = true
+        self.detailImageView.alpha = 1.0
+        self.clickShowTextView.hidden = true
+    }
+    
+    
     func tapClear(gesture: UITapGestureRecognizer)
     {
+        if switchHaveFun.on{
+            
+            return
+        }
         tapTimes = tapTimes + 1
         if(tapTimes%2 == 1)
-        {
-            UIView.transitionWithView(shadow,
-                duration:1,
-                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-                animations: {
-                    self.shadow.hidden = true
-                    self.detailImageView.alpha = 1.0
-                    self.clickShowTextView.text = "clickShowTextView"
-                   
-                    
-                },
-                completion: nil)
-        }
-        else
         {
             UIView.transitionWithView(detailImageView ,
                 duration:1,
                 options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                 animations: {
                     self.detailImageView.alpha = 0.5
+                    self.clickShowTextView.hidden = false
                     self.clickShowTextView.text = "clickShowTextView"
                     
                     self.slider.hidden = false
@@ -92,12 +100,32 @@ class detailViewController: UIViewController {
                 },
                 completion: nil)
         }
+        else
+        {
+            UIView.transitionWithView(shadow,
+                duration:1,
+                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                animations: {
+                    self.shadow.hidden = true
+                    self.detailImageView.alpha = 1.0
+                    self.clickShowTextView.hidden = true
+                    self.clickShowTextView.text = "clickShowTextView"
+                    
+                    
+                },
+                completion: nil)
+            
+            
+        }
         
 
     }
     func respondToSwipe(gesture: UIGestureRecognizer)
     {
         self.detailImageView.alpha = 1.0
+        if switchHaveFun.on{
+            return
+        }
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
@@ -151,7 +179,7 @@ class detailViewController: UIViewController {
         let selectedValue = Float(sender.value)
         let result = selectedValue / Float(10)
         detailImageView.alpha = CGFloat(result)
-        
+        clickShowTextView.hidden = false
         clickShowTextView.text = slideHiddenInforation[Int(selectedValue)]
         
         
@@ -163,6 +191,14 @@ class detailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 
 }

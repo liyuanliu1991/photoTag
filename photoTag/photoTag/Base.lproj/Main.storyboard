@@ -347,6 +347,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-JP-FLX">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="IK3-ER-0Qh" eventType="valueChanged" id="UBu-vU-Cm8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have Fun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-Dw-bia">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Yz-x3-fPP">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -376,7 +388,7 @@
                                     <action selector="sliderChange:" destination="IK3-ER-0Qh" eventType="valueChanged" id="FNO-VE-FAF"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-zb-0qq" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-zb-0qq" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Hk-cad">
@@ -436,8 +448,11 @@
                             <constraint firstItem="3Yz-x3-fPP" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="FWl-Qe-ygB"/>
                             <constraint firstItem="hZ7-br-W6b" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="G9d-ak-aZu"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" id="H1u-Kx-owf"/>
+                            <constraint firstItem="KGz-Dw-bia" firstAttribute="leading" secondItem="DDa-JP-FLX" secondAttribute="trailing" constant="5" id="MMX-VZ-SUx"/>
+                            <constraint firstAttribute="trailing" secondItem="KGz-Dw-bia" secondAttribute="trailing" constant="5" id="NZI-65-t4d"/>
                             <constraint firstItem="QW3-zb-0qq" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="ZEg-oV-ntc"/>
                             <constraint firstItem="CnX-um-T1I" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="cEd-Gi-joN"/>
+                            <constraint firstItem="KGz-Dw-bia" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" constant="5" id="d4C-Rj-i1D"/>
                             <constraint firstAttribute="trailing" secondItem="QW3-zb-0qq" secondAttribute="trailing" id="hES-Df-sTR"/>
                             <constraint firstAttribute="trailing" secondItem="hZ7-br-W6b" secondAttribute="trailing" id="mcO-dy-Dka"/>
                             <constraint firstItem="hZ7-br-W6b" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="oLB-EH-26c"/>
@@ -445,10 +460,13 @@
                             <constraint firstItem="QW3-zb-0qq" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="q7M-2Q-WhQ"/>
                             <constraint firstItem="CnX-um-T1I" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="qaB-60-bJf"/>
                             <constraint firstItem="3Yz-x3-fPP" firstAttribute="centerY" secondItem="QW3-zb-0qq" secondAttribute="centerY" id="tnU-k3-akA"/>
+                            <constraint firstItem="DDa-JP-FLX" firstAttribute="centerY" secondItem="KGz-Dw-bia" secondAttribute="centerY" id="wUs-xO-2qc"/>
                             <constraint firstAttribute="trailing" secondItem="CnX-um-T1I" secondAttribute="trailing" id="zYY-M3-M6o"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="DDa-JP-FLX"/>
+                                <exclude reference="KGz-Dw-bia"/>
                                 <exclude reference="3Yz-x3-fPP"/>
                                 <exclude reference="CnX-um-T1I"/>
                                 <exclude reference="hZ7-br-W6b"/>
@@ -461,6 +479,10 @@
                                 <exclude reference="G9d-ak-aZu"/>
                                 <exclude reference="mcO-dy-Dka"/>
                                 <exclude reference="oLB-EH-26c"/>
+                                <exclude reference="wUs-xO-2qc"/>
+                                <exclude reference="MMX-VZ-SUx"/>
+                                <exclude reference="NZI-65-t4d"/>
+                                <exclude reference="d4C-Rj-i1D"/>
                                 <exclude reference="FWl-Qe-ygB"/>
                                 <exclude reference="oyU-rD-MQ0"/>
                                 <exclude reference="tnU-k3-akA"/>
@@ -474,6 +496,8 @@
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
+                                <include reference="DDa-JP-FLX"/>
+                                <include reference="KGz-Dw-bia"/>
                                 <include reference="3Yz-x3-fPP"/>
                                 <include reference="CnX-um-T1I"/>
                                 <include reference="hZ7-br-W6b"/>
@@ -486,6 +510,10 @@
                                 <include reference="G9d-ak-aZu"/>
                                 <include reference="mcO-dy-Dka"/>
                                 <include reference="oLB-EH-26c"/>
+                                <include reference="wUs-xO-2qc"/>
+                                <include reference="MMX-VZ-SUx"/>
+                                <include reference="NZI-65-t4d"/>
+                                <include reference="d4C-Rj-i1D"/>
                                 <include reference="FWl-Qe-ygB"/>
                                 <include reference="oyU-rD-MQ0"/>
                                 <include reference="tnU-k3-akA"/>
@@ -504,6 +532,7 @@
                         <outlet property="information" destination="qJW-Hk-cad" id="gSJ-Vk-eyl"/>
                         <outlet property="shadow" destination="QW3-zb-0qq" id="Oaq-4L-BLR"/>
                         <outlet property="slider" destination="hZ7-br-W6b" id="5uP-pl-eqP"/>
+                        <outlet property="switchHaveFun" destination="DDa-JP-FLX" id="IvT-6T-Koe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4f-mV-pSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
