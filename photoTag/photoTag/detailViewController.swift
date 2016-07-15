@@ -17,11 +17,21 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var information: UITextView!
     
+    @IBOutlet weak var clickShowTextView: UITextView!
+    
+    
+    var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
+    
+    var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
+    
+    var tapTimes = 1
     var detailImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         detailImageView.image = detailImage
+        
+        detailImageView.alpha = 1.0
         
         shadow.hidden = true
         // Do any additional setup after loading the view.
@@ -49,14 +59,31 @@ class detailViewController: UIViewController {
     }
     func tapClear(gesture: UITapGestureRecognizer)
     {
-        UIView.transitionWithView(shadow ,
-            duration:1,
-            options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-            animations: {
-                self.shadow.hidden = true
-                
-            },
-            completion: nil)
+        tapTimes = tapTimes + 1
+        if(tapTimes%2 == 1)
+        {
+            UIView.transitionWithView(shadow,
+                duration:1,
+                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                animations: {
+                    self.shadow.hidden = true
+                    self.detailImageView.alpha = 1.0
+                    
+                },
+                completion: nil)
+        }
+        else
+        {
+            UIView.transitionWithView(detailImageView ,
+                duration:1,
+                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                animations: {
+                    self.detailImageView.alpha = 0.5
+                    self.clickShowTextView.text = "clickShowTextView"
+                },
+                completion: nil)
+        }
+        
 
     }
     func respondToSwipe(gesture: UIGestureRecognizer)
@@ -68,7 +95,9 @@ class detailViewController: UIViewController {
                 UIView.transitionWithView(shadow ,
                     duration:1,
                     options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-                    animations: { self.shadow.hidden = false },
+                    animations: { self.shadow.hidden = false
+                        self.information.text = self.upDownLeftRight[2]
+                    },
                     completion: nil)
                 
             case UISwipeGestureRecognizerDirection.Right:
@@ -76,21 +105,27 @@ class detailViewController: UIViewController {
                 UIView.transitionWithView(shadow ,
                     duration:1,
                     options:  UIViewAnimationOptions.TransitionFlipFromRight ,
-                    animations: { self.shadow.hidden = false },
+                    animations: { self.shadow.hidden = false
+                        self.information.text = self.upDownLeftRight[3]
+                    },
                     completion: nil)
             case UISwipeGestureRecognizerDirection.Up:
                 
                 UIView.transitionWithView(shadow ,
                     duration:1,
                     options:  UIViewAnimationOptions.TransitionCurlUp,
-                    animations: { self.shadow.hidden = false },
+                    animations: { self.shadow.hidden = false
+                        self.information.text = self.upDownLeftRight[0]
+                    },
                     completion: nil)
             case UISwipeGestureRecognizerDirection.Down:
                 
                 UIView.transitionWithView(shadow ,
                     duration:1,
                     options:  UIViewAnimationOptions.TransitionCurlDown,
-                    animations: { self.shadow.hidden = false },
+                    animations: { self.shadow.hidden = false
+                        self.information.text = self.upDownLeftRight[1]
+                    },
                     completion: nil)
 
                 
