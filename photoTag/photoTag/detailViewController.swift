@@ -75,6 +75,13 @@ class detailViewController: UIViewController, UITextViewDelegate {
         self.shadow.hidden = true
         self.detailImageView.alpha = 1.0
         self.clickShowTextView.hidden = true
+        if switchHaveFun.on{
+            self.slider.hidden = true
+        }
+        else
+        {
+            self.slider.hidden = false
+        }
     }
     
     
