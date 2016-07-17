@@ -353,7 +353,7 @@
                                     <action selector="switchAction:" destination="IK3-ER-0Qh" eventType="valueChanged" id="UBu-vU-Cm8"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have Fun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-Dw-bia">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Secrets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGz-Dw-bia">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -446,7 +446,7 @@
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="QW3-zb-0qq" secondAttribute="bottom" id="9kJ-sm-Rqp"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="hZ7-br-W6b" secondAttribute="bottom" id="Dxc-EF-pxG"/>
                             <constraint firstItem="3Yz-x3-fPP" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="FWl-Qe-ygB"/>
-                            <constraint firstItem="hZ7-br-W6b" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="G9d-ak-aZu"/>
+                            <constraint firstItem="hZ7-br-W6b" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" constant="40" id="G9d-ak-aZu"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" id="H1u-Kx-owf"/>
                             <constraint firstItem="KGz-Dw-bia" firstAttribute="leading" secondItem="DDa-JP-FLX" secondAttribute="trailing" constant="5" id="MMX-VZ-SUx"/>
                             <constraint firstAttribute="trailing" secondItem="KGz-Dw-bia" secondAttribute="trailing" constant="5" id="NZI-65-t4d"/>
@@ -454,7 +454,7 @@
                             <constraint firstItem="CnX-um-T1I" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" id="cEd-Gi-joN"/>
                             <constraint firstItem="KGz-Dw-bia" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" constant="5" id="d4C-Rj-i1D"/>
                             <constraint firstAttribute="trailing" secondItem="QW3-zb-0qq" secondAttribute="trailing" id="hES-Df-sTR"/>
-                            <constraint firstAttribute="trailing" secondItem="hZ7-br-W6b" secondAttribute="trailing" id="mcO-dy-Dka"/>
+                            <constraint firstAttribute="trailing" secondItem="hZ7-br-W6b" secondAttribute="trailing" constant="40" id="mcO-dy-Dka"/>
                             <constraint firstItem="hZ7-br-W6b" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="oLB-EH-26c"/>
                             <constraint firstItem="3Yz-x3-fPP" firstAttribute="top" secondItem="1aS-jK-v4S" secondAttribute="bottom" constant="272" id="oyU-rD-MQ0"/>
                             <constraint firstItem="QW3-zb-0qq" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" id="q7M-2Q-WhQ"/>
@@ -527,6 +527,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="addSecretsLabel" destination="KGz-Dw-bia" id="9Lu-8l-g1a"/>
                         <outlet property="clickShowTextView" destination="3Yz-x3-fPP" id="n7j-7o-0u8"/>
                         <outlet property="detailImageView" destination="CnX-um-T1I" id="ZAd-Ly-n85"/>
                         <outlet property="information" destination="qJW-Hk-cad" id="gSJ-Vk-eyl"/>
@@ -537,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4f-mV-pSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="993"/>
+            <point key="canvasLocation" x="2469" y="993"/>
         </scene>
     </scenes>
     <resources>

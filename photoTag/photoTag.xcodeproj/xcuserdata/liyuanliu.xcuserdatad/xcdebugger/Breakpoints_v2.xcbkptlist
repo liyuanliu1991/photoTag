@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "photoTag/detailViewController.swift"
-            timestampString = "490285287.885219"
+            timestampString = "490408855.189009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "respondToSwipe(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "photoTag/detailViewController.swift"
-            timestampString = "490285287.885219"
+            timestampString = "490408855.189009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "respondToSwipe(_:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -24,3 +24,33 @@ extension RangeReplaceableCollectionType where Generator.Element : Equatable {
         }
     }
 }
+
+extension UIImageView{
+    func blurImage(){
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

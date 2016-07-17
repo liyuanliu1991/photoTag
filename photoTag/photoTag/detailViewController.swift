@@ -22,6 +22,9 @@ class detailViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var slider: UISlider!
     
     @IBOutlet weak var switchHaveFun: UISwitch!
+
+    @IBOutlet weak var addSecretsLabel: UILabel!
+    
     
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
     
@@ -31,18 +34,27 @@ class detailViewController: UIViewController, UITextViewDelegate {
     var detailImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       
+        
+        
+        
+        
+        
+        /*detailImageView.frame = self.view.bounds
+        detailImageView.blurImage()
+        self.view.addSubview(self.detailImageView)*/
+        
         detailImageView.image = detailImage
         
         detailImageView.alpha = 1.0
         clickShowTextView.hidden = true
         
         switchHaveFun.setOn(false, animated: true)
-       // slider.hidden = true
+        // slider.hidden = true
         
         clickShowTextView.delegate = self
         information.delegate = self
-        
         
         
         
@@ -69,20 +81,65 @@ class detailViewController: UIViewController, UITextViewDelegate {
         let tapReconginzer = UITapGestureRecognizer(target: self, action: "tapClear:")
         self.view.addGestureRecognizer(tapReconginzer)
         
+        
+        let addSecretsRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressSecrets:")
+        self.view.addGestureRecognizer(addSecretsRecognizer)
+        //detailImageView.userInteractionEnabled = true
+    }
+    
+    func longPressSecrets(gesture: UILongPressGestureRecognizer)
+    {
+        if switchHaveFun.on{
+            
+            let longPress = gesture as UILongPressGestureRecognizer
+            let state = longPress.state
+            
+            switch state{
+            case UIGestureRecognizerState.Began:
+                print("begin")
+            case UIGestureRecognizerState.Changed:
+                print("change")
+            case UIGestureRecognizerState.Ended:
+                let locationView = longPress.locationInView(detailImageView)
+                let size = CGSize(width: 50.0, height: 50.0)
+                let location = CGRect(origin: locationView, size: size)
+                
+                let newtextView = UITextView(frame: location)
+                self.detailImageView.addSubview(newtextView)
+               // self.detailImageView.bringSubviewToFront(newtextView)
+                newtextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+                newtextView.selectable = true
+                newtextView.text = "tettetete"
+                newtextView.editable = true
+                self.detailImageView.userInteractionEnabled = true
+                newtextView.delegate = self
+                
+                
+                print("end")
+            default:
+                break
+            }
+
+            
+        }
     }
     
     @IBAction func switchAction(sender: AnyObject) {
         self.shadow.hidden = true
         self.detailImageView.alpha = 1.0
         self.clickShowTextView.hidden = true
+        
         if switchHaveFun.on{
             self.slider.hidden = true
+           
         }
         else
         {
             self.slider.hidden = false
         }
     }
+    
+
     
     
     func tapClear(gesture: UITapGestureRecognizer)
@@ -99,6 +156,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                 animations: {
                     self.detailImageView.alpha = 0.5
+                    //self.detailImageView.addSubview(self.clickShowTextView)
+                    //self.detailImageView.bringSubviewToFront(self.clickShowTextView)
                     self.clickShowTextView.hidden = false
                     self.clickShowTextView.text = "clickShowTextView"
                     
