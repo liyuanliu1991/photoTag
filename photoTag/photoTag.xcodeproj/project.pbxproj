@@ -76,6 +76,7 @@
 		ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332141D2C32FD00AF4F94 /* rightArrow.png */; };
 		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
 		ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */; };
+		ECF5BD931D3B5E0400B4F9C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		ECF332141D2C32FD00AF4F94 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
 		ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradiantView.swift; sourceTree = "<group>"; };
+		ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF5BD931D3B5E0400B4F9C5 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +261,7 @@
 		ECF331AD1D2B0BF000AF4F94 = {
 			isa = PBXGroup;
 			children = (
+				ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */,
 				ECF331B81D2B0BF000AF4F94 /* photoTag */,
 				ECF331D01D2B0BF100AF4F94 /* photoTagTests */,
 				ECF331DB1D2B0BF100AF4F94 /* photoTagUITests */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class detailViewController: UIViewController, UITextViewDelegate {
 
@@ -38,8 +39,9 @@ class detailViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
        
+      /*  detailImageView.clipsToBounds = true
         
-        
+        detailImageView.layer.cornerRadius = detailImageView.frame.size.height/2;*/
         
         
         
@@ -89,6 +91,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
         //detailImageView.userInteractionEnabled = true
     }
     
+    
+    
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
     {
         if switchHaveFun.on{
@@ -98,26 +102,29 @@ class detailViewController: UIViewController, UITextViewDelegate {
             
             switch state{
             case UIGestureRecognizerState.Began:
-                print("begin")
-            case UIGestureRecognizerState.Changed:
-                print("change")
-            case UIGestureRecognizerState.Ended:
                 let locationView = longPress.locationInView(detailImageView)
                 let size = CGSize(width: 50.0, height: 50.0)
                 let location = CGRect(origin: locationView, size: size)
                 
                 let newtextView = UITextView(frame: location)
                 self.detailImageView.addSubview(newtextView)
-
+                
                 newtextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
                 newtextView.selectable = true
-                newtextView.text = "tettetete"
+                newtextView.text = "tetteteteoooooooooooooooooooooooooooooo"
                 newtextView.editable = true
                 newtextView.userInteractionEnabled = true
                 self.detailImageView.userInteractionEnabled = true
                 newtextView.delegate = self
+                newtextView.layer.cornerRadius = newtextView.frame.size.height/2
+                newtextView.clipsToBounds = true
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
+                print("begin")
+            case UIGestureRecognizerState.Changed:
+                print("change")
+            case UIGestureRecognizerState.Ended:
+                
                 
                 
                 print("end")
