@@ -11,6 +11,7 @@ import QuartzCore
 
 class detailViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var Guess: UISwitch!
     
     @IBOutlet weak var detailImageView: UIImageView!
     
@@ -25,6 +26,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var switchHaveFun: UISwitch!
 
     @IBOutlet weak var addSecretsLabel: UILabel!
+    
     
     
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
@@ -52,9 +54,19 @@ class detailViewController: UIViewController, UITextViewDelegate {
         detailImageView.image = detailImage
         
         detailImageView.alpha = 1.0
+        
+        
+        
+      /*  var aspect = (detailImage?.size.height)! / (self.view.frame.size.width)
+        
+        var newHeight = aspect * detailImageView.frame.width
+        
+        detailImageView.frame = CGRectMake(detailImageView.frame.origin.x, detailImageView.frame.origin.y, self.view.frame.size.width, newHeight)*/
+        
         clickShowTextView.hidden = true
         
         switchHaveFun.setOn(false, animated: true)
+        Guess.setOn(false, animated: true)
         // slider.hidden = true
         
         clickShowTextView.delegate = self
@@ -143,7 +155,12 @@ class detailViewController: UIViewController, UITextViewDelegate {
         
         if switchHaveFun.on{
             self.slider.hidden = true
+            if Guess.on{
+                Guess.setOn(false, animated: true)
+                
+            }
             infoHideTextView.show()
+            
            
         }
         else
@@ -154,12 +171,33 @@ class detailViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    @IBAction func GuessAction(sender: AnyObject) {
+        self.shadow.hidden = true
+        self.detailImageView.alpha = 1.0
+        self.clickShowTextView.hidden = true
+        if Guess.on{
+            self.slider.hidden = true
+            if switchHaveFun.on{
+                self.switchHaveFun.setOn(false, animated: true)
+                
+            }
+            infoHideTextView.hide()
+        }
+        else
+        {
+            self.slider.hidden = false
+            
+            //then hide all found view
+        }
+        
+        
+    }
 
     
     
     func tapClear(gesture: UITapGestureRecognizer)
     {
-        if switchHaveFun.on{
+        if switchHaveFun.on || Guess.on{
             
             return
         }
@@ -203,7 +241,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
     func respondToSwipe(gesture: UIGestureRecognizer)
     {
         self.detailImageView.alpha = 1.0
-        if switchHaveFun.on{
+        if switchHaveFun.on || Guess.on{
             return
         }
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
