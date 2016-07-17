@@ -25,13 +25,24 @@ class TextViewArray{
     func hide()
     {
         for hide in infoHideTextView{
-            hide.hidden = true
+          
+            hide.alpha = 0.04
+            hide.textColor = UIColor.clearColor()
+            hide.editable = false
+            hide.selectable = false
+            
         }
     }
     func show()
     {
         for hide in infoHideTextView{
-            hide.hidden = false
+            hide.editable = true
+            hide.selectable = true
+            
+            hide.alpha = 0.75
+            hide.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            
+            hide.textColor = UIColor.blackColor()
         }
     }
 }
@@ -55,10 +66,39 @@ extension UIImageView{
         blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
         self.addSubview(blurEffectView)
     }
+   /* func addTextView(locationView:CGPoint,new:UITextView)
+    {
+        let location = CGRect(x: locationView.x - 25 , y: locationView.y-25, width: 55, height: 55)
+        new.frame = location
+        //let new = UITextView(frame: location)
+        new.initializeMyArgument()
+        self.addSubview(new)
+        
+       
+    }*/
 }
 
 
-
+extension UITextView{
+    func increaseFontSize(divide:CGFloat)
+    {
+        self.font =  UIFont(name: self.font!.fontName, size: self.frame.size.height/divide )!
+    }
+    func initializeMyArgument(){
+        self.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        self.selectable = true
+        self.text = "beautifullly you see these words ?tetteteteoooooooooooooooooooooooooooooo"
+        
+        self.increaseFontSize(4)
+        
+        self.editable = true
+        self.userInteractionEnabled = true
+        //self.userInteractionEnabled = true
+        //newtextView.delegate = self
+        self.layer.cornerRadius = self.frame.size.height/2
+        self.clipsToBounds = true
+    }
+}
 
 
 

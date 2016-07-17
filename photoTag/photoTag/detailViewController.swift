@@ -56,6 +56,13 @@ class detailViewController: UIViewController, UITextViewDelegate {
         detailImageView.alpha = 1.0
         
         
+       /* let mask = CALayer()
+        
+            let test = UIImage(named: "section.png") as! CGImage
+        mask.contents = test
+        mask.frame = CGRectMake(0, 0, detailImageView.image!.size.width, detailImageView.image!.size.height)
+        detailImageView.layer.mask = mask
+        detailImageView.layer.masksToBounds = true*/
         
       /*  var aspect = (detailImage?.size.height)! / (self.view.frame.size.width)
         
@@ -103,7 +110,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
         //detailImageView.userInteractionEnabled = true
     }
     
-    
+   
     
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
     {
@@ -115,15 +122,22 @@ class detailViewController: UIViewController, UITextViewDelegate {
             switch state{
             case UIGestureRecognizerState.Began:
                 let locationView = longPress.locationInView(detailImageView)
-                let size = CGSize(width: 50.0, height: 50.0)
-                let location = CGRect(origin: locationView, size: size)
+               
+                
+                let location = CGRect(x: locationView.x - 25 , y: locationView.y-25, width: 55, height: 55)
+                //let location = CGRect(origin: locationView, size: size)
+                
+               
                 
                 let newtextView = UITextView(frame: location)
                 self.detailImageView.addSubview(newtextView)
                 
+                
                 newtextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
                 newtextView.selectable = true
                 newtextView.text = "tetteteteoooooooooooooooooooooooooooooo"
+                //newtextView.textColor = UIColor.clearColor()
+                newtextView.increaseFontSize(4)
                 newtextView.editable = true
                 newtextView.userInteractionEnabled = true
                 self.detailImageView.userInteractionEnabled = true
@@ -133,6 +147,16 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
                 print("begin")
+               /* let locationView = longPress.locationInView(detailImageView)
+                
+                let newtextView = UITextView()
+                newtextView.initializeMyArgument()
+                
+                self.detailImageView.addTextView(locationView,new: newtextView)
+                
+                infoHideTextView.infoHideTextView.append(newtextView)
+                
+                print("begin")*/
             case UIGestureRecognizerState.Changed:
                 print("change")
             case UIGestureRecognizerState.Ended:

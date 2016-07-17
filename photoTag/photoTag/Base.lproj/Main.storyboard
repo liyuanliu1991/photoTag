@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -378,7 +379,7 @@
                                     <constraint firstAttribute="width" constant="240" id="VHM-bI-6mX"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -425,7 +426,7 @@
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -511,30 +512,30 @@
                                 <exclude reference="QW3-zb-0qq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZEg-oV-ntc"/>
-                                <exclude reference="hES-Df-sTR"/>
-                                <exclude reference="q7M-2Q-WhQ"/>
+                                <exclude reference="9kJ-sm-Rqp"/>
+                                <exclude reference="Dxc-EF-pxG"/>
+                                <exclude reference="YZP-ai-dEW"/>
+                                <exclude reference="G9d-ak-aZu"/>
+                                <exclude reference="mcO-dy-Dka"/>
+                                <exclude reference="oLB-EH-26c"/>
+                                <exclude reference="wUs-xO-2qc"/>
                                 <exclude reference="BIh-A2-sX7"/>
                                 <exclude reference="qvG-NL-A0O"/>
+                                <exclude reference="MMX-VZ-SUx"/>
+                                <exclude reference="NZI-65-t4d"/>
+                                <exclude reference="d4C-Rj-i1D"/>
+                                <exclude reference="hKe-ee-7yX"/>
+                                <exclude reference="ho9-L1-AS9"/>
+                                <exclude reference="FWl-Qe-ygB"/>
+                                <exclude reference="oyU-rD-MQ0"/>
+                                <exclude reference="tnU-k3-akA"/>
                                 <exclude reference="E2W-eV-RzY"/>
                                 <exclude reference="oTF-ju-ga7"/>
                                 <exclude reference="qaB-60-bJf"/>
                                 <exclude reference="zYY-M3-M6o"/>
-                                <exclude reference="FWl-Qe-ygB"/>
-                                <exclude reference="oyU-rD-MQ0"/>
-                                <exclude reference="tnU-k3-akA"/>
-                                <exclude reference="wUs-xO-2qc"/>
-                                <exclude reference="hKe-ee-7yX"/>
-                                <exclude reference="ho9-L1-AS9"/>
-                                <exclude reference="MMX-VZ-SUx"/>
-                                <exclude reference="NZI-65-t4d"/>
-                                <exclude reference="d4C-Rj-i1D"/>
-                                <exclude reference="G9d-ak-aZu"/>
-                                <exclude reference="mcO-dy-Dka"/>
-                                <exclude reference="oLB-EH-26c"/>
-                                <exclude reference="9kJ-sm-Rqp"/>
-                                <exclude reference="Dxc-EF-pxG"/>
-                                <exclude reference="YZP-ai-dEW"/>
+                                <exclude reference="ZEg-oV-ntc"/>
+                                <exclude reference="hES-Df-sTR"/>
+                                <exclude reference="q7M-2Q-WhQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -549,30 +550,30 @@
                                 <include reference="QW3-zb-0qq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZEg-oV-ntc"/>
-                                <include reference="hES-Df-sTR"/>
-                                <include reference="q7M-2Q-WhQ"/>
+                                <include reference="9kJ-sm-Rqp"/>
+                                <include reference="Dxc-EF-pxG"/>
+                                <include reference="YZP-ai-dEW"/>
+                                <include reference="G9d-ak-aZu"/>
+                                <include reference="mcO-dy-Dka"/>
+                                <include reference="oLB-EH-26c"/>
+                                <include reference="wUs-xO-2qc"/>
                                 <include reference="BIh-A2-sX7"/>
                                 <include reference="qvG-NL-A0O"/>
+                                <include reference="MMX-VZ-SUx"/>
+                                <include reference="NZI-65-t4d"/>
+                                <include reference="d4C-Rj-i1D"/>
+                                <include reference="hKe-ee-7yX"/>
+                                <include reference="ho9-L1-AS9"/>
+                                <include reference="FWl-Qe-ygB"/>
+                                <include reference="oyU-rD-MQ0"/>
+                                <include reference="tnU-k3-akA"/>
                                 <include reference="E2W-eV-RzY"/>
                                 <include reference="oTF-ju-ga7"/>
                                 <include reference="qaB-60-bJf"/>
                                 <include reference="zYY-M3-M6o"/>
-                                <include reference="FWl-Qe-ygB"/>
-                                <include reference="oyU-rD-MQ0"/>
-                                <include reference="tnU-k3-akA"/>
-                                <include reference="wUs-xO-2qc"/>
-                                <include reference="hKe-ee-7yX"/>
-                                <include reference="ho9-L1-AS9"/>
-                                <include reference="MMX-VZ-SUx"/>
-                                <include reference="NZI-65-t4d"/>
-                                <include reference="d4C-Rj-i1D"/>
-                                <include reference="G9d-ak-aZu"/>
-                                <include reference="mcO-dy-Dka"/>
-                                <include reference="oLB-EH-26c"/>
-                                <include reference="9kJ-sm-Rqp"/>
-                                <include reference="Dxc-EF-pxG"/>
-                                <include reference="YZP-ai-dEW"/>
+                                <include reference="ZEg-oV-ntc"/>
+                                <include reference="hES-Df-sTR"/>
+                                <include reference="q7M-2Q-WhQ"/>
                             </mask>
                         </variation>
                     </view>

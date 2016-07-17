@@ -75,7 +75,7 @@ class imageCollectionViewController: UICollectionViewController {
         
         cell.imageView.image = photos?.photoSet[indexPath.row].image
         
-     
+        
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
