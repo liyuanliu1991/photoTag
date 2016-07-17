@@ -30,6 +30,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
     
     var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
     
+    var infoHideTextView = TextViewArray()
+    
     var tapTimes = 0
     var detailImage: UIImage?
     override func viewDidLoad() {
@@ -106,13 +108,15 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 
                 let newtextView = UITextView(frame: location)
                 self.detailImageView.addSubview(newtextView)
-               // self.detailImageView.bringSubviewToFront(newtextView)
+
                 newtextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
                 newtextView.selectable = true
                 newtextView.text = "tettetete"
                 newtextView.editable = true
-                self.detailImageView.userInteractionEnabled = true
+                //self.detailImageView.userInteractionEnabled = true
                 newtextView.delegate = self
+                
+                infoHideTextView.infoHideTextView.append(newtextView)
                 
                 
                 print("end")
@@ -131,11 +135,14 @@ class detailViewController: UIViewController, UITextViewDelegate {
         
         if switchHaveFun.on{
             self.slider.hidden = true
+            infoHideTextView.show()
            
         }
         else
         {
             self.slider.hidden = false
+            infoHideTextView.hide()
+            
         }
     }
     
@@ -156,8 +163,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                 animations: {
                     self.detailImageView.alpha = 0.5
-                    //self.detailImageView.addSubview(self.clickShowTextView)
-                    //self.detailImageView.bringSubviewToFront(self.clickShowTextView)
+                   
                     self.clickShowTextView.hidden = false
                     self.clickShowTextView.text = "clickShowTextView"
                     

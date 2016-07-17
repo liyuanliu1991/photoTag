@@ -15,6 +15,26 @@ enum flagType : Int{
     
 }
 
+class TextViewArray{
+    var infoHideTextView = [UITextView]()
+    init()
+    {
+        //nothing
+    }
+    func hide()
+    {
+        for hide in infoHideTextView{
+            hide.hidden = true
+        }
+    }
+    func show()
+    {
+        for hide in infoHideTextView{
+            hide.hidden = false
+        }
+    }
+}
+
 extension RangeReplaceableCollectionType where Generator.Element : Equatable {
     
     // Remove first collection element that is equal to the given `object`:
