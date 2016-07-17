@@ -113,7 +113,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 newtextView.selectable = true
                 newtextView.text = "tettetete"
                 newtextView.editable = true
-                //self.detailImageView.userInteractionEnabled = true
+                newtextView.userInteractionEnabled = true
+                self.detailImageView.userInteractionEnabled = true
                 newtextView.delegate = self
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
