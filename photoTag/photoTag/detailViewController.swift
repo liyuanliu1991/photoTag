@@ -128,7 +128,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 //let location = CGRect(origin: locationView, size: size)
                 
                
-                
+                //create new text view
                 let newtextView = UITextView(frame: location)
                 self.detailImageView.addSubview(newtextView)
                 
@@ -144,6 +144,12 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 newtextView.delegate = self
                 newtextView.layer.cornerRadius = newtextView.frame.size.height/2
                 newtextView.clipsToBounds = true
+                
+                //swipe to left is deleteing this one
+                let swipeLeft = UISwipeGestureRecognizer(target: self, action: "deleteTextView:")
+                swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+                newtextView.addGestureRecognizer(swipeLeft)
+                
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
                 print("begin")
@@ -172,6 +178,26 @@ class detailViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    func deleteTextView(gesture: UIGestureRecognizer){
+        
+        if !switchHaveFun.on{
+        return
+        }
+        let deleteObject = gesture.view as? UITextView
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+        switch swipeGesture.direction{
+            case UISwipeGestureRecognizerDirection.Left:
+                deleteObject?.removeFromSuperview()
+                infoHideTextView.infoHideTextView.removeObject(deleteObject!)
+            
+            
+        default:
+            break
+
+            }
+        }
+    }
     @IBAction func switchAction(sender: AnyObject) {
         self.shadow.hidden = true
         self.detailImageView.alpha = 1.0
