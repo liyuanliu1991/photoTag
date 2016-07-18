@@ -150,6 +150,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
                 newtextView.addGestureRecognizer(swipeLeft)
                 
+                let tapToFind = UITapGestureRecognizer(target: self, action: "tapFind:")
+                newtextView.addGestureRecognizer(tapToFind)
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
                 print("begin")
@@ -177,6 +179,22 @@ class detailViewController: UIViewController, UITextViewDelegate {
             
         }
     }
+    func tapFind(gesture: UITapGestureRecognizer){
+        if !Guess.on{
+            return
+        }
+        let target = gesture.view as? UITextView
+        target?.hidden = false
+        target!.editable = true
+        target!.selectable = true
+        
+        target!.alpha = 0.75
+        target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        
+        target!.textColor = UIColor.blackColor()
+        
+    }
+    
     
     func deleteTextView(gesture: UIGestureRecognizer){
         
