@@ -30,11 +30,50 @@ class imageCollectionViewController: UICollectionViewController,UINavigationCont
         mylayout = layout
         
         let plusButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "Add:")
-        
         navigationItem.rightBarButtonItem = plusButton
         
-     
+     //   let takePhotoButton = UIBarButtonItem(title: "Take Photo", style: .Plain, target: self, action: "TakePhoto:")
+      //  navigationItem.leftBarButtonItem = takePhotoButton
         
+    }
+    
+    func TakePhoto(sender:UIBarButtonItem)
+    {
+        if isCameraAvailable() && doesCameraSupportTakingPhotos()
+        {
+            let controller = UIImagePickerController()
+            controller.view.backgroundColor = UIColor.whiteColor()
+            controller.sourceType = UIImagePickerControllerSourceType.Camera
+            controller.mediaTypes = [kUTTypeImage as String]
+            controller.allowsEditing = true
+            controller.delegate = self
+            
+            let sysVersion = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+            if sysVersion >= 8.0{
+                controller.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            }
+            
+            if !self.isAuthorized(){
+                if sysVersion >= 8.0 {
+                    let alertVC = UIAlertController(title: nil, message: "deny", preferredStyle: UIAlertControllerStyle.Alert)
+                    let openIt = UIAlertAction(title: "open", style: UIAlertActionStyle.Default, handler: { (alert:UIAlertAction) -> Void in
+                        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+                    })
+                    alertVC.addAction(openIt)
+                    self.presentViewController(alertVC, animated: true, completion: nil)
+                }else{
+                    let alertVC = UIAlertController(title: "notice", message: "please set privacy", preferredStyle: UIAlertControllerStyle.Alert)
+                    self.presentViewController(alertVC, animated: true, completion: nil)
+                }
+            }else{
+                self.presentViewController(controller, animated: true, completion: nil)
+            }
+        }else{
+            print("doesn't support taking photo")
+            
+        }
+        
+
     }
     
     func Add(sender:UIBarButtonItem)
