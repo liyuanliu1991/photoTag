@@ -134,7 +134,7 @@ class albumTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let  k = allDataSets.categoryCellSets[section].albumSets.count + 1
+        let  k = allDataSets.categoryCellSets[section].albumSets.count + 2
         
         return k
         
@@ -187,11 +187,23 @@ class albumTableViewController: UITableViewController {
         
         if indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count
         {
-            let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
-            cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
-            cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[0].addNewAlbumLabel!
-            
-            return cell
+            if indexPath.row == allDataSets.categoryCellSets[indexPath.section].albumSets.count
+            {
+                let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
+                cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
+                cell.addNewAlbumLabel.text = allDataSets.addNewAlbumCellSets[0].addNewAlbumLabel!
+                return cell
+                
+            }
+            else
+            {
+                let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
+                cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
+                cell.addNewAlbumLabel.text = "Click me to delete whole section"
+                return cell
+            }
+ 
+           
         }
         else
         {
@@ -215,8 +227,8 @@ class albumTableViewController: UITableViewController {
             let albumSubtitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
             cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
             
-            let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
-            cell.addGestureRecognizer(longpress)
+           /* let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
+            cell.addGestureRecognizer(longpress)*/
 
             
             return cell
@@ -372,18 +384,18 @@ class albumTableViewController: UITableViewController {
         
         cell.rightImage.addGestureRecognizer(tapRecognizer)
         
-        cell.leftImage.userInteractionEnabled = true
+     /*   cell.leftImage.userInteractionEnabled = true
         let deleteTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("deleteSectionTap:"))
         cell.leftImage.addGestureRecognizer((deleteTapRecognizer))
         
         
         cell.categoryTitle.userInteractionEnabled = true
         let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
-        cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
+        cell.categoryTitle.addGestureRecognizer(editCategoryTitle)*/
         
         return cell.contentView
     }
-    func editCategoryTitle(gesture:UILongPressGestureRecognizer)
+ /*   func editCategoryTitle(gesture:UILongPressGestureRecognizer)
     {
         let tapLocation = gesture.locationInView(self.tableView)
         
@@ -433,9 +445,9 @@ class albumTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
 
-    }
+    }*/
     
-    func deleteSectionTap(gesture:UITapGestureRecognizer)
+/*    func deleteSectionTap(gesture:UITapGestureRecognizer)
     {
         tableView.beginUpdates()
         let tapLocation = gesture.locationInView(self.tableView)
@@ -463,7 +475,7 @@ class albumTableViewController: UITableViewController {
         tableView.deleteSections(section, withRowAnimation: .Automatic)
         tableView.endUpdates()
         
-    }
+    }*/
     
     func expandCellTap(gesture: UITapGestureRecognizer)
     {
@@ -510,9 +522,24 @@ class albumTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if(indexPath.row >= allDataSets.categoryCellSets[indexPath.section].albumSets.count)
+        if(indexPath.row == allDataSets.categoryCellSets[indexPath.section].albumSets.count)
         {
             self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
+        }
+        else if indexPath.row > allDataSets.categoryCellSets[indexPath.section].albumSets.count
+        {
+            tableView.beginUpdates()
+            
+            if expandCell.contains(indexPath.section)
+            {
+                expandCell.removeObject(indexPath.section)
+   
+            }
+            allDataSets.categoryCellSets.removeAtIndex(indexPath.section)
+            let section = NSIndexSet(index: indexPath.section)
+            tableView.deleteSections(section, withRowAnimation: .Automatic)
+            
+            tableView.endUpdates()
         }
     }
     
