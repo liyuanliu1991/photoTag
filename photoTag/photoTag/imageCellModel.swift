@@ -15,10 +15,16 @@ class imageCellModel{
     var hiddenImage: UIImage?
     
     var showHidenImage: Bool
-    init(imageName: String?, checkIconName:String?)
+    
+    var imageData:NSData?
+    init(imageName: String?, checkIconName:String?,data:NSData?)
     {
         if let imageName = imageName{
             self.image = UIImage(named: imageName)
+        }
+        else if let data = data{
+            self.imageData = data
+            self.image = UIImage(data: data)
         }
         if let checkIconName = checkIconName{
             self.checkIcon = UIImage(named: checkIconName)
@@ -26,6 +32,7 @@ class imageCellModel{
         showHidenImage = false
         
         hiddenImage = UIImage(named: "1.png")
+        
     }
     
 }
