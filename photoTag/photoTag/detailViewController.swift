@@ -27,7 +27,9 @@ class detailViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var addSecretsLabel: UILabel!
     
+    @IBOutlet weak var guessLabel: UILabel!
     
+    @IBOutlet weak var hideNumLeft: UILabel!
     
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
     
@@ -54,6 +56,24 @@ class detailViewController: UIViewController, UITextViewDelegate {
         detailImageView.image = detailImage
         
         detailImageView.alpha = 1.0
+        
+        
+        
+        hideNumLeft.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
+        hideNumLeft.layer.shadowOpacity = 0.6
+        hideNumLeft.layer.shadowRadius = 6
+        hideNumLeft.hidden = true
+        
+        addSecretsLabel.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
+        addSecretsLabel.layer.shadowOpacity = 0.6
+        addSecretsLabel.layer.shadowRadius = 6
+        addSecretsLabel.hidden = false
+        
+        
+        guessLabel.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
+        guessLabel.layer.shadowOpacity = 0.6
+        guessLabel.layer.shadowRadius = 6
+        guessLabel.hidden = false
         
         
        /* let mask = CALayer()
@@ -124,7 +144,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 let locationView = longPress.locationInView(detailImageView)
                
                 
-                let location = CGRect(x: locationView.x - 25 , y: locationView.y-25, width: 55, height: 55)
+                let location = CGRect(x: locationView.x - 27.5 , y: locationView.y-27.5, width: 55, height: 55)
                 //let location = CGRect(origin: locationView, size: size)
                 
                
@@ -144,6 +164,15 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 newtextView.delegate = self
                 newtextView.layer.cornerRadius = newtextView.frame.size.height/2
                 newtextView.clipsToBounds = true
+                
+                
+                //shadow effects-----------------------------------------------
+              /*  newtextView.layer.shadowOffset = CGSize(width: 10, height: 20)
+                newtextView.layer.shadowOpacity = 0.9
+                newtextView.layer.shadowRadius = 6*/
+                
+                
+                //-------------------------------------------------------------
                 
                 //swipe to left is deleteing this one
                 let swipeLeft = UISwipeGestureRecognizer(target: self, action: "deleteTextView:")
@@ -184,14 +213,30 @@ class detailViewController: UIViewController, UITextViewDelegate {
             return
         }
         let target = gesture.view as? UITextView
-        target?.hidden = false
-        target!.editable = true
-        target!.selectable = true
         
-        target!.alpha = 0.75
-        target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        let locationView = gesture.locationInView(detailImageView)
         
-        target!.textColor = UIColor.blackColor()
+        let hideX = (target?.frame.origin.x)!
+        let hideY = (target?.frame.origin.y)!
+        
+        let tapX = locationView.x
+        let tapY = locationView.y
+        
+        if((tapX >= hideX - 15 && tapX <= hideX + 35) && (tapY >= hideY - 15 && tapY <= hideY + 35))
+        {
+            print("tap location \(locationView.x):\(locationView.y)")
+            print("info location \((target?.frame.origin.x)!)\((target?.frame.origin.y)!)")
+            
+            target?.hidden = false
+            target!.editable = false
+            target!.selectable = false
+        
+            target!.alpha = 0.75
+            target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            
+            target!.textColor = UIColor.blackColor()
+        }
+        
         
     }
     
@@ -250,11 +295,19 @@ class detailViewController: UIViewController, UITextViewDelegate {
                 
             }
             infoHideTextView.hide()
+            hideNumLeft.hidden = false
+            hideNumLeft.text = "\(infoHideTextView.infoHideTextView.count) hidden egges left"
+            switchHaveFun.hidden = true
+            addSecretsLabel.hidden = true
+            
         }
         else
         {
             self.slider.hidden = false
-            
+            infoHideTextView.hide()
+            hideNumLeft.hidden = true
+            switchHaveFun.hidden = false
+            addSecretsLabel.hidden = false
             //then hide all found view
         }
         

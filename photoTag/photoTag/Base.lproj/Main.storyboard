@@ -357,7 +357,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9i-Ng-TbC">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDa-JP-FLX">
@@ -466,9 +466,19 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcK-Vh-Fy1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hZ7-br-W6b" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" constant="10" id="2r8-qb-Tsq">
+                                <variation key="heightClass=regular" constant="5"/>
+                            </constraint>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="QW3-zb-0qq" secondAttribute="bottom" id="9kJ-sm-Rqp"/>
                             <constraint firstAttribute="leadingMargin" secondItem="exb-ka-kOH" secondAttribute="leading" constant="10" id="BIh-A2-sX7"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="hZ7-br-W6b" secondAttribute="bottom" id="Dxc-EF-pxG"/>
@@ -477,6 +487,8 @@
                             <constraint firstItem="hZ7-br-W6b" firstAttribute="leading" secondItem="Q9p-YT-qll" secondAttribute="leading" constant="40" id="G9d-ak-aZu"/>
                             <constraint firstItem="KGz-Dw-bia" firstAttribute="leading" secondItem="DDa-JP-FLX" secondAttribute="trailing" constant="5" id="MMX-VZ-SUx"/>
                             <constraint firstAttribute="trailing" secondItem="KGz-Dw-bia" secondAttribute="trailing" constant="5" id="NZI-65-t4d"/>
+                            <constraint firstItem="lcK-Vh-Fy1" firstAttribute="centerX" secondItem="QW3-zb-0qq" secondAttribute="centerX" id="VfB-OH-xFN"/>
+                            <constraint firstItem="exb-ka-kOH" firstAttribute="centerY" secondItem="lcK-Vh-Fy1" secondAttribute="centerY" id="Xtu-7a-r9U"/>
                             <constraint firstItem="ybx-WG-3xV" firstAttribute="top" secondItem="CnX-um-T1I" secondAttribute="bottom" constant="40" id="YZP-ai-dEW">
                                 <variation key="heightClass=regular" constant="35"/>
                             </constraint>
@@ -510,20 +522,24 @@
                                 <exclude reference="CnX-um-T1I"/>
                                 <exclude reference="hZ7-br-W6b"/>
                                 <exclude reference="QW3-zb-0qq"/>
+                                <exclude reference="lcK-Vh-Fy1"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9kJ-sm-Rqp"/>
                                 <exclude reference="Dxc-EF-pxG"/>
                                 <exclude reference="YZP-ai-dEW"/>
+                                <exclude reference="2r8-qb-Tsq"/>
                                 <exclude reference="G9d-ak-aZu"/>
                                 <exclude reference="mcO-dy-Dka"/>
                                 <exclude reference="oLB-EH-26c"/>
                                 <exclude reference="wUs-xO-2qc"/>
                                 <exclude reference="BIh-A2-sX7"/>
+                                <exclude reference="Xtu-7a-r9U"/>
                                 <exclude reference="qvG-NL-A0O"/>
                                 <exclude reference="MMX-VZ-SUx"/>
                                 <exclude reference="NZI-65-t4d"/>
                                 <exclude reference="d4C-Rj-i1D"/>
+                                <exclude reference="VfB-OH-xFN"/>
                                 <exclude reference="hKe-ee-7yX"/>
                                 <exclude reference="ho9-L1-AS9"/>
                                 <exclude reference="FWl-Qe-ygB"/>
@@ -548,20 +564,24 @@
                                 <include reference="CnX-um-T1I"/>
                                 <include reference="hZ7-br-W6b"/>
                                 <include reference="QW3-zb-0qq"/>
+                                <include reference="lcK-Vh-Fy1"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="9kJ-sm-Rqp"/>
-                                <include reference="Dxc-EF-pxG"/>
+                                <exclude reference="Dxc-EF-pxG"/>
                                 <include reference="YZP-ai-dEW"/>
+                                <include reference="2r8-qb-Tsq"/>
                                 <include reference="G9d-ak-aZu"/>
                                 <include reference="mcO-dy-Dka"/>
                                 <include reference="oLB-EH-26c"/>
                                 <include reference="wUs-xO-2qc"/>
                                 <include reference="BIh-A2-sX7"/>
+                                <include reference="Xtu-7a-r9U"/>
                                 <include reference="qvG-NL-A0O"/>
                                 <include reference="MMX-VZ-SUx"/>
                                 <include reference="NZI-65-t4d"/>
                                 <include reference="d4C-Rj-i1D"/>
+                                <include reference="VfB-OH-xFN"/>
                                 <include reference="hKe-ee-7yX"/>
                                 <include reference="ho9-L1-AS9"/>
                                 <include reference="FWl-Qe-ygB"/>
@@ -582,6 +602,8 @@
                         <outlet property="addSecretsLabel" destination="KGz-Dw-bia" id="9Lu-8l-g1a"/>
                         <outlet property="clickShowTextView" destination="3Yz-x3-fPP" id="n7j-7o-0u8"/>
                         <outlet property="detailImageView" destination="CnX-um-T1I" id="ZAd-Ly-n85"/>
+                        <outlet property="guessLabel" destination="z9i-Ng-TbC" id="tKS-Do-sf2"/>
+                        <outlet property="hideNumLeft" destination="lcK-Vh-Fy1" id="sPM-Rt-MRh"/>
                         <outlet property="information" destination="qJW-Hk-cad" id="gSJ-Vk-eyl"/>
                         <outlet property="shadow" destination="QW3-zb-0qq" id="Oaq-4L-BLR"/>
                         <outlet property="slider" destination="hZ7-br-W6b" id="5uP-pl-eqP"/>
@@ -590,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4f-mV-pSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="993"/>
+            <point key="canvasLocation" x="2523" y="993"/>
         </scene>
     </scenes>
     <resources>
