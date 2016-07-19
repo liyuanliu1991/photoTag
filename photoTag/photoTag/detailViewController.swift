@@ -55,7 +55,9 @@ class detailViewController: UIViewController, UITextViewDelegate {
         
         detailImageView.image = detailImage
         
+        //let imageData = UIImagePNGRepresentation(detailImage!)
         
+        //detailImageView.image = UIImage(data: imageData!)
         
         detailImageView.alpha = 1.0
         
