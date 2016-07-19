@@ -77,6 +77,7 @@
 		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
 		ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */; };
 		ECF5BD931D3B5E0400B4F9C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */; };
+		ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
 		ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradiantView.swift; sourceTree = "<group>"; };
 		ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 		ECF331B81D2B0BF000AF4F94 /* photoTag */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9C1FD1D3E31FB001B1737 /* MPC */,
 				ECF331F31D2B10E300AF4F94 /* pListData */,
 				ECF332181D2C37C800AF4F94 /* Common */,
 				ECF331F21D2B10CB00AF4F94 /* Resource */,
@@ -342,6 +345,7 @@
 				ECF331B91D2B0BF000AF4F94 /* AppDelegate.swift */,
 				ECBC62BC1D34C15900E9C9C2 /* imageCollectionViewController.swift */,
 				ECBC62E41D3731AB00E9C9C2 /* detailViewController.swift */,
+				ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -385,6 +389,13 @@
 				ECF332161D2C37BF00AF4F94 /* enumCommon.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		ECF9C1FD1D3E31FB001B1737 /* MPC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MPC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,6 +590,7 @@
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
 				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,
+				ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */,
 				ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */,
 				ECF331FB1D2B177D00AF4F94 /* albumTableViewController.swift in Sources */,
 				ECF332031D2B1EA400AF4F94 /* categoryTableViewCell.swift in Sources */,

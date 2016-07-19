@@ -26,6 +26,23 @@
             </objects>
             <point key="canvasLocation" x="423" y="1002"/>
         </scene>
+        <!--Guess View Controller-->
+        <scene sceneID="4Ty-dd-xBR">
+            <objects>
+                <viewController id="8cs-4x-331" customClass="guessViewController" customModule="photoTag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OLy-1r-aTU"/>
+                        <viewControllerLayoutGuide type="bottom" id="OwU-wW-oHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VVW-6f-ZsO">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a0-Qn-y0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="330.75"/>
+        </scene>
         <!--Album-->
         <scene sceneID="ztB-zf-thf">
             <objects>
@@ -264,6 +281,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Album" id="1YJ-eo-5Te">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="eG2-Co-nJd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eu7-wO-4hw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guess"/>
+                                <connections>
+                                    <segue destination="8cs-4x-331" kind="show" identifier="recvGuessSegue" id="CxV-wE-qH6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wCk-aK-5BB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="f8h-qz-vHf">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>

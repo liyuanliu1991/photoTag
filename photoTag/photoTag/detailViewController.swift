@@ -300,7 +300,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
             }
             infoHideTextView.hide()
             hideNumLeft.hidden = false
-            hideNumLeft.text = "\(infoHideTextView.infoHideTextView.count) hidden egges left"
+            hideNumLeft.text = "\(infoHideTextView.infoHideTextView.count) hidden egges in total"
             switchHaveFun.hidden = true
             addSecretsLabel.hidden = true
             
