@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "photoTag/albumTableViewController.swift"
-            timestampString = "490594105.290336"
+            timestampString = "490595013.147156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "586"
-            endingLineNumber = "586">
+            startingLineNumber = "591"
+            endingLineNumber = "591">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -72,25 +72,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "photoTag/albumTableViewController.swift"
-            timestampString = "490594105.290336"
+            timestampString = "490595013.147156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "590"
+            endingLineNumber = "590">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "photoTag/albumTableViewController.swift"
+            timestampString = "490595013.147156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "585"
             endingLineNumber = "585">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "photoTag/albumTableViewController.swift"
-            timestampString = "490594105.290336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "580"
-            endingLineNumber = "580">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

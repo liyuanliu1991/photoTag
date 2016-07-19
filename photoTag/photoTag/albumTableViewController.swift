@@ -386,18 +386,20 @@ class albumTableViewController: UITableViewController {
         
      /*   cell.leftImage.userInteractionEnabled = true
         let deleteTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("deleteSectionTap:"))
-        cell.leftImage.addGestureRecognizer((deleteTapRecognizer))
+        cell.leftImage.addGestureRecognizer((deleteTapRecognizer))*/
         
         
         cell.categoryTitle.userInteractionEnabled = true
         let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
-        cell.categoryTitle.addGestureRecognizer(editCategoryTitle)*/
+        cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
         
         return cell.contentView
     }
- /*   func editCategoryTitle(gesture:UILongPressGestureRecognizer)
+    func editCategoryTitle(gesture:UILongPressGestureRecognizer)
     {
-        let tapLocation = gesture.locationInView(self.tableView)
+        
+        let target = gesture.view as! UILabel
+        /*let tapLocation = gesture.locationInView(self.tableView)
         
         let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
         var whichSectionTapped:Int?
@@ -408,7 +410,7 @@ class albumTableViewController: UITableViewController {
         else
         {
             whichSectionTapped = (indexPath?.section)!
-        }
+        }*/
        
         var newName: String?
         let alert = UIAlertController(title: "Category",
@@ -421,11 +423,14 @@ class albumTableViewController: UITableViewController {
                 if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
                     newName = alertTextField.text
                     
-                    self.allDataSets.categoryCellSets[whichSectionTapped!].categoryTitle = newName
+                    target.text = newName
+                    
+                    target.reloadInputViews()
+                /*    self.allDataSets.categoryCellSets[whichSectionTapped!].categoryTitle = newName
                 
                     let indexSet = NSIndexSet(index: whichSectionTapped!)
                     
-                    self.tableView.reloadSections(indexSet, withRowAnimation: .Automatic)
+                    self.tableView.reloadSections(indexSet, withRowAnimation: .Automatic)*/
                 }
                 
         }
@@ -445,7 +450,7 @@ class albumTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
 
-    }*/
+    }
     
 /*    func deleteSectionTap(gesture:UITapGestureRecognizer)
     {
