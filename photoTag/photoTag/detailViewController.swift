@@ -8,9 +8,16 @@
 
 import UIKit
 import QuartzCore
+import MultipeerConnectivity
 
-class detailViewController: UIViewController, UITextViewDelegate {
+class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDelegate, UIAlertViewDelegate {
 
+    let selectedPeer: UIAlertView = UIAlertView()
+    
+    var myselectedPeer: MCPeerID?
+    
+    var mpcManager: MPCManager?
+    
     @IBOutlet weak var Guess: UISwitch!
     
     @IBOutlet weak var detailImageView: UIImageView!
@@ -57,7 +64,7 @@ class detailViewController: UIViewController, UITextViewDelegate {
         
         detailImageView.image = detailImage
         
-        //let imageData = UIImagePNGRepresentation(detailImage!)
+       // let imageData = UIImagePNGRepresentation(detailImage!)
         
         //detailImageView.image = UIImage(data: imageData!)
         
@@ -138,8 +145,60 @@ class detailViewController: UIViewController, UITextViewDelegate {
     
    
     @IBAction func sharePhoto(sender: AnyObject) {
+        mpcManager = MPCManager()
+        mpcManager?.delegate = self
+        mpcManager?.browser?.startBrowsingForPeers()
+        
+        if mpcManager?.foundPeer.count > 0
+        {
+            
+            selectedPeer.delegate = self
+            selectedPeer.title = "Slect Device to Pair"
+            for each in (mpcManager?.foundPeer)!{
+                selectedPeer.addButtonWithTitle(each.displayName)
+            }
+            selectedPeer.show()
+        }
+        else
+        {
+            print("cannot find peers")
+            return
+        }
+        
+        //shareButton.titleLabel?.text = "Browsering"
+        
+        var test = Dictionary<String,String?>()
+        test["test"] = "test2"
+        
+        var question = Dictionary<String,String?>()
+        question["q1"] = "q2"
+        
+        let data = dataSend(imageData: UIImagePNGRepresentation(detailImage!)!, clickHideInfo: clickShowTextView.text, leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, locationInfo: test, hints: nil, questions: question, temptsNum: 10)
+        
+        mpcManager?.sendData(data, toPeer: self.myselectedPeer!)
+        
+    }
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
+        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
+    }
+    
+    func invitationWasReceived(fromPeer: String) {
+        
+    }
+    func connectWithPeer(peerID: MCPeerID) {
+        
+    }
+    
+    func foundPeer() {
+        print(mpcManager?.foundPeer[0])
+        selectedPeer.reloadInputViews()
         
         
+    }
+    func lostPeer() {
+        print(mpcManager?.foundPeer[0])
+        selectedPeer.reloadInputViews()
     }
     
     
