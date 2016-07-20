@@ -31,6 +31,8 @@ class detailViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var hideNumLeft: UILabel!
     
+    @IBOutlet weak var shareButton: UIButton!
+    
     var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
     
     var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
@@ -135,6 +137,11 @@ class detailViewController: UIViewController, UITextViewDelegate {
     }
     
    
+    @IBAction func sharePhoto(sender: AnyObject) {
+        
+        
+    }
+    
     
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
     {

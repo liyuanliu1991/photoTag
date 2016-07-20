@@ -50,14 +50,6 @@ class albumTableViewController: UITableViewController {
         
         switch state{
         case UIGestureRecognizerState.Began:
-            if indexPath != nil{
-                initPath = indexPath
-            }
-            else
-            {
-                initPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: 0)
-            }
-        case UIGestureRecognizerState.Changed:
             if(initPath?.section == nil)
             {
                 if(initPath?.row == nil)
@@ -116,6 +108,8 @@ class albumTableViewController: UITableViewController {
             
             tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
             initPath = indexPath
+
+        //case UIGestureRecognizerState.Changed:
             
             default:
             break

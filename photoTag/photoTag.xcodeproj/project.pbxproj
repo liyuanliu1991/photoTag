@@ -75,6 +75,7 @@
 		ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */; };
 		ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332141D2C32FD00AF4F94 /* rightArrow.png */; };
 		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
+		ECF3D2181D3EF80D0051F889 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D2171D3EF80D0051F889 /* MPCManager.swift */; };
 		ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */; };
 		ECF5BD931D3B5E0400B4F9C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */; };
 		ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */; };
@@ -172,6 +173,7 @@
 		ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaulNewAlbumCoverImage.png; sourceTree = "<group>"; };
 		ECF332141D2C32FD00AF4F94 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
+		ECF3D2171D3EF80D0051F889 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradiantView.swift; sourceTree = "<group>"; };
 		ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessViewController.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		ECF9C1FD1D3E31FB001B1737 /* MPC */ = {
 			isa = PBXGroup;
 			children = (
+				ECF3D2171D3EF80D0051F889 /* MPCManager.swift */,
 			);
 			name = MPC;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
 				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,
+				ECF3D2181D3EF80D0051F889 /* MPCManager.swift in Sources */,
 				ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */,
 				ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */,
 				ECF331FB1D2B177D00AF4F94 /* albumTableViewController.swift in Sources */,

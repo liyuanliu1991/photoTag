@@ -10,12 +10,37 @@ import UIKit
 
 class guessViewController: UIViewController {
 
+    @IBOutlet weak var answerQuestion: UIButton!
+    
+    @IBOutlet weak var temptsLeft: UILabel!
+    
+    @IBOutlet weak var eggsLeft: UILabel!
+    
+    @IBOutlet weak var hintsButton: UIButton!
+    
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var guessImage: UIImageView!
+    
+    @IBOutlet weak var shadow: GradientView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let recvButton = UIBarButtonItem(title: "Receive Secrets", style: .Plain, target: self, action: "recvPhoto:")
+        navigationItem.rightBarButtonItem = recvButton
 
+        self.shadow.hidden = true
+        slider.hidden = true
+        
         // Do any additional setup after loading the view.
     }
 
+    func recvPhoto(sender: UIBarButtonItem)
+    {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
