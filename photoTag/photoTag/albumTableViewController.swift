@@ -376,10 +376,19 @@ class albumTableViewController: UITableViewController {
         cell.rightImage.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("expandCellTap:"))
         cell.rightImage.tag = section
-        
-       
-        
         cell.rightImage.addGestureRecognizer(tapRecognizer)
+        
+        cell.leftImage.userInteractionEnabled = true
+        let tapRecognizerLeft = UITapGestureRecognizer(target: self, action: Selector("expandCellTapLeftImage:"))
+        cell.leftImage.tag = section
+        cell.leftImage.addGestureRecognizer(tapRecognizerLeft)
+
+
+        cell.categoryTitle.userInteractionEnabled = true
+        let tapRecognizerLeftTitle = UITapGestureRecognizer(target: self, action: Selector("expandCellTapTitle:"))
+        cell.categoryTitle.tag = section
+        cell.categoryTitle.addGestureRecognizer(tapRecognizerLeftTitle)
+        
         
      /*   cell.leftImage.userInteractionEnabled = true
         let deleteTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("deleteSectionTap:"))
@@ -390,13 +399,13 @@ class albumTableViewController: UITableViewController {
         let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
         cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
         
-       // cell.contentView.addGestureRecognizer(tapRecognizer)
+       
         return cell.contentView
     }
     func editCategoryTitle(gesture:UILongPressGestureRecognizer)
     {
         
-        let target = gesture.view as! UILabel
+        let target = gesture.view! as! UILabel
         /*let tapLocation = gesture.locationInView(self.tableView)
         
         let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
@@ -479,6 +488,40 @@ class albumTableViewController: UITableViewController {
         tableView.endUpdates()
         
     }*/
+   
+    
+    func expandCellTapTitle(gesture: UITapGestureRecognizer)
+    {
+        tableView.beginUpdates()
+        
+        let target = gesture.view! as? UILabel
+        
+        //let tapLocation = gesture.locationInView(self.tableView)
+        
+        // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+        
+        whichSectionTapped = target?.tag
+        
+        
+        
+        if expandCell.contains(whichSectionTapped!)
+        {
+            expandCell.removeObject(whichSectionTapped!)
+            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
+            
+            
+        }
+        else
+        {
+            expandCell.append(whichSectionTapped!)
+            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
+            
+            
+        }
+        tableView.endUpdates()
+    }
+    
     
     func expandCellTap(gesture: UITapGestureRecognizer)
     {
@@ -488,9 +531,9 @@ class albumTableViewController: UITableViewController {
         
         //let tapLocation = gesture.locationInView(self.tableView)
         
-       // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
         var whichSectionTapped:Int?
-     
+        
         whichSectionTapped = target?.tag
         
         
@@ -508,6 +551,39 @@ class albumTableViewController: UITableViewController {
             expandCell.append(whichSectionTapped!)
             let tapView = gesture.view! as? UIImageView
             tapView?.image = UIImage(named: "dropDown.png")
+            
+            
+        }
+        tableView.endUpdates()
+    }
+
+    
+    func expandCellTapLeftImage(gesture: UITapGestureRecognizer)
+    {
+        tableView.beginUpdates()
+        
+        let target = gesture.view! as? UIView
+        
+        //let tapLocation = gesture.locationInView(self.tableView)
+        
+       // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+        var whichSectionTapped:Int?
+     
+        whichSectionTapped = target?.tag
+        
+        
+        
+        if expandCell.contains(whichSectionTapped!)
+        {
+            expandCell.removeObject(whichSectionTapped!)
+            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
+            
+            
+        }
+        else
+        {
+            expandCell.append(whichSectionTapped!)
+            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
             
             
         }
