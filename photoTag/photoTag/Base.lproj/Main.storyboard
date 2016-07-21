@@ -220,8 +220,8 @@
                                                 <constraint firstAttribute="height" constant="30" id="leu-JS-IGX"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9sJ-nb-ksb">
-                                            <rect key="frame" x="8" y="0.0" width="542" height="51"/>
+                                        <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9sJ-nb-ksb">
+                                            <rect key="frame" x="8" y="0.0" width="552" height="51"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="section.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-mb-QDW">
                                                     <rect key="frame" x="0.0" y="1" width="50" height="50"/>
@@ -230,8 +230,8 @@
                                                         <constraint firstAttribute="height" constant="50" id="nnj-4U-JZQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Category Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-0G-tFt">
-                                                    <rect key="frame" x="55" y="1" width="487" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Category Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-0G-tFt">
+                                                    <rect key="frame" x="50" y="1" width="502" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                                         <constraint firstItem="vzG-Ri-6qM" firstAttribute="top" secondItem="kLW-AL-mED" secondAttribute="top" constant="7" id="iSR-TV-PyR"/>
                                         <constraint firstAttribute="trailing" secondItem="vzG-Ri-6qM" secondAttribute="trailing" constant="10" id="kg5-jD-C1W"/>
                                         <constraint firstAttribute="bottom" secondItem="9sJ-nb-ksb" secondAttribute="bottom" id="nuD-pd-N4r"/>
-                                        <constraint firstItem="vzG-Ri-6qM" firstAttribute="leading" secondItem="9sJ-nb-ksb" secondAttribute="trailing" constant="10" id="vKM-il-lRy"/>
+                                        <constraint firstItem="vzG-Ri-6qM" firstAttribute="leading" secondItem="9sJ-nb-ksb" secondAttribute="trailing" id="vKM-il-lRy"/>
                                         <constraint firstItem="9sJ-nb-ksb" firstAttribute="leading" secondItem="kLW-AL-mED" secondAttribute="leadingMargin" id="zOT-Er-nQD"/>
                                     </constraints>
                                 </tableViewCellContentView>
