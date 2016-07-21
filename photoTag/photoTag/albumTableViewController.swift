@@ -11,15 +11,16 @@ import UIKit
 class albumTableViewController: UITableViewController {
     
     
+    
     var allDataSets = loadDataFromPlist(addNewAlbumCellImageName: nil)
+    
     var expandCell = [Int]()
     var initPath: NSIndexPath?
-    //var whichSectionTapped = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-            }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -374,7 +375,9 @@ class albumTableViewController: UITableViewController {
         
         cell.rightImage.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("expandCellTap:"))
+        cell.rightImage.tag = section
         
+       
         
         cell.rightImage.addGestureRecognizer(tapRecognizer)
         
@@ -387,6 +390,7 @@ class albumTableViewController: UITableViewController {
         let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
         cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
         
+       // cell.contentView.addGestureRecognizer(tapRecognizer)
         return cell.contentView
     }
     func editCategoryTitle(gesture:UILongPressGestureRecognizer)
@@ -480,20 +484,15 @@ class albumTableViewController: UITableViewController {
     {
         tableView.beginUpdates()
         
+        let target = gesture.view! as? UIView
         
+        //let tapLocation = gesture.locationInView(self.tableView)
         
-        let tapLocation = gesture.locationInView(self.tableView)
-        
-        let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
+       // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
         var whichSectionTapped:Int?
-        if indexPath == nil
-        {
-            whichSectionTapped = 0
-        }
-        else
-        {
-            whichSectionTapped = (indexPath?.section)!
-        }
+     
+        whichSectionTapped = target?.tag
+        
         
         
         if expandCell.contains(whichSectionTapped!)

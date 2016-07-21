@@ -1,0 +1,22 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "ec4d2140ae7da7ac93144329618b8369"
+build_time: [522375558, 430354000]
+inputs:
+  "/Users/tangzekun/jerry/photoTag/photoTag/loadDataFromPlist.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/imageCellModel.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/imageCollectionViewCell.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/imageCollectionViewController.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/categoryCellModel.swift": [522371674, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/gradiantView.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/addNewAlbumTableViewCell.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/detailViewController.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/WaterfallLayout.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/albumCellModel.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/AppDelegate.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/enumCommon.swift": [522372493, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/albumTableViewCell.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/MPCManager.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/guessViewController.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/addNewAlbumCellModel.swift": [522370722, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/photoTag/albumTableViewController.swift": [522375557, 0]
+  "/Users/tangzekun/jerry/photoTag/photoTag/categoryTableViewCell.swift": [522371271, 0]

@@ -1,0 +1,795 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MPCManagerDelegate"
+- "MPCManager"
+- "dataSend"
+provides-nominal:
+- "P8photoTag18MPCManagerDelegate"
+- "C8photoTag10MPCManager"
+- "C8photoTag8dataSend"
+provides-member:
+- ["P8photoTag18MPCManagerDelegate", ""]
+- ["C8photoTag10MPCManager", ""]
+- ["C8photoTag8dataSend", ""]
+provides-dynamic-lookup:
+- "peer"
+- "browser"
+- "browser"
+- "browser"
+- "browser"
+- "invitationHandler"
+- "advertiser"
+- "advertiser"
+- "advertiser"
+- "foundPeer"
+- "session"
+- "session"
+- "session"
+- "session"
+- "session"
+- "session"
+depends-top-level:
+- "NSError"
+- "NSData"
+- "NSURL"
+- "NSInputStream"
+- "Int"
+- "MPCManagerDelegate"
+- "MCNearbyServiceBrowser"
+- "MCSession"
+- "dataSend"
+- "MPCManager"
+- !private "=="
+- "MCSessionState"
+- "NSObject"
+- "MCNearbyServiceAdvertiserDelegate"
+- !private "print"
+- "MCSessionDelegate"
+- "Dictionary"
+- "MCPeerID"
+- "NSProgress"
+- "Void"
+- !private "StringLiteralType"
+- "MCNearbyServiceBrowserDelegate"
+- !private "AnyObject"
+- "MCNearbyServiceAdvertiser"
+- !private "MCSessionSendDataMode"
+- !private "NSKeyedArchiver"
+- "Bool"
+- !private "NSNotificationCenter"
+- "String"
+- !private "BooleanLiteralType"
+- !private "UIDevice"
+depends-member:
+- !private ["Ps9AnyObject", "MCNearbyServiceAdvertiser"]
+- !private ["Ps9AnyObject", "MCNearbyServiceBrowser"]
+- ["Ps9AnyObject", "MCPeerID"]
+- !private ["Ps9AnyObject", "MCSession"]
+- !private ["Ps9AnyObject", "MCSessionSendDataMode"]
+- !private ["Ps9AnyObject", "NSKeyedArchiver"]
+- !private ["Ps9AnyObject", "NSNotificationCenter"]
+- !private ["Ps9AnyObject", "UIDevice"]
+- ["Ps9AnyObject", "advertiser"]
+- !private ["Ps9AnyObject", "archivedDataWithRootObject"]
+- ["Ps9AnyObject", "browser"]
+- !private ["Ps9AnyObject", "clickHideInfo"]
+- !private ["Ps9AnyObject", "currentDevice"]
+- !private ["Ps9AnyObject", "defaultCenter"]
+- ["Ps9AnyObject", "delegate"]
+- !private ["Ps9AnyObject", "displayName"]
+- !private ["Ps9AnyObject", "downInfo"]
+- ["Ps9AnyObject", "foundPeer"]
+- !private ["Ps9AnyObject", "hints"]
+- !private ["Ps9AnyObject", "imageData"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "invitationHandler"]
+- !private ["Ps9AnyObject", "leftInfo"]
+- !private ["Ps9AnyObject", "localizedDescription"]
+- !private ["Ps9AnyObject", "locationInfo"]
+- !private ["Ps9AnyObject", "name"]
+- ["Ps9AnyObject", "peer"]
+- !private ["Ps9AnyObject", "postNotificationName"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "questions"]
+- !private ["Ps9AnyObject", "rightInfo"]
+- ["Ps9AnyObject", "sendData"]
+- ["Ps9AnyObject", "session"]
+- !private ["Ps9AnyObject", "sliderInfo"]
+- !private ["Ps9AnyObject", "temptsNum"]
+- !private ["Ps9AnyObject", "upInfo"]
+- ["Ps9AnyObject", ""]
+- ["Sa", "Generator"]
+- ["Sa", "Index"]
+- ["Sa", "SubSequence"]
+- ["Sa", "_Element"]
+- !private ["Sa", "append"]
+- !private ["Sa", "enumerate"]
+- ["Sa", "init"]
+- !private ["Sa", "removeAtIndex"]
+- ["Ps23ArrayLiteralConvertible", "Generator"]
+- ["Ps23ArrayLiteralConvertible", "Index"]
+- ["Ps23ArrayLiteralConvertible", "SubSequence"]
+- ["Ps23ArrayLiteralConvertible", "_Element"]
+- !private ["Ps23ArrayLiteralConvertible", "append"]
+- !private ["Ps23ArrayLiteralConvertible", "enumerate"]
+- ["Ps23ArrayLiteralConvertible", "init"]
+- !private ["Ps23ArrayLiteralConvertible", "removeAtIndex"]
+- ["Vs10ArraySlice", "Generator"]
+- ["Vs10ArraySlice", "Index"]
+- ["Ps22BidirectionalIndexType", "Distance"]
+- ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
+- ["Ps21BitwiseOperationsType", "Distance"]
+- ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- ["Ps11CVarArgType", "Distance"]
+- ["Ps11CVarArgType", "IntegerLiteralType"]
+- !private ["Ps11CVarArgType", "MCNearbyServiceAdvertiser"]
+- !private ["Ps11CVarArgType", "MCNearbyServiceBrowser"]
+- ["Ps11CVarArgType", "MCPeerID"]
+- !private ["Ps11CVarArgType", "MCSession"]
+- !private ["Ps11CVarArgType", "MCSessionSendDataMode"]
+- !private ["Ps11CVarArgType", "NSKeyedArchiver"]
+- !private ["Ps11CVarArgType", "NSNotificationCenter"]
+- !private ["Ps11CVarArgType", "UIDevice"]
+- ["Ps11CVarArgType", "advertiser"]
+- !private ["Ps11CVarArgType", "archivedDataWithRootObject"]
+- ["Ps11CVarArgType", "browser"]
+- !private ["Ps11CVarArgType", "currentDevice"]
+- !private ["Ps11CVarArgType", "defaultCenter"]
+- ["Ps11CVarArgType", "delegate"]
+- !private ["Ps11CVarArgType", "displayName"]
+- ["Ps11CVarArgType", "foundPeer"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "invitationHandler"]
+- !private ["Ps11CVarArgType", "localizedDescription"]
+- !private ["Ps11CVarArgType", "name"]
+- ["Ps11CVarArgType", "peer"]
+- !private ["Ps11CVarArgType", "postNotificationName"]
+- !private ["Ps11CVarArgType", "print"]
+- ["Ps11CVarArgType", "sendData"]
+- ["Ps11CVarArgType", "session"]
+- ["Ps11CVarArgType", ""]
+- !private ["Vs9Character", "deinit"]
+- ["Ps14CollectionType", "Generator"]
+- ["Ps14CollectionType", "Index"]
+- !private ["Ps14CollectionType", "Key"]
+- ["Ps14CollectionType", "SubSequence"]
+- !private ["Ps14CollectionType", "Value"]
+- ["Ps14CollectionType", "_Element"]
+- !private ["Ps14CollectionType", "append"]
+- !private ["Ps14CollectionType", "enumerate"]
+- ["Ps14CollectionType", "init"]
+- !private ["Ps14CollectionType", "removeAtIndex"]
+- ["Ps10Comparable", "Distance"]
+- ["Ps10Comparable", "IntegerLiteralType"]
+- !private ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "Generator"]
+- ["Ps28CustomDebugStringConvertible", "Index"]
+- !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "MCNearbyServiceAdvertiser"]
+- !private ["Ps28CustomDebugStringConvertible", "MCNearbyServiceBrowser"]
+- ["Ps28CustomDebugStringConvertible", "MCPeerID"]
+- !private ["Ps28CustomDebugStringConvertible", "MCSession"]
+- !private ["Ps28CustomDebugStringConvertible", "MCSessionSendDataMode"]
+- !private ["Ps28CustomDebugStringConvertible", "NSKeyedArchiver"]
+- !private ["Ps28CustomDebugStringConvertible", "NSNotificationCenter"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- ["Ps28CustomDebugStringConvertible", "SubSequence"]
+- !private ["Ps28CustomDebugStringConvertible", "UIDevice"]
+- !private ["Ps28CustomDebugStringConvertible", "Value"]
+- ["Ps28CustomDebugStringConvertible", "_Element"]
+- ["Ps28CustomDebugStringConvertible", "advertiser"]
+- !private ["Ps28CustomDebugStringConvertible", "append"]
+- !private ["Ps28CustomDebugStringConvertible", "archivedDataWithRootObject"]
+- ["Ps28CustomDebugStringConvertible", "browser"]
+- !private ["Ps28CustomDebugStringConvertible", "currentDevice"]
+- !private ["Ps28CustomDebugStringConvertible", "defaultCenter"]
+- ["Ps28CustomDebugStringConvertible", "delegate"]
+- !private ["Ps28CustomDebugStringConvertible", "displayName"]
+- !private ["Ps28CustomDebugStringConvertible", "enumerate"]
+- ["Ps28CustomDebugStringConvertible", "foundPeer"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "invitationHandler"]
+- !private ["Ps28CustomDebugStringConvertible", "localizedDescription"]
+- !private ["Ps28CustomDebugStringConvertible", "name"]
+- ["Ps28CustomDebugStringConvertible", "peer"]
+- !private ["Ps28CustomDebugStringConvertible", "postNotificationName"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "removeAtIndex"]
+- ["Ps28CustomDebugStringConvertible", "sendData"]
+- ["Ps28CustomDebugStringConvertible", "session"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "Distance"]
+- ["Ps23CustomStringConvertible", "Generator"]
+- ["Ps23CustomStringConvertible", "Index"]
+- ["Ps23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "MCNearbyServiceAdvertiser"]
+- !private ["Ps23CustomStringConvertible", "MCNearbyServiceBrowser"]
+- ["Ps23CustomStringConvertible", "MCPeerID"]
+- !private ["Ps23CustomStringConvertible", "MCSession"]
+- !private ["Ps23CustomStringConvertible", "MCSessionSendDataMode"]
+- !private ["Ps23CustomStringConvertible", "NSKeyedArchiver"]
+- !private ["Ps23CustomStringConvertible", "NSNotificationCenter"]
+- ["Ps23CustomStringConvertible", "SubSequence"]
+- !private ["Ps23CustomStringConvertible", "UIDevice"]
+- !private ["Ps23CustomStringConvertible", "Value"]
+- ["Ps23CustomStringConvertible", "_Element"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "advertiser"]
+- !private ["Ps23CustomStringConvertible", "append"]
+- !private ["Ps23CustomStringConvertible", "archivedDataWithRootObject"]
+- ["Ps23CustomStringConvertible", "browser"]
+- !private ["Ps23CustomStringConvertible", "currentDevice"]
+- !private ["Ps23CustomStringConvertible", "defaultCenter"]
+- ["Ps23CustomStringConvertible", "delegate"]
+- !private ["Ps23CustomStringConvertible", "displayName"]
+- !private ["Ps23CustomStringConvertible", "enumerate"]
+- ["Ps23CustomStringConvertible", "foundPeer"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "invitationHandler"]
+- !private ["Ps23CustomStringConvertible", "localizedDescription"]
+- !private ["Ps23CustomStringConvertible", "name"]
+- ["Ps23CustomStringConvertible", "peer"]
+- !private ["Ps23CustomStringConvertible", "postNotificationName"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "removeAtIndex"]
+- ["Ps23CustomStringConvertible", "sendData"]
+- ["Ps23CustomStringConvertible", "session"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
+- !private ["Vs10Dictionary", "deinit"]
+- !private ["Ps28DictionaryLiteralConvertible", "Key"]
+- !private ["Ps28DictionaryLiteralConvertible", "Value"]
+- !private ["Sd", "deinit"]
+- !private ["Vs18EnumerateGenerator", "Element"]
+- !private ["Vs17EnumerateSequence", "Generator"]
+- ["Ps9Equatable", "Connected"]
+- ["Ps9Equatable", "Connecting"]
+- ["Ps9Equatable", "Distance"]
+- ["Ps9Equatable", "IntegerLiteralType"]
+- !private ["Ps9Equatable", "MCNearbyServiceAdvertiser"]
+- !private ["Ps9Equatable", "MCNearbyServiceBrowser"]
+- ["Ps9Equatable", "MCPeerID"]
+- !private ["Ps9Equatable", "MCSession"]
+- !private ["Ps9Equatable", "MCSessionSendDataMode"]
+- !private ["Ps9Equatable", "NSKeyedArchiver"]
+- !private ["Ps9Equatable", "NSNotificationCenter"]
+- !private ["Ps9Equatable", "Reliable"]
+- !private ["Ps9Equatable", "UIDevice"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "advertiser"]
+- !private ["Ps9Equatable", "archivedDataWithRootObject"]
+- ["Ps9Equatable", "browser"]
+- !private ["Ps9Equatable", "currentDevice"]
+- !private ["Ps9Equatable", "defaultCenter"]
+- ["Ps9Equatable", "delegate"]
+- !private ["Ps9Equatable", "displayName"]
+- ["Ps9Equatable", "foundPeer"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "invitationHandler"]
+- !private ["Ps9Equatable", "localizedDescription"]
+- !private ["Ps9Equatable", "name"]
+- ["Ps9Equatable", "peer"]
+- !private ["Ps9Equatable", "postNotificationName"]
+- !private ["Ps9Equatable", "print"]
+- ["Ps9Equatable", "sendData"]
+- ["Ps9Equatable", "session"]
+- ["Ps9Equatable", ""]
+- !private ["Ps9ErrorType", "localizedDescription"]
+- !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["Sf", "deinit"]
+- ["Ps16ForwardIndexType", "Distance"]
+- ["Ps16ForwardIndexType", "IntegerLiteralType"]
+- ["Ps13GeneratorType", "Element"]
+- ["Ps8Hashable", "Connected"]
+- ["Ps8Hashable", "Connecting"]
+- ["Ps8Hashable", "Distance"]
+- ["Ps8Hashable", "IntegerLiteralType"]
+- !private ["Ps8Hashable", "MCNearbyServiceAdvertiser"]
+- !private ["Ps8Hashable", "MCNearbyServiceBrowser"]
+- ["Ps8Hashable", "MCPeerID"]
+- !private ["Ps8Hashable", "MCSession"]
+- !private ["Ps8Hashable", "MCSessionSendDataMode"]
+- !private ["Ps8Hashable", "NSKeyedArchiver"]
+- !private ["Ps8Hashable", "NSNotificationCenter"]
+- !private ["Ps8Hashable", "Reliable"]
+- !private ["Ps8Hashable", "UIDevice"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "advertiser"]
+- !private ["Ps8Hashable", "archivedDataWithRootObject"]
+- ["Ps8Hashable", "browser"]
+- !private ["Ps8Hashable", "currentDevice"]
+- !private ["Ps8Hashable", "defaultCenter"]
+- ["Ps8Hashable", "delegate"]
+- !private ["Ps8Hashable", "displayName"]
+- ["Ps8Hashable", "foundPeer"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "invitationHandler"]
+- !private ["Ps8Hashable", "localizedDescription"]
+- !private ["Ps8Hashable", "name"]
+- ["Ps8Hashable", "peer"]
+- !private ["Ps8Hashable", "postNotificationName"]
+- !private ["Ps8Hashable", "print"]
+- ["Ps8Hashable", "sendData"]
+- ["Ps8Hashable", "session"]
+- ["Ps8Hashable", ""]
+- ["Ps9Indexable", "Generator"]
+- ["Ps9Indexable", "Index"]
+- !private ["Ps9Indexable", "Key"]
+- ["Ps9Indexable", "SubSequence"]
+- !private ["Ps9Indexable", "Value"]
+- ["Ps9Indexable", "_Element"]
+- !private ["Ps9Indexable", "append"]
+- !private ["Ps9Indexable", "enumerate"]
+- ["Ps9Indexable", "init"]
+- !private ["Ps9Indexable", "removeAtIndex"]
+- ["Vs17IndexingGenerator", "Element"]
+- ["Si", "Distance"]
+- ["Si", "IntegerLiteralType"]
+- !private ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- ["Ps21IntegerArithmeticType", "Distance"]
+- ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
+- ["Ps25IntegerLiteralConvertible", "Distance"]
+- ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
+- ["Ps11IntegerType", "Distance"]
+- ["Ps11IntegerType", "IntegerLiteralType"]
+- !private ["CSo25MCNearbyServiceAdvertiser", "delegate"]
+- !private ["CSo25MCNearbyServiceAdvertiser", "init"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "MCNearbyServiceAdvertiser"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "MCNearbyServiceBrowser"]
+- ["PSo33MCNearbyServiceAdvertiserDelegate", "MCPeerID"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "MCSession"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "MCSessionSendDataMode"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "NSKeyedArchiver"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "NSNotificationCenter"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "UIDevice"]
+- ["PSo33MCNearbyServiceAdvertiserDelegate", "advertiser"]
+- ["PSo33MCNearbyServiceAdvertiserDelegate", "browser"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "delegate"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "foundPeer"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "invitationHandler"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "peer"]
+- !private ["PSo33MCNearbyServiceAdvertiserDelegate", "print"]
+- ["PSo33MCNearbyServiceAdvertiserDelegate", "session"]
+- ["PSo33MCNearbyServiceAdvertiserDelegate", ""]
+- !private ["CSo22MCNearbyServiceBrowser", "delegate"]
+- !private ["CSo22MCNearbyServiceBrowser", "init"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "MCNearbyServiceAdvertiser"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "MCNearbyServiceBrowser"]
+- ["PSo30MCNearbyServiceBrowserDelegate", "MCPeerID"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "MCSession"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "MCSessionSendDataMode"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "NSKeyedArchiver"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "NSNotificationCenter"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "UIDevice"]
+- ["PSo30MCNearbyServiceBrowserDelegate", "advertiser"]
+- ["PSo30MCNearbyServiceBrowserDelegate", "browser"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "delegate"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "foundPeer"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "invitationHandler"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "peer"]
+- !private ["PSo30MCNearbyServiceBrowserDelegate", "print"]
+- ["PSo30MCNearbyServiceBrowserDelegate", "session"]
+- ["PSo30MCNearbyServiceBrowserDelegate", ""]
+- !private ["CSo8MCPeerID", "displayName"]
+- !private ["CSo8MCPeerID", "init"]
+- !private ["CSo9MCSession", "delegate"]
+- !private ["CSo9MCSession", "init"]
+- !private ["CSo9MCSession", "sendData"]
+- !private ["PSo17MCSessionDelegate", "MCNearbyServiceAdvertiser"]
+- !private ["PSo17MCSessionDelegate", "MCNearbyServiceBrowser"]
+- ["PSo17MCSessionDelegate", "MCPeerID"]
+- !private ["PSo17MCSessionDelegate", "MCSession"]
+- !private ["PSo17MCSessionDelegate", "MCSessionSendDataMode"]
+- !private ["PSo17MCSessionDelegate", "NSKeyedArchiver"]
+- !private ["PSo17MCSessionDelegate", "NSNotificationCenter"]
+- !private ["PSo17MCSessionDelegate", "UIDevice"]
+- ["PSo17MCSessionDelegate", "advertiser"]
+- ["PSo17MCSessionDelegate", "browser"]
+- !private ["PSo17MCSessionDelegate", "delegate"]
+- !private ["PSo17MCSessionDelegate", "foundPeer"]
+- !private ["PSo17MCSessionDelegate", "invitationHandler"]
+- !private ["PSo17MCSessionDelegate", "peer"]
+- !private ["PSo17MCSessionDelegate", "print"]
+- ["PSo17MCSessionDelegate", "session"]
+- ["PSo17MCSessionDelegate", ""]
+- !private ["OSC21MCSessionSendDataMode", "Reliable"]
+- ["OSC14MCSessionState", "Connected"]
+- ["OSC14MCSessionState", "Connecting"]
+- !private ["C8photoTag10MPCManager", "AnyObject"]
+- ["C8photoTag10MPCManager", "Bool"]
+- ["C8photoTag10MPCManager", "MCNearbyServiceAdvertiser"]
+- ["C8photoTag10MPCManager", "MCNearbyServiceBrowser"]
+- ["C8photoTag10MPCManager", "MCPeerID"]
+- ["C8photoTag10MPCManager", "MCSession"]
+- !private ["C8photoTag10MPCManager", "MCSessionSendDataMode"]
+- ["C8photoTag10MPCManager", "MCSessionState"]
+- ["C8photoTag10MPCManager", "MPCManagerDelegate"]
+- ["C8photoTag10MPCManager", "NSData"]
+- ["C8photoTag10MPCManager", "NSError"]
+- ["C8photoTag10MPCManager", "NSInputStream"]
+- !private ["C8photoTag10MPCManager", "NSKeyedArchiver"]
+- !private ["C8photoTag10MPCManager", "NSNotificationCenter"]
+- ["C8photoTag10MPCManager", "NSProgress"]
+- ["C8photoTag10MPCManager", "NSURL"]
+- ["C8photoTag10MPCManager", "String"]
+- !private ["C8photoTag10MPCManager", "UIDevice"]
+- ["C8photoTag10MPCManager", "Void"]
+- ["C8photoTag10MPCManager", "advertiser"]
+- ["C8photoTag10MPCManager", "browser"]
+- ["C8photoTag10MPCManager", "dataSend"]
+- ["C8photoTag10MPCManager", "deinit"]
+- ["C8photoTag10MPCManager", "delegate"]
+- ["C8photoTag10MPCManager", "foundPeer"]
+- ["C8photoTag10MPCManager", "init"]
+- ["C8photoTag10MPCManager", "invitationHandler"]
+- ["C8photoTag10MPCManager", "peer"]
+- !private ["C8photoTag10MPCManager", "print"]
+- ["C8photoTag10MPCManager", "sendData"]
+- ["C8photoTag10MPCManager", "session"]
+- ["P8photoTag18MPCManagerDelegate", "MCPeerID"]
+- ["P8photoTag18MPCManagerDelegate", "String"]
+- ["P8photoTag18MPCManagerDelegate", "connectWithPeer"]
+- ["P8photoTag18MPCManagerDelegate", "foundPeer"]
+- ["P8photoTag18MPCManagerDelegate", "invitationWasReceived"]
+- ["P8photoTag18MPCManagerDelegate", "lostPeer"]
+- ["Ps14MirrorPathType", "Distance"]
+- ["Ps14MirrorPathType", "IntegerLiteralType"]
+- !private ["Ps14MirrorPathType", "init"]
+- ["Ps21MutableCollectionType", "Generator"]
+- ["Ps21MutableCollectionType", "Index"]
+- ["Ps21MutableCollectionType", "SubSequence"]
+- ["Ps21MutableCollectionType", "_Element"]
+- !private ["Ps21MutableCollectionType", "append"]
+- !private ["Ps21MutableCollectionType", "enumerate"]
+- ["Ps21MutableCollectionType", "init"]
+- !private ["Ps21MutableCollectionType", "removeAtIndex"]
+- ["Ps16MutableIndexable", "Generator"]
+- ["Ps16MutableIndexable", "Index"]
+- ["Ps16MutableIndexable", "SubSequence"]
+- ["Ps16MutableIndexable", "_Element"]
+- !private ["Ps16MutableIndexable", "append"]
+- !private ["Ps16MutableIndexable", "enumerate"]
+- ["Ps16MutableIndexable", "init"]
+- !private ["Ps16MutableIndexable", "removeAtIndex"]
+- ["Ps16MutableSliceable", "Generator"]
+- ["Ps16MutableSliceable", "Index"]
+- ["Ps16MutableSliceable", "SubSequence"]
+- ["Ps16MutableSliceable", "_Element"]
+- !private ["Ps16MutableSliceable", "append"]
+- !private ["Ps16MutableSliceable", "enumerate"]
+- ["Ps16MutableSliceable", "init"]
+- !private ["Ps16MutableSliceable", "removeAtIndex"]
+- !private ["CSo7NSCoder", "archivedDataWithRootObject"]
+- !private ["PSo8NSCoding", "displayName"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "localizedDescription"]
+- !private ["PSo9NSCopying", "displayName"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "localizedDescription"]
+- !private ["CSo7NSError", "localizedDescription"]
+- !private ["CSo15NSKeyedArchiver", "archivedDataWithRootObject"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo20NSNotificationCenter", "defaultCenter"]
+- !private ["CSo20NSNotificationCenter", "postNotificationName"]
+- !private ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "MCNearbyServiceAdvertiser"]
+- ["CSo8NSObject", "MCNearbyServiceBrowser"]
+- ["CSo8NSObject", "MCPeerID"]
+- ["CSo8NSObject", "MCSession"]
+- !private ["CSo8NSObject", "MCSessionSendDataMode"]
+- ["CSo8NSObject", "MCSessionState"]
+- ["CSo8NSObject", "MPCManagerDelegate"]
+- ["CSo8NSObject", "NSData"]
+- ["CSo8NSObject", "NSError"]
+- ["CSo8NSObject", "NSInputStream"]
+- !private ["CSo8NSObject", "NSKeyedArchiver"]
+- !private ["CSo8NSObject", "NSNotificationCenter"]
+- ["CSo8NSObject", "NSProgress"]
+- ["CSo8NSObject", "NSURL"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "UIDevice"]
+- ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "advertiser"]
+- !private ["CSo8NSObject", "archivedDataWithRootObject"]
+- ["CSo8NSObject", "browser"]
+- !private ["CSo8NSObject", "currentDevice"]
+- ["CSo8NSObject", "dataSend"]
+- !private ["CSo8NSObject", "defaultCenter"]
+- ["CSo8NSObject", "delegate"]
+- !private ["CSo8NSObject", "displayName"]
+- ["CSo8NSObject", "foundPeer"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "invitationHandler"]
+- !private ["CSo8NSObject", "localizedDescription"]
+- !private ["CSo8NSObject", "name"]
+- ["CSo8NSObject", "peer"]
+- !private ["CSo8NSObject", "postNotificationName"]
+- !private ["CSo8NSObject", "print"]
+- ["CSo8NSObject", "sendData"]
+- ["CSo8NSObject", "session"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "MCNearbyServiceAdvertiser"]
+- !private ["PSo16NSObjectProtocol", "MCNearbyServiceBrowser"]
+- ["PSo16NSObjectProtocol", "MCPeerID"]
+- !private ["PSo16NSObjectProtocol", "MCSession"]
+- !private ["PSo16NSObjectProtocol", "MCSessionSendDataMode"]
+- !private ["PSo16NSObjectProtocol", "NSKeyedArchiver"]
+- !private ["PSo16NSObjectProtocol", "NSNotificationCenter"]
+- !private ["PSo16NSObjectProtocol", "UIDevice"]
+- ["PSo16NSObjectProtocol", "advertiser"]
+- !private ["PSo16NSObjectProtocol", "archivedDataWithRootObject"]
+- ["PSo16NSObjectProtocol", "browser"]
+- !private ["PSo16NSObjectProtocol", "currentDevice"]
+- !private ["PSo16NSObjectProtocol", "defaultCenter"]
+- ["PSo16NSObjectProtocol", "delegate"]
+- !private ["PSo16NSObjectProtocol", "displayName"]
+- ["PSo16NSObjectProtocol", "foundPeer"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "invitationHandler"]
+- !private ["PSo16NSObjectProtocol", "localizedDescription"]
+- !private ["PSo16NSObjectProtocol", "name"]
+- ["PSo16NSObjectProtocol", "peer"]
+- !private ["PSo16NSObjectProtocol", "postNotificationName"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- ["PSo16NSObjectProtocol", "sendData"]
+- ["PSo16NSObjectProtocol", "session"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "displayName"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "localizedDescription"]
+- !private ["CSo8NSString", "deinit"]
+- !private ["CSo8NSString", "init"]
+- ["Ps21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- !private ["Ps16OutputStreamType", "init"]
+- ["Ps21RandomAccessIndexType", "Distance"]
+- ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
+- ["Ps30RangeReplaceableCollectionType", "Generator"]
+- ["Ps30RangeReplaceableCollectionType", "Index"]
+- ["Ps30RangeReplaceableCollectionType", "SubSequence"]
+- ["Ps30RangeReplaceableCollectionType", "_Element"]
+- !private ["Ps30RangeReplaceableCollectionType", "append"]
+- !private ["Ps30RangeReplaceableCollectionType", "enumerate"]
+- ["Ps30RangeReplaceableCollectionType", "init"]
+- !private ["Ps30RangeReplaceableCollectionType", "removeAtIndex"]
+- ["Ps16RawRepresentable", "Connected"]
+- ["Ps16RawRepresentable", "Connecting"]
+- !private ["Ps16RawRepresentable", "Reliable"]
+- ["Ps12SequenceType", "Element"]
+- ["Ps12SequenceType", "Generator"]
+- ["Ps12SequenceType", "Index"]
+- !private ["Ps12SequenceType", "Key"]
+- ["Ps12SequenceType", "SubSequence"]
+- !private ["Ps12SequenceType", "Value"]
+- ["Ps12SequenceType", "_Element"]
+- !private ["Ps12SequenceType", "append"]
+- !private ["Ps12SequenceType", "enumerate"]
+- ["Ps12SequenceType", "init"]
+- !private ["Ps12SequenceType", "removeAtIndex"]
+- ["Ps17SignedIntegerType", "Distance"]
+- ["Ps17SignedIntegerType", "IntegerLiteralType"]
+- ["Ps16SignedNumberType", "Distance"]
+- ["Ps16SignedNumberType", "IntegerLiteralType"]
+- !private ["Ps10Streamable", "init"]
+- ["Ps10Strideable", "Distance"]
+- ["Ps10Strideable", "IntegerLiteralType"]
+- !private ["SS", "init"]
+- !private ["Ps30StringInterpolationConvertible", "init"]
+- !private ["Ps24StringLiteralConvertible", "init"]
+- !private ["CSo8UIDevice", "currentDevice"]
+- !private ["CSo8UIDevice", "name"]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["Sc", "deinit"]
+- !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- ["Ps10_ArrayType", "Generator"]
+- ["Ps10_ArrayType", "Index"]
+- ["Ps10_ArrayType", "SubSequence"]
+- ["Ps10_ArrayType", "_Element"]
+- !private ["Ps10_ArrayType", "append"]
+- !private ["Ps10_ArrayType", "enumerate"]
+- ["Ps10_ArrayType", "init"]
+- !private ["Ps10_ArrayType", "removeAtIndex"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
+- ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["Ps32_BuiltinStringLiteralConvertible", "init"]
+- !private ["Ps37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["Ps39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- ["Ps24_DestructorSafeContainer", "Generator"]
+- ["Ps24_DestructorSafeContainer", "Index"]
+- ["Ps24_DestructorSafeContainer", "SubSequence"]
+- ["Ps24_DestructorSafeContainer", "_Element"]
+- !private ["Ps24_DestructorSafeContainer", "append"]
+- !private ["Ps24_DestructorSafeContainer", "enumerate"]
+- ["Ps24_DestructorSafeContainer", "init"]
+- !private ["Ps24_DestructorSafeContainer", "removeAtIndex"]
+- ["Ps14_Incrementable", "Distance"]
+- ["Ps14_Incrementable", "IntegerLiteralType"]
+- ["Ps22_IntegerArithmeticType", "Distance"]
+- ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
+- ["Ps12_IntegerType", "Distance"]
+- ["Ps12_IntegerType", "IntegerLiteralType"]
+- ["Ps21_ObjectiveCBridgeable", "Distance"]
+- ["Ps21_ObjectiveCBridgeable", "Generator"]
+- ["Ps21_ObjectiveCBridgeable", "Index"]
+- ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["Ps21_ObjectiveCBridgeable", "Key"]
+- ["Ps21_ObjectiveCBridgeable", "SubSequence"]
+- !private ["Ps21_ObjectiveCBridgeable", "Value"]
+- ["Ps21_ObjectiveCBridgeable", "_Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "append"]
+- !private ["Ps21_ObjectiveCBridgeable", "enumerate"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "removeAtIndex"]
+- ["Ps22_RandomAccessAmbiguity", "Distance"]
+- ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- ["Ps12_Reflectable", "Distance"]
+- ["Ps12_Reflectable", "Generator"]
+- ["Ps12_Reflectable", "Index"]
+- ["Ps12_Reflectable", "IntegerLiteralType"]
+- !private ["Ps12_Reflectable", "Key"]
+- ["Ps12_Reflectable", "Some"]
+- ["Ps12_Reflectable", "SubSequence"]
+- !private ["Ps12_Reflectable", "Value"]
+- ["Ps12_Reflectable", "_Element"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "append"]
+- !private ["Ps12_Reflectable", "enumerate"]
+- ["Ps12_Reflectable", "init"]
+- !private ["Ps12_Reflectable", "removeAtIndex"]
+- ["Ps18_SignedIntegerType", "Distance"]
+- ["Ps18_SignedIntegerType", "IntegerLiteralType"]
+- ["C8photoTag8dataSend", "Dictionary"]
+- ["C8photoTag8dataSend", "Int"]
+- ["C8photoTag8dataSend", "NSData"]
+- ["C8photoTag8dataSend", "String"]
+- ["C8photoTag8dataSend", "clickHideInfo"]
+- ["C8photoTag8dataSend", "deinit"]
+- ["C8photoTag8dataSend", "downInfo"]
+- ["C8photoTag8dataSend", "hints"]
+- ["C8photoTag8dataSend", "imageData"]
+- ["C8photoTag8dataSend", "init"]
+- ["C8photoTag8dataSend", "leftInfo"]
+- ["C8photoTag8dataSend", "locationInfo"]
+- ["C8photoTag8dataSend", "questions"]
+- ["C8photoTag8dataSend", "rightInfo"]
+- ["C8photoTag8dataSend", "sliderInfo"]
+- ["C8photoTag8dataSend", "temptsNum"]
+- ["C8photoTag8dataSend", "upInfo"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sa"
+- "Ps23ArrayLiteralConvertible"
+- "Vs10ArraySlice"
+- "Ps22BidirectionalIndexType"
+- "Ps21BitwiseOperationsType"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- "Ps11CVarArgType"
+- !private "Vs9Character"
+- "Ps14CollectionType"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- !private "Ps28DictionaryLiteralConvertible"
+- !private "Sd"
+- !private "Vs18EnumerateGenerator"
+- !private "Vs17EnumerateSequence"
+- "Ps9Equatable"
+- !private "Ps9ErrorType"
+- !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "Sf"
+- "Ps16ForwardIndexType"
+- "Ps13GeneratorType"
+- "Ps8Hashable"
+- "Ps9Indexable"
+- "Vs17IndexingGenerator"
+- "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- "Ps21IntegerArithmeticType"
+- "Ps25IntegerLiteralConvertible"
+- "Ps11IntegerType"
+- !private "CSo25MCNearbyServiceAdvertiser"
+- "PSo33MCNearbyServiceAdvertiserDelegate"
+- !private "CSo22MCNearbyServiceBrowser"
+- "PSo30MCNearbyServiceBrowserDelegate"
+- !private "CSo8MCPeerID"
+- !private "CSo9MCSession"
+- "PSo17MCSessionDelegate"
+- !private "OSC21MCSessionSendDataMode"
+- "OSC14MCSessionState"
+- "C8photoTag10MPCManager"
+- "P8photoTag18MPCManagerDelegate"
+- "Ps14MirrorPathType"
+- "Ps21MutableCollectionType"
+- "Ps16MutableIndexable"
+- "Ps16MutableSliceable"
+- !private "CSo7NSCoder"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo7NSError"
+- !private "CSo15NSKeyedArchiver"
+- !private "PSo16NSMutableCopying"
+- !private "CSo20NSNotificationCenter"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- "Ps21NilLiteralConvertible"
+- "Sq"
+- !private "Ps16OutputStreamType"
+- "Ps21RandomAccessIndexType"
+- "Ps30RangeReplaceableCollectionType"
+- "Ps16RawRepresentable"
+- "Ps12SequenceType"
+- "Ps17SignedIntegerType"
+- "Ps16SignedNumberType"
+- !private "Ps10Streamable"
+- "Ps10Strideable"
+- !private "SS"
+- !private "Ps30StringInterpolationConvertible"
+- !private "Ps24StringLiteralConvertible"
+- !private "CSo8UIDevice"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- !private "Sc"
+- !private "Ps31UnicodeScalarLiteralConvertible"
+- "Ps10_ArrayType"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- "Ps33_BuiltinIntegerLiteralConvertible"
+- !private "Ps32_BuiltinStringLiteralConvertible"
+- !private "Ps37_BuiltinUTF16StringLiteralConvertible"
+- !private "Ps39_BuiltinUnicodeScalarLiteralConvertible"
+- "Ps24_DestructorSafeContainer"
+- "Ps14_Incrementable"
+- "Ps22_IntegerArithmeticType"
+- "Ps12_IntegerType"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps22_RandomAccessAmbiguity"
+- "Ps12_Reflectable"
+- "Ps18_SignedIntegerType"
+- "C8photoTag8dataSend"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AssetsLibrary.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MultipeerConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+interface-hash: "894f8dd8ad89c0a51dd5bc2d46ef5a7a"

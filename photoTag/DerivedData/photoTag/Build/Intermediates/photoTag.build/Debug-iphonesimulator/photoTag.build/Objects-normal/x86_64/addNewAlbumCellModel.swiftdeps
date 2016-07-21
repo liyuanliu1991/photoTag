@@ -1,0 +1,112 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "addNewAblumCellModel"
+provides-nominal:
+- "C8photoTag20addNewAblumCellModel"
+provides-member:
+- ["C8photoTag20addNewAblumCellModel", ""]
+provides-dynamic-lookup:
+- "addNewAlbumLabel"
+- "leftImage"
+depends-top-level:
+- "NSObject"
+- !private "??"
+- !private "StringLiteralType"
+- "addNewAblumCellModel"
+- "String"
+- "UIImage"
+depends-member:
+- !private ["Ps9AnyObject", "UIImage"]
+- ["Ps9AnyObject", "addNewAlbumLabel"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "leftImage"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps11CVarArgType", "UIImage"]
+- ["Ps11CVarArgType", "addNewAlbumLabel"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "leftImage"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- !private ["Ps28CustomDebugStringConvertible", "UIImage"]
+- ["Ps28CustomDebugStringConvertible", "addNewAlbumLabel"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "leftImage"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "UIImage"]
+- ["Ps23CustomStringConvertible", "addNewAlbumLabel"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "leftImage"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "UIImage"]
+- ["Ps9Equatable", "addNewAlbumLabel"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "leftImage"]
+- ["Ps9Equatable", ""]
+- !private ["Ps8Hashable", "UIImage"]
+- ["Ps8Hashable", "addNewAlbumLabel"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "leftImage"]
+- ["Ps8Hashable", ""]
+- !private ["PSo8NSCoding", "init"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIImage"]
+- ["CSo8NSObject", "addNewAlbumLabel"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "leftImage"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
+- ["PSo16NSObjectProtocol", "addNewAlbumLabel"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "leftImage"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- ["Ps21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- !private ["Vs12StaticString", "deinit"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- !private ["CSo7UIImage", "init"]
+- !private ["Ps24_ImageLiteralConvertible", "init"]
+- ["Ps12_Reflectable", "Some"]
+- ["C8photoTag20addNewAblumCellModel", "String"]
+- ["C8photoTag20addNewAblumCellModel", "UIImage"]
+- ["C8photoTag20addNewAblumCellModel", "addNewAlbumLabel"]
+- ["C8photoTag20addNewAblumCellModel", "deinit"]
+- ["C8photoTag20addNewAblumCellModel", "init"]
+- ["C8photoTag20addNewAblumCellModel", "leftImage"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- !private "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- "Ps21NilLiteralConvertible"
+- "Sq"
+- !private "Vs12StaticString"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "CSo7UIImage"
+- !private "Ps24_ImageLiteralConvertible"
+- "Ps12_Reflectable"
+- "C8photoTag20addNewAblumCellModel"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AssetsLibrary.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MultipeerConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+interface-hash: "ac25a6dc24bdaca7d8c11930583b7994"

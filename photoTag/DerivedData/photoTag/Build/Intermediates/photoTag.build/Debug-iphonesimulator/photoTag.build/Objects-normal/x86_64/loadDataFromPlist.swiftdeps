@@ -1,0 +1,336 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "loadDataFromPlist"
+provides-nominal:
+- "C8photoTag17loadDataFromPlist"
+provides-member:
+- ["C8photoTag17loadDataFromPlist", ""]
+provides-dynamic-lookup:
+- "addNewAlbumCellSets"
+- "loadAddNewAlbumCellSets"
+- "categoryCellSets"
+- "loadCategoryCellSets"
+depends-top-level:
+- "addNewAblumCellModel"
+- "loadDataFromPlist"
+- !private "imageCellModel"
+- "NSObject"
+- !private "StringLiteralType"
+- "categoryCellModel"
+- "String"
+- !private "albumCellModel"
+depends-member:
+- ["Ps9AnyObject", "addNewAblumCellModel"]
+- ["Ps9AnyObject", "addNewAlbumCellSets"]
+- !private ["Ps9AnyObject", "albumCellModel"]
+- ["Ps9AnyObject", "categoryCellModel"]
+- ["Ps9AnyObject", "categoryCellSets"]
+- !private ["Ps9AnyObject", "imageCellModel"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "loadAddNewAlbumCellSets"]
+- ["Ps9AnyObject", "loadCategoryCellSets"]
+- ["Ps9AnyObject", ""]
+- ["Sa", "Generator"]
+- ["Sa", "Index"]
+- ["Sa", "SubSequence"]
+- ["Sa", "_Element"]
+- !private ["Sa", "append"]
+- ["Sa", "init"]
+- ["Ps23ArrayLiteralConvertible", "Generator"]
+- ["Ps23ArrayLiteralConvertible", "Index"]
+- ["Ps23ArrayLiteralConvertible", "SubSequence"]
+- ["Ps23ArrayLiteralConvertible", "_Element"]
+- !private ["Ps23ArrayLiteralConvertible", "append"]
+- ["Ps23ArrayLiteralConvertible", "init"]
+- ["Vs10ArraySlice", "Generator"]
+- ["Vs10ArraySlice", "Index"]
+- ["Ps22BidirectionalIndexType", "Distance"]
+- ["Ps22BidirectionalIndexType", "IntegerLiteralType"]
+- ["Ps21BitwiseOperationsType", "Distance"]
+- ["Ps21BitwiseOperationsType", "IntegerLiteralType"]
+- ["Ps11CVarArgType", "Distance"]
+- ["Ps11CVarArgType", "IntegerLiteralType"]
+- ["Ps11CVarArgType", "addNewAblumCellModel"]
+- ["Ps11CVarArgType", "addNewAlbumCellSets"]
+- !private ["Ps11CVarArgType", "albumCellModel"]
+- ["Ps11CVarArgType", "categoryCellModel"]
+- ["Ps11CVarArgType", "categoryCellSets"]
+- !private ["Ps11CVarArgType", "imageCellModel"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "loadAddNewAlbumCellSets"]
+- ["Ps11CVarArgType", "loadCategoryCellSets"]
+- ["Ps11CVarArgType", ""]
+- ["Ps14CollectionType", "Generator"]
+- ["Ps14CollectionType", "Index"]
+- ["Ps14CollectionType", "SubSequence"]
+- ["Ps14CollectionType", "_Element"]
+- !private ["Ps14CollectionType", "append"]
+- ["Ps14CollectionType", "init"]
+- ["Ps10Comparable", "Distance"]
+- ["Ps10Comparable", "IntegerLiteralType"]
+- ["Ps28CustomDebugStringConvertible", "Generator"]
+- ["Ps28CustomDebugStringConvertible", "Index"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- ["Ps28CustomDebugStringConvertible", "SubSequence"]
+- ["Ps28CustomDebugStringConvertible", "_Element"]
+- ["Ps28CustomDebugStringConvertible", "addNewAblumCellModel"]
+- ["Ps28CustomDebugStringConvertible", "addNewAlbumCellSets"]
+- !private ["Ps28CustomDebugStringConvertible", "albumCellModel"]
+- !private ["Ps28CustomDebugStringConvertible", "append"]
+- ["Ps28CustomDebugStringConvertible", "categoryCellModel"]
+- ["Ps28CustomDebugStringConvertible", "categoryCellSets"]
+- !private ["Ps28CustomDebugStringConvertible", "imageCellModel"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "loadAddNewAlbumCellSets"]
+- ["Ps28CustomDebugStringConvertible", "loadCategoryCellSets"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "Distance"]
+- ["Ps23CustomStringConvertible", "Generator"]
+- ["Ps23CustomStringConvertible", "Index"]
+- ["Ps23CustomStringConvertible", "IntegerLiteralType"]
+- ["Ps23CustomStringConvertible", "SubSequence"]
+- ["Ps23CustomStringConvertible", "_Element"]
+- ["Ps23CustomStringConvertible", "addNewAblumCellModel"]
+- ["Ps23CustomStringConvertible", "addNewAlbumCellSets"]
+- !private ["Ps23CustomStringConvertible", "albumCellModel"]
+- !private ["Ps23CustomStringConvertible", "append"]
+- ["Ps23CustomStringConvertible", "categoryCellModel"]
+- ["Ps23CustomStringConvertible", "categoryCellSets"]
+- !private ["Ps23CustomStringConvertible", "imageCellModel"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "loadAddNewAlbumCellSets"]
+- ["Ps23CustomStringConvertible", "loadCategoryCellSets"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "Distance"]
+- ["Ps9Equatable", "IntegerLiteralType"]
+- ["Ps9Equatable", "addNewAblumCellModel"]
+- ["Ps9Equatable", "addNewAlbumCellSets"]
+- !private ["Ps9Equatable", "albumCellModel"]
+- ["Ps9Equatable", "categoryCellModel"]
+- ["Ps9Equatable", "categoryCellSets"]
+- !private ["Ps9Equatable", "imageCellModel"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "loadAddNewAlbumCellSets"]
+- ["Ps9Equatable", "loadCategoryCellSets"]
+- ["Ps9Equatable", ""]
+- ["Ps16ForwardIndexType", "Distance"]
+- ["Ps16ForwardIndexType", "IntegerLiteralType"]
+- ["Ps13GeneratorType", "Element"]
+- ["Ps8Hashable", "Distance"]
+- ["Ps8Hashable", "IntegerLiteralType"]
+- ["Ps8Hashable", "addNewAblumCellModel"]
+- ["Ps8Hashable", "addNewAlbumCellSets"]
+- !private ["Ps8Hashable", "albumCellModel"]
+- ["Ps8Hashable", "categoryCellModel"]
+- ["Ps8Hashable", "categoryCellSets"]
+- !private ["Ps8Hashable", "imageCellModel"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "loadAddNewAlbumCellSets"]
+- ["Ps8Hashable", "loadCategoryCellSets"]
+- ["Ps8Hashable", ""]
+- ["Ps9Indexable", "Generator"]
+- ["Ps9Indexable", "Index"]
+- ["Ps9Indexable", "SubSequence"]
+- ["Ps9Indexable", "_Element"]
+- !private ["Ps9Indexable", "append"]
+- ["Ps9Indexable", "init"]
+- ["Vs17IndexingGenerator", "Element"]
+- ["Si", "Distance"]
+- ["Si", "IntegerLiteralType"]
+- ["Ps21IntegerArithmeticType", "Distance"]
+- ["Ps21IntegerArithmeticType", "IntegerLiteralType"]
+- ["Ps25IntegerLiteralConvertible", "Distance"]
+- ["Ps25IntegerLiteralConvertible", "IntegerLiteralType"]
+- ["Ps11IntegerType", "Distance"]
+- ["Ps11IntegerType", "IntegerLiteralType"]
+- ["Ps14MirrorPathType", "Distance"]
+- ["Ps14MirrorPathType", "IntegerLiteralType"]
+- ["Ps21MutableCollectionType", "Generator"]
+- ["Ps21MutableCollectionType", "Index"]
+- ["Ps21MutableCollectionType", "SubSequence"]
+- ["Ps21MutableCollectionType", "_Element"]
+- !private ["Ps21MutableCollectionType", "append"]
+- ["Ps21MutableCollectionType", "init"]
+- ["Ps16MutableIndexable", "Generator"]
+- ["Ps16MutableIndexable", "Index"]
+- ["Ps16MutableIndexable", "SubSequence"]
+- ["Ps16MutableIndexable", "_Element"]
+- !private ["Ps16MutableIndexable", "append"]
+- ["Ps16MutableIndexable", "init"]
+- ["Ps16MutableSliceable", "Generator"]
+- ["Ps16MutableSliceable", "Index"]
+- ["Ps16MutableSliceable", "SubSequence"]
+- ["Ps16MutableSliceable", "_Element"]
+- !private ["Ps16MutableSliceable", "append"]
+- ["Ps16MutableSliceable", "init"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "addNewAblumCellModel"]
+- ["CSo8NSObject", "addNewAlbumCellSets"]
+- !private ["CSo8NSObject", "albumCellModel"]
+- ["CSo8NSObject", "categoryCellModel"]
+- ["CSo8NSObject", "categoryCellSets"]
+- !private ["CSo8NSObject", "imageCellModel"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "loadAddNewAlbumCellSets"]
+- ["CSo8NSObject", "loadCategoryCellSets"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "addNewAblumCellModel"]
+- ["PSo16NSObjectProtocol", "addNewAlbumCellSets"]
+- !private ["PSo16NSObjectProtocol", "albumCellModel"]
+- ["PSo16NSObjectProtocol", "categoryCellModel"]
+- ["PSo16NSObjectProtocol", "categoryCellSets"]
+- !private ["PSo16NSObjectProtocol", "imageCellModel"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "loadAddNewAlbumCellSets"]
+- ["PSo16NSObjectProtocol", "loadCategoryCellSets"]
+- ["PSo16NSObjectProtocol", ""]
+- ["Ps21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- ["Ps21RandomAccessIndexType", "Distance"]
+- ["Ps21RandomAccessIndexType", "IntegerLiteralType"]
+- ["Ps30RangeReplaceableCollectionType", "Generator"]
+- ["Ps30RangeReplaceableCollectionType", "Index"]
+- ["Ps30RangeReplaceableCollectionType", "SubSequence"]
+- ["Ps30RangeReplaceableCollectionType", "_Element"]
+- !private ["Ps30RangeReplaceableCollectionType", "append"]
+- ["Ps30RangeReplaceableCollectionType", "init"]
+- ["Ps12SequenceType", "Element"]
+- ["Ps12SequenceType", "Generator"]
+- ["Ps12SequenceType", "Index"]
+- ["Ps12SequenceType", "SubSequence"]
+- ["Ps12SequenceType", "_Element"]
+- !private ["Ps12SequenceType", "append"]
+- ["Ps12SequenceType", "init"]
+- ["Ps17SignedIntegerType", "Distance"]
+- ["Ps17SignedIntegerType", "IntegerLiteralType"]
+- ["Ps16SignedNumberType", "Distance"]
+- ["Ps16SignedNumberType", "IntegerLiteralType"]
+- !private ["Vs12StaticString", "deinit"]
+- ["Ps10Strideable", "Distance"]
+- ["Ps10Strideable", "IntegerLiteralType"]
+- ["Ps10_ArrayType", "Generator"]
+- ["Ps10_ArrayType", "Index"]
+- ["Ps10_ArrayType", "SubSequence"]
+- ["Ps10_ArrayType", "_Element"]
+- !private ["Ps10_ArrayType", "append"]
+- ["Ps10_ArrayType", "init"]
+- ["Ps33_BuiltinIntegerLiteralConvertible", "Distance"]
+- ["Ps33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- ["Ps24_DestructorSafeContainer", "Generator"]
+- ["Ps24_DestructorSafeContainer", "Index"]
+- ["Ps24_DestructorSafeContainer", "SubSequence"]
+- ["Ps24_DestructorSafeContainer", "_Element"]
+- !private ["Ps24_DestructorSafeContainer", "append"]
+- ["Ps24_DestructorSafeContainer", "init"]
+- ["Ps14_Incrementable", "Distance"]
+- ["Ps14_Incrementable", "IntegerLiteralType"]
+- ["Ps22_IntegerArithmeticType", "Distance"]
+- ["Ps22_IntegerArithmeticType", "IntegerLiteralType"]
+- ["Ps12_IntegerType", "Distance"]
+- ["Ps12_IntegerType", "IntegerLiteralType"]
+- ["Ps21_ObjectiveCBridgeable", "Distance"]
+- ["Ps21_ObjectiveCBridgeable", "Generator"]
+- ["Ps21_ObjectiveCBridgeable", "Index"]
+- ["Ps21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- ["Ps21_ObjectiveCBridgeable", "SubSequence"]
+- ["Ps21_ObjectiveCBridgeable", "_Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "append"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- ["Ps22_RandomAccessAmbiguity", "Distance"]
+- ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- ["Ps12_Reflectable", "Distance"]
+- ["Ps12_Reflectable", "Generator"]
+- ["Ps12_Reflectable", "Index"]
+- ["Ps12_Reflectable", "IntegerLiteralType"]
+- ["Ps12_Reflectable", "Some"]
+- ["Ps12_Reflectable", "SubSequence"]
+- ["Ps12_Reflectable", "_Element"]
+- !private ["Ps12_Reflectable", "append"]
+- ["Ps12_Reflectable", "init"]
+- ["Ps18_SignedIntegerType", "Distance"]
+- ["Ps18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["C8photoTag20addNewAblumCellModel", "init"]
+- !private ["C8photoTag14albumCellModel", "init"]
+- !private ["C8photoTag17categoryCellModel", "init"]
+- !private ["C8photoTag14imageCellModel", "init"]
+- ["C8photoTag17loadDataFromPlist", "String"]
+- ["C8photoTag17loadDataFromPlist", "addNewAblumCellModel"]
+- ["C8photoTag17loadDataFromPlist", "addNewAlbumCellSets"]
+- !private ["C8photoTag17loadDataFromPlist", "albumCellModel"]
+- ["C8photoTag17loadDataFromPlist", "categoryCellModel"]
+- ["C8photoTag17loadDataFromPlist", "categoryCellSets"]
+- ["C8photoTag17loadDataFromPlist", "deinit"]
+- !private ["C8photoTag17loadDataFromPlist", "imageCellModel"]
+- ["C8photoTag17loadDataFromPlist", "init"]
+- ["C8photoTag17loadDataFromPlist", "loadAddNewAlbumCellSets"]
+- ["C8photoTag17loadDataFromPlist", "loadCategoryCellSets"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sa"
+- "Ps23ArrayLiteralConvertible"
+- "Vs10ArraySlice"
+- "Ps22BidirectionalIndexType"
+- "Ps21BitwiseOperationsType"
+- "Ps11CVarArgType"
+- "Ps14CollectionType"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps16ForwardIndexType"
+- "Ps13GeneratorType"
+- "Ps8Hashable"
+- "Ps9Indexable"
+- "Vs17IndexingGenerator"
+- "Si"
+- "Ps21IntegerArithmeticType"
+- "Ps25IntegerLiteralConvertible"
+- "Ps11IntegerType"
+- "Ps14MirrorPathType"
+- "Ps21MutableCollectionType"
+- "Ps16MutableIndexable"
+- "Ps16MutableSliceable"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "Ps21NilLiteralConvertible"
+- "Sq"
+- "Ps21RandomAccessIndexType"
+- "Ps30RangeReplaceableCollectionType"
+- "Ps12SequenceType"
+- "Ps17SignedIntegerType"
+- "Ps16SignedNumberType"
+- !private "Vs12StaticString"
+- "Ps10Strideable"
+- "Ps10_ArrayType"
+- "Ps33_BuiltinIntegerLiteralConvertible"
+- "Ps24_DestructorSafeContainer"
+- "Ps14_Incrementable"
+- "Ps22_IntegerArithmeticType"
+- "Ps12_IntegerType"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps22_RandomAccessAmbiguity"
+- "Ps12_Reflectable"
+- "Ps18_SignedIntegerType"
+- !private "C8photoTag20addNewAblumCellModel"
+- !private "C8photoTag14albumCellModel"
+- !private "C8photoTag17categoryCellModel"
+- !private "C8photoTag14imageCellModel"
+- "C8photoTag17loadDataFromPlist"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AssetsLibrary.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MultipeerConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+interface-hash: "165121a2755a745319582f4642e76f80"

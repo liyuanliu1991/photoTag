@@ -15,6 +15,7 @@ class categoryCellModel: NSObject {
     var rightImage: UIImage?
     var albumSets = [albumCellModel]()
     var expand: flagType
+    var identtfier:Int?
     init(leftImageName:String?,categoryTitle:String?,rightImageName:String?, albumset : [albumCellModel])
     {
         self.expand = .closed

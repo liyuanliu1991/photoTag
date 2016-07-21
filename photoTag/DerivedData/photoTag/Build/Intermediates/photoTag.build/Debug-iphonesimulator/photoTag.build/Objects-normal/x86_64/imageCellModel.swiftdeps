@@ -1,0 +1,87 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "imageCellModel"
+provides-nominal:
+- "C8photoTag14imageCellModel"
+provides-member:
+- ["C8photoTag14imageCellModel", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "UIImage"
+- !private "StringLiteralType"
+- "Bool"
+- !private "BooleanLiteralType"
+- "imageCellModel"
+- "NSData"
+- "String"
+depends-member:
+- !private ["Ps9AnyObject", "UIImage"]
+- !private ["Ps9AnyObject", "checkIcon"]
+- !private ["Ps9AnyObject", "hiddenImage"]
+- !private ["Ps9AnyObject", "image"]
+- !private ["Ps9AnyObject", "imageData"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "showHidenImage"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps11CVarArgType", "init"]
+- ["Ps28CustomDebugStringConvertible", "Some"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps8Hashable", "init"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["CSo8NSObject", "init"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo14NSSecureCoding", "init"]
+- ["Ps21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- !private ["CSo7UIImage", "init"]
+- !private ["Ps24_ImageLiteralConvertible", "init"]
+- ["Ps12_Reflectable", "Some"]
+- ["C8photoTag14imageCellModel", "Bool"]
+- ["C8photoTag14imageCellModel", "NSData"]
+- ["C8photoTag14imageCellModel", "String"]
+- ["C8photoTag14imageCellModel", "UIImage"]
+- ["C8photoTag14imageCellModel", "checkIcon"]
+- ["C8photoTag14imageCellModel", "deinit"]
+- ["C8photoTag14imageCellModel", "hiddenImage"]
+- ["C8photoTag14imageCellModel", "image"]
+- ["C8photoTag14imageCellModel", "imageData"]
+- ["C8photoTag14imageCellModel", "init"]
+- ["C8photoTag14imageCellModel", "showHidenImage"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps23CustomStringConvertible"
+- !private "Ps9Equatable"
+- !private "Ps8Hashable"
+- !private "PSo8NSCoding"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- "Ps21NilLiteralConvertible"
+- "Sq"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "CSo7UIImage"
+- !private "Ps24_ImageLiteralConvertible"
+- "Ps12_Reflectable"
+- "C8photoTag14imageCellModel"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AssetsLibrary.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MultipeerConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+interface-hash: "ce0696585318c513a497d4a66fe1d93a"

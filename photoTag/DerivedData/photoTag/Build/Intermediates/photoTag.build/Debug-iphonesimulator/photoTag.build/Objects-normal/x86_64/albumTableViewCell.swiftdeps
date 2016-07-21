@@ -1,0 +1,249 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "albumTableViewCell"
+provides-nominal:
+- "C8photoTag18albumTableViewCell"
+provides-member:
+- ["C8photoTag18albumTableViewCell", ""]
+provides-dynamic-lookup:
+- "albumTitle"
+- "albumSubtitle"
+- "awakeFromNib"
+- "setSelected"
+- "ratingImage"
+- "albumCoverImage"
+depends-top-level:
+- "UIImageView"
+- "UILabel"
+- "UITableViewCell"
+- "Bool"
+- "albumTableViewCell"
+depends-member:
+- ["Ps9AnyObject", "albumCoverImage"]
+- ["Ps9AnyObject", "albumSubtitle"]
+- ["Ps9AnyObject", "albumTitle"]
+- ["Ps9AnyObject", "awakeFromNib"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "ratingImage"]
+- ["Ps9AnyObject", "setSelected"]
+- ["Ps9AnyObject", ""]
+- ["Ps11CVarArgType", "albumCoverImage"]
+- ["Ps11CVarArgType", "albumSubtitle"]
+- ["Ps11CVarArgType", "albumTitle"]
+- ["Ps11CVarArgType", "awakeFromNib"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "ratingImage"]
+- ["Ps11CVarArgType", "setSelected"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "albumCoverImage"]
+- ["Ps28CustomDebugStringConvertible", "albumSubtitle"]
+- ["Ps28CustomDebugStringConvertible", "albumTitle"]
+- ["Ps28CustomDebugStringConvertible", "awakeFromNib"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "ratingImage"]
+- ["Ps28CustomDebugStringConvertible", "setSelected"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "albumCoverImage"]
+- ["Ps23CustomStringConvertible", "albumSubtitle"]
+- ["Ps23CustomStringConvertible", "albumTitle"]
+- ["Ps23CustomStringConvertible", "awakeFromNib"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "ratingImage"]
+- ["Ps23CustomStringConvertible", "setSelected"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "albumCoverImage"]
+- ["Ps9Equatable", "albumSubtitle"]
+- ["Ps9Equatable", "albumTitle"]
+- ["Ps9Equatable", "awakeFromNib"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "ratingImage"]
+- ["Ps9Equatable", "setSelected"]
+- ["Ps9Equatable", ""]
+- ["Ps8Hashable", "albumCoverImage"]
+- ["Ps8Hashable", "albumSubtitle"]
+- ["Ps8Hashable", "albumTitle"]
+- ["Ps8Hashable", "awakeFromNib"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "ratingImage"]
+- ["Ps8Hashable", "setSelected"]
+- ["Ps8Hashable", ""]
+- ["PSo8NSCoding", "albumCoverImage"]
+- ["PSo8NSCoding", "albumSubtitle"]
+- ["PSo8NSCoding", "albumTitle"]
+- ["PSo8NSCoding", "awakeFromNib"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "ratingImage"]
+- ["PSo8NSCoding", "setSelected"]
+- ["PSo8NSCoding", ""]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "albumCoverImage"]
+- ["CSo8NSObject", "albumSubtitle"]
+- ["CSo8NSObject", "albumTitle"]
+- ["CSo8NSObject", "awakeFromNib"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "ratingImage"]
+- ["CSo8NSObject", "setSelected"]
+- ["PSo16NSObjectProtocol", "albumCoverImage"]
+- ["PSo16NSObjectProtocol", "albumSubtitle"]
+- ["PSo16NSObjectProtocol", "albumTitle"]
+- ["PSo16NSObjectProtocol", "awakeFromNib"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "ratingImage"]
+- ["PSo16NSObjectProtocol", "setSelected"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo29UIAccessibilityIdentification", "albumCoverImage"]
+- ["PSo29UIAccessibilityIdentification", "albumSubtitle"]
+- ["PSo29UIAccessibilityIdentification", "albumTitle"]
+- ["PSo29UIAccessibilityIdentification", "awakeFromNib"]
+- ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", "ratingImage"]
+- ["PSo29UIAccessibilityIdentification", "setSelected"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- ["PSo12UIAppearance", "albumCoverImage"]
+- ["PSo12UIAppearance", "albumSubtitle"]
+- ["PSo12UIAppearance", "albumTitle"]
+- ["PSo12UIAppearance", "awakeFromNib"]
+- ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", "ratingImage"]
+- ["PSo12UIAppearance", "setSelected"]
+- ["PSo12UIAppearance", ""]
+- ["PSo21UIAppearanceContainer", "albumCoverImage"]
+- ["PSo21UIAppearanceContainer", "albumSubtitle"]
+- ["PSo21UIAppearanceContainer", "albumTitle"]
+- ["PSo21UIAppearanceContainer", "awakeFromNib"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "ratingImage"]
+- ["PSo21UIAppearanceContainer", "setSelected"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo17UICoordinateSpace", "albumCoverImage"]
+- ["PSo17UICoordinateSpace", "albumSubtitle"]
+- ["PSo17UICoordinateSpace", "albumTitle"]
+- ["PSo17UICoordinateSpace", "awakeFromNib"]
+- ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", "ratingImage"]
+- ["PSo17UICoordinateSpace", "setSelected"]
+- ["PSo17UICoordinateSpace", ""]
+- ["PSo13UIDynamicItem", "albumCoverImage"]
+- ["PSo13UIDynamicItem", "albumSubtitle"]
+- ["PSo13UIDynamicItem", "albumTitle"]
+- ["PSo13UIDynamicItem", "awakeFromNib"]
+- ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", "ratingImage"]
+- ["PSo13UIDynamicItem", "setSelected"]
+- ["PSo13UIDynamicItem", ""]
+- ["PSo18UIFocusEnvironment", "albumCoverImage"]
+- ["PSo18UIFocusEnvironment", "albumSubtitle"]
+- ["PSo18UIFocusEnvironment", "albumTitle"]
+- ["PSo18UIFocusEnvironment", "awakeFromNib"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "ratingImage"]
+- ["PSo18UIFocusEnvironment", "setSelected"]
+- ["PSo18UIFocusEnvironment", ""]
+- ["PSo27UIGestureRecognizerDelegate", "albumCoverImage"]
+- ["PSo27UIGestureRecognizerDelegate", "albumSubtitle"]
+- ["PSo27UIGestureRecognizerDelegate", "albumTitle"]
+- ["PSo27UIGestureRecognizerDelegate", "awakeFromNib"]
+- ["PSo27UIGestureRecognizerDelegate", "init"]
+- ["PSo27UIGestureRecognizerDelegate", "ratingImage"]
+- ["PSo27UIGestureRecognizerDelegate", "setSelected"]
+- ["PSo27UIGestureRecognizerDelegate", ""]
+- ["CSo11UIResponder", "Bool"]
+- ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "albumCoverImage"]
+- ["CSo11UIResponder", "albumSubtitle"]
+- ["CSo11UIResponder", "albumTitle"]
+- ["CSo11UIResponder", "awakeFromNib"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "ratingImage"]
+- ["CSo11UIResponder", "setSelected"]
+- ["CSo15UITableViewCell", "Bool"]
+- ["CSo15UITableViewCell", "UIImageView"]
+- ["CSo15UITableViewCell", "UILabel"]
+- ["CSo15UITableViewCell", "albumCoverImage"]
+- ["CSo15UITableViewCell", "albumSubtitle"]
+- ["CSo15UITableViewCell", "albumTitle"]
+- ["CSo15UITableViewCell", "awakeFromNib"]
+- ["CSo15UITableViewCell", "init"]
+- ["CSo15UITableViewCell", "ratingImage"]
+- ["CSo15UITableViewCell", "setSelected"]
+- ["CSo15UITableViewCell", ""]
+- ["PSo18UITraitEnvironment", "albumCoverImage"]
+- ["PSo18UITraitEnvironment", "albumSubtitle"]
+- ["PSo18UITraitEnvironment", "albumTitle"]
+- ["PSo18UITraitEnvironment", "awakeFromNib"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "ratingImage"]
+- ["PSo18UITraitEnvironment", "setSelected"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "Bool"]
+- ["CSo6UIView", "UIImageView"]
+- ["CSo6UIView", "UILabel"]
+- ["CSo6UIView", "albumCoverImage"]
+- ["CSo6UIView", "albumSubtitle"]
+- ["CSo6UIView", "albumTitle"]
+- ["CSo6UIView", "awakeFromNib"]
+- ["CSo6UIView", "init"]
+- ["CSo6UIView", "ratingImage"]
+- ["CSo6UIView", "setSelected"]
+- ["Ps12_Reflectable", "albumCoverImage"]
+- ["Ps12_Reflectable", "albumSubtitle"]
+- ["Ps12_Reflectable", "albumTitle"]
+- ["Ps12_Reflectable", "awakeFromNib"]
+- ["Ps12_Reflectable", "init"]
+- ["Ps12_Reflectable", "ratingImage"]
+- ["Ps12_Reflectable", "setSelected"]
+- ["Ps12_Reflectable", ""]
+- ["C8photoTag18albumTableViewCell", "Bool"]
+- ["C8photoTag18albumTableViewCell", "UIImageView"]
+- ["C8photoTag18albumTableViewCell", "UILabel"]
+- ["C8photoTag18albumTableViewCell", "albumCoverImage"]
+- ["C8photoTag18albumTableViewCell", "albumSubtitle"]
+- ["C8photoTag18albumTableViewCell", "albumTitle"]
+- ["C8photoTag18albumTableViewCell", "awakeFromNib"]
+- ["C8photoTag18albumTableViewCell", "deinit"]
+- ["C8photoTag18albumTableViewCell", "init"]
+- ["C8photoTag18albumTableViewCell", "ratingImage"]
+- ["C8photoTag18albumTableViewCell", "setSelected"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "PSo27UIGestureRecognizerDelegate"
+- "CSo11UIResponder"
+- "CSo15UITableViewCell"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "Ps12_Reflectable"
+- "C8photoTag18albumTableViewCell"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AssetsLibrary.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MultipeerConnectivity.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+interface-hash: "80b72a3a620385228a4ed5cdb66480d1"

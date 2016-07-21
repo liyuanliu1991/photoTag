@@ -15,8 +15,7 @@ class categoryTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryTitle: UILabel!
     
     @IBOutlet weak var rightImage: UIImageView!
-    
-    
+
     
 
     override func awakeFromNib() {
