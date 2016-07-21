@@ -508,14 +508,14 @@ class albumTableViewController: UITableViewController {
         if expandCell.contains(whichSectionTapped!)
         {
             expandCell.removeObject(whichSectionTapped!)
-            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
+          //  allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
             
             
         }
         else
         {
             expandCell.append(whichSectionTapped!)
-            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
+          //  allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
             
             
         }
@@ -541,16 +541,16 @@ class albumTableViewController: UITableViewController {
         if expandCell.contains(whichSectionTapped!)
         {
             expandCell.removeObject(whichSectionTapped!)
-            let tapView = gesture.view! as? UIImageView
-            tapView?.image = UIImage(named: "rightArrow.png")
+           // let tapView = gesture.view! as? UIImageView
+           // tapView?.image = UIImage(named: "rightArrow.png")
             
             
         }
         else
         {
             expandCell.append(whichSectionTapped!)
-            let tapView = gesture.view! as? UIImageView
-            tapView?.image = UIImage(named: "dropDown.png")
+          //  let tapView = gesture.view! as? UIImageView
+           // tapView?.image = UIImage(named: "dropDown.png")
             
             
         }
@@ -576,14 +576,14 @@ class albumTableViewController: UITableViewController {
         if expandCell.contains(whichSectionTapped!)
         {
             expandCell.removeObject(whichSectionTapped!)
-            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
+          //  allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "rightArrow.png")
             
             
         }
         else
         {
             expandCell.append(whichSectionTapped!)
-            allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
+           // allDataSets.categoryCellSets[whichSectionTapped!].rightImage = UIImage(named: "dropDown.png")
             
             
         }
