@@ -29,14 +29,14 @@ class WaterfallLayout: UICollectionViewLayout {
     
     override func collectionViewContentSize() -> CGSize {
         
-        //let k = contentHeight
+      
         return CGSize(width: width, height: contentHeight)
     }
     
     override func prepareLayout() {
         
         cache.removeAll()
-        //if cache.isEmpty {
+        
             
             let columnWidth = width / CGFloat(numberOfColums)
             
@@ -48,8 +48,7 @@ class WaterfallLayout: UICollectionViewLayout {
             var yOffsets = [CGFloat](count: numberOfColums, repeatedValue: 0)
             
             var column = 0
-        
-       // let k = collectionView!.numberOfItemsInSection(0)
+     
         
             for item in 0..<collectionView!.numberOfItemsInSection(0) {
                 
@@ -61,10 +60,9 @@ class WaterfallLayout: UICollectionViewLayout {
                 let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
                 attributes.frame = frame
                 cache.append(attributes)
-              //  let k1 = contentHeight
-               // let k2 = CGRectGetMaxY(frame)
+            
                 contentHeight = max(contentHeight, CGRectGetMaxY(frame))
-               // let k = contentHeight
+            
                 
                 
                 yOffsets[column] = yOffsets[column] + height
@@ -75,7 +73,7 @@ class WaterfallLayout: UICollectionViewLayout {
                     column = 1
                 }
             }
-        //}
+       
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

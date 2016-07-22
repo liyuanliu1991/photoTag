@@ -98,7 +98,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate
     func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) { }
     
     // MARK: Custom method implementation
-    func sendData(dataToSend:dataSend,toPeer: MCPeerID)->Bool{
+    func sendData(dataToSend: Dictionary<String,String> ,toPeer: MCPeerID)->Bool{
+        
+        
+        
         let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dataToSend)
         var peerArray = [MCPeerID]()
         peerArray.append(toPeer)
@@ -120,21 +123,58 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate
 
 
 
-class dataSend{
-    var imageData:NSData
+class dataSend: AnyObject{
+    var imageData:NSData?
     var clickHideInfo:String?
     var leftInfo:String?
     var rightInfo:String?
     var upInfo:String?
     var downInfo:String?
     var sliderInfo:[String]?
-    var locationInfo:Dictionary<String, String?>//location string, hideinfo string
+    //var locationInfo:Dictionary<String, String?>//location string, hideinfo string
+    var textViewArray:[UITextView]?
     var hints:[String]?
-    var questions:Dictionary<String, String?> // question and answer
-    var temptsNum: Int
+    var questions:Dictionary<String, String>? // question and answer
+    var temptsNum: Int?
+    
+  /*  required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        self.imageData = aDecoder.decodeObjectForKey("imageData") as! NSData
+        self.clickHideInfo = aDecoder.decodeObjectForKey("clickHideInfo") as? String
+        self.leftInfo = aDecoder.decodeObjectForKey("leftInfo") as? String
+        self.rightInfo = aDecoder.decodeObjectForKey("rightInfo") as? String
+        self.upInfo = aDecoder.decodeObjectForKey("upInfo") as? String
+        self.downInfo = aDecoder.decodeObjectForKey("downInfo") as? String
+        self.sliderInfo = aDecoder.decodeObjectForKey("sliderInfo") as? [String]
+        self.textViewArray = aDecoder.decodeObjectForKey("textViewArray") as? [UITextView]
+        self.hints = aDecoder.decodeObjectForKey("hints") as? [String]
+        self.questions = (aDecoder.decodeObjectForKey("questions") as? Dictionary<String, String>?)!
+        self.temptsNum = aDecoder.decodeObjectForKey("temptsNum") as? Int
+        
+    }
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(imageData,forKey: "imageData")
+        aCoder.encodeObject(clickHideInfo,forKey: "clickHideInfo")
+        aCoder.encodeObject(leftInfo,forKey: "leftInfo")
+        aCoder.encodeObject(rightInfo,forKey: "rightInfo")
+        aCoder.encodeObject(upInfo,forKey: "upInfo")
+        aCoder.encodeObject(downInfo,forKey: "downInfo")
+        aCoder.encodeObject(sliderInfo,forKey: "sliderInfo")
+        aCoder.encodeObject(textViewArray,forKey: "textViewArray")
+        
+        aCoder.encodeObject(hints,forKey: "hints")
+        aCoder.encodeObject(questions,forKey: "questions")
+        aCoder.encodeObject(temptsNum,forKey: "temptsNum")
+        
+        
+        
+    }*/
+    
+    
  
-    init(imageData: NSData, clickHideInfo:String?,leftInfo:String?,rightInfo:String?,upInfo:String?,downInfo:String?,sliderInfo:[String]?,locationInfo:Dictionary<String, String?>,hints:[String]?,questions:Dictionary<String, String?>,temptsNum: Int)
+    init(imageData: NSData, clickHideInfo:String?,leftInfo:String?,rightInfo:String?,upInfo:String?,downInfo:String?,sliderInfo:[String]?,textViewArray: [UITextView]?/*locationInfo:Dictionary<String, String?>*/,hints:[String]?,questions:Dictionary<String, String>?,temptsNum: Int?)
     {
+        
         self.imageData = imageData
         if let clickHideInfo = clickHideInfo{
             self.clickHideInfo = clickHideInfo
@@ -154,11 +194,17 @@ class dataSend{
         if let sliderInfo = sliderInfo{
             self.sliderInfo = sliderInfo
         }
-        self.locationInfo = locationInfo
+        //self.locationInfo = locationInfo
+        if let textViewArray = textViewArray{
+            self.textViewArray = textViewArray
+        }
         if let hints = hints{
             self.hints = hints
         }
-        self.questions = questions
+        if let question = questions{
+            self.questions = question
+        }
+        
         self.temptsNum = temptsNum
         
     }

@@ -47,7 +47,7 @@ class guessViewController: UIViewController,MPCManagerDelegate {
         appDelegate.advertiser?.startAdvertisingPeer()
         isAdvertising = true
 
-        
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleMPCReceivedDataWithNotification:"), name: "receivedMPCDataNotification", object: nil)
    
     }
 
@@ -88,7 +88,43 @@ class guessViewController: UIViewController,MPCManagerDelegate {
             print("connected with \(peerID.displayName )")
         }
     }
+    
+    func handleMPCReceivedDataWithNotification(notification: NSNotification)
+    {
+        let recvData = notification.object as! Dictionary<String,AnyObject>
+        let data = recvData["data"] as? NSData
+        let fromPeer = recvData["fromPeer"] as! MCPeerID
+      /*  let imageDataString = recvData["imageData"] as? String
+        let imageData = imageDataString?.dataUsingEncoding(NSUTF8StringEncoding)
+        guessImage.image = UIImage(data:imageData!)
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            self.guessImage.reloadInputViews()
+        })*/
+        
+        let dataString = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
+        let message = dataString["message"] 
+        print("recv \(message)")
+        
+    }
 
 
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

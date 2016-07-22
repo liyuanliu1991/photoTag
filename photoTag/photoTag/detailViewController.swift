@@ -142,8 +142,21 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         //detailImageView.userInteractionEnabled = true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "shareSegue"
+        {
+            let peerList = segue.destinationViewController as! peerListViewController
+            let imagedata = UIImagePNGRepresentation(detailImage!)
+            
+            
+            
+            let data = dataSend(imageData: imagedata!, clickHideInfo: self.clickHidenInfo , leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, textViewArray: infoHideTextView.infoHideTextView /*locationInfo: */, hints: ["Test Hints"], questions: nil, temptsNum: 10)
+            peerList.dataToSend = data
+        }
+    }
    
     @IBAction func sharePhoto(sender: AnyObject) {
+        
         
         
      /*   mpcManager = MPCManager()

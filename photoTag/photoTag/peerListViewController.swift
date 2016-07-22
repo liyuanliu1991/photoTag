@@ -11,11 +11,15 @@ import MultipeerConnectivity
 
 class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDelegate, UITableViewDataSource{
     
+    var dataToSend: dataSend?
+    
     @IBOutlet weak var peerTableView: UITableView!
     
     let appDelegate = MPCManager()
     
     var isAdvertising: Bool?
+    
+    var selectPeer: MCPeerID?
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,8 +63,8 @@ class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDel
         return 50
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectPeer = appDelegate.foundPeer[indexPath.row] as MCPeerID
-        appDelegate.browser?.invitePeer(selectPeer, toSession: appDelegate.session!, withContext: nil, timeout: 20)
+        selectPeer = appDelegate.foundPeer[indexPath.row] as MCPeerID
+        appDelegate.browser?.invitePeer(selectPeer!, toSession: appDelegate.session!, withContext: nil, timeout: 20)
     }
     
     func foundPeer() {
@@ -101,6 +105,27 @@ class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDel
     func connectWithPeer(peerID: MCPeerID) {
         NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
             print("connected with \(peerID.displayName )")
+            
+           let messageDictionary: [String: String] = ["message": "test"]
+            self.appDelegate.sendData(messageDictionary, toPeer: self.selectPeer!)
+            
+         /*   var data = Dictionary<String,AnyObject>()
+            
+            data["imageData"] = self.dataToSend?.imageData
+            data["clickHideInfo"] = self.dataToSend?.clickHideInfo
+            data["leftInfo"] = self.dataToSend?.leftInfo
+            data["rightInfo"] = self.dataToSend?.rightInfo
+            data["upInfo"] = self.dataToSend?.upInfo
+            data["downInfo"] = self.dataToSend?.downInfo
+            data["sliderInfo"] = self.dataToSend?.sliderInfo
+            data["textViewArray"] = self.dataToSend?.textViewArray
+            data["hints"] = self.dataToSend?.hints
+            data["questions"] = self.dataToSend?.questions
+            data["temptsNum"] = self.dataToSend?.temptsNum*/
+            
+            
+        //    self.appDelegate.sendData(testMsg, toPeer: self.selectPeer!)
+            
         }
     }
 
