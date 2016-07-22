@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC5F0F6C1D41B68200A552A4 /* peerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -99,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peerListViewController.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				ECBC62BC1D34C15900E9C9C2 /* imageCollectionViewController.swift */,
 				ECBC62E41D3731AB00E9C9C2 /* detailViewController.swift */,
 				ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */,
+				EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
 				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,
+				EC5F0F6C1D41B68200A552A4 /* peerListViewController.swift in Sources */,
 				ECF3D2181D3EF80D0051F889 /* MPCManager.swift in Sources */,
 				ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */,
 				ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */,

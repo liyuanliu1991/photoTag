@@ -43,9 +43,15 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate
     }
     
     func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        for (_,aPeer) in foundPeer.enumerate(){
+            if aPeer.displayName == peerID.displayName{
+                return
+            }
+        }
         foundPeer.append(peerID)
         delegate?.foundPeer()
     }
+
     func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         for (index, aPeer) in foundPeer.enumerate(){
             if aPeer == peerID{

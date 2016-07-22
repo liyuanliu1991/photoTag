@@ -9,7 +9,12 @@
 import UIKit
 import MultipeerConnectivity
 
-class guessViewController: UIViewController, MPCManagerDelegate {
+class guessViewController: UIViewController,MPCManagerDelegate {
+    
+    var appDelegate = MPCManager()
+    
+    var isAdvertising: Bool?
+
 
     @IBOutlet weak var answerQuestion: UIButton!
     
@@ -25,8 +30,8 @@ class guessViewController: UIViewController, MPCManagerDelegate {
     
     @IBOutlet weak var shadow: GradientView!
     
-    var isAdvertising: Bool?
-    var mpcManager: MPCManager?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,77 +42,53 @@ class guessViewController: UIViewController, MPCManagerDelegate {
         self.shadow.hidden = true
         slider.hidden = true
         
-        mpcManager?.advertiser?.startAdvertisingPeer()
-        
+        appDelegate.delegate = self
+       // appDelegate.browser?.startBrowsingForPeers()
+        appDelegate.advertiser?.startAdvertisingPeer()
         isAdvertising = true
-        mpcManager?.delegate = self
+
         
-        // Do any additional setup after loading the view.
+   
     }
 
-    func invitationWasReceived(fromPeer: String) {
-        let alert = UIAlertController(title: "", message: "\(fromPeer) wants to chat with you.", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.mpcManager!.invitationHandler!(true, self.mpcManager!.session!)
-        }
-        
-        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            //self.mpcManager.invitationHandler(false, nil)
-            print("decline")
-        }
-        
-        alert.addAction(acceptAction)
-        alert.addAction(declineAction)
-        
-    /*    NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-            self.presentViewController(alert, animated: true, completion: nil)
-        }*/
-    }
-    func connectWithPeer(peerID: MCPeerID) {
-        //start to recv data
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleMPCReceivedDataWithNotification:", name: "receivedMPCDataNotification", object: nil)
-    }
-    func handleMPCReceivedDataWithNotification(notification:NSNotification)
-    {
-        let receivedDataDictionary = notification.object as! Dictionary<String,AnyObject>
-        
-        let data = receivedDataDictionary["data"] as? NSData
-        let fromPeer = receivedDataDictionary["fromPeer"] as! MCPeerID
-        
-        let dataRecv = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! dataSend
-        
-        //print("\(dataRecv.hints),\(),\()")
-    }
-    
-    func lostPeer() {
-        
-    }
-    func foundPeer() {
-        
-    }
-    
-    func stopAdvertising(sender: UIBarButtonItem)
-    {
-        mpcManager?.advertiser?.stopAdvertisingPeer()
-    }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func foundPeer() {
+        print("found p")
     }
-    */
+    func lostPeer() {
+        print("lost")
+    }
+    
+    func invitationWasReceived(fromPeer: String) {
+        let alert = UIAlertController(title: "", message: "\(fromPeer) wants to send you photo.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+            self.appDelegate.invitationHandler!(true, self.appDelegate.session!)
+        }
+        
+        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+            self.appDelegate.invitationHandler!(false, self.appDelegate.session!)
+        }
+        
+        alert.addAction(acceptAction)
+        alert.addAction(declineAction)
+        
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+    }
+    func connectWithPeer(peerID: MCPeerID) {
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            print("connected with \(peerID.displayName )")
+        }
+    }
 
+
+   
 }

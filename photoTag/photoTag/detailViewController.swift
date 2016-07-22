@@ -8,15 +8,11 @@
 
 import UIKit
 import QuartzCore
-import MultipeerConnectivity
 
-class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDelegate, UIAlertViewDelegate {
 
-    let selectedPeer: UIAlertView = UIAlertView()
-    
-    var myselectedPeer: MCPeerID?
-    
-    var mpcManager: MPCManager?
+class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDelegate {
+
+
     
     @IBOutlet weak var Guess: UISwitch!
     
@@ -51,7 +47,8 @@ class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
+        
       /*  detailImageView.clipsToBounds = true
         
         detailImageView.layer.cornerRadius = detailImageView.frame.size.height/2;*/
@@ -145,7 +142,9 @@ class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDele
     
    
     @IBAction func sharePhoto(sender: AnyObject) {
-        mpcManager = MPCManager()
+        
+        
+     /*   mpcManager = MPCManager()
         mpcManager?.delegate = self
         mpcManager?.browser?.startBrowsingForPeers()
         
@@ -175,33 +174,15 @@ class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDele
         
         let data = dataSend(imageData: UIImagePNGRepresentation(detailImage!)!, clickHideInfo: clickShowTextView.text, leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, locationInfo: test, hints: nil, questions: question, temptsNum: 10)
         
-        mpcManager?.sendData(data, toPeer: self.myselectedPeer!)
+        mpcManager?.sendData(data, toPeer: self.myselectedPeer!)*/
         
     }
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
-        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
+      /*  self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
+        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)*/
     }
     
-    func invitationWasReceived(fromPeer: String) {
-        
-    }
-    func connectWithPeer(peerID: MCPeerID) {
-        
-    }
-    
-    func foundPeer() {
-        print(mpcManager?.foundPeer[0])
-        selectedPeer.reloadInputViews()
-        
-        
-    }
-    func lostPeer() {
-        print(mpcManager?.foundPeer[0])
-        selectedPeer.reloadInputViews()
-    }
-    
-    
+     
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
     {
         if switchHaveFun.on{
@@ -254,16 +235,7 @@ class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDele
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
                 print("begin")
-               /* let locationView = longPress.locationInView(detailImageView)
-                
-                let newtextView = UITextView()
-                newtextView.initializeMyArgument()
-                
-                self.detailImageView.addTextView(locationView,new: newtextView)
-                
-                infoHideTextView.infoHideTextView.append(newtextView)
-                
-                print("begin")*/
+               
             case UIGestureRecognizerState.Changed:
                 print("change")
             case UIGestureRecognizerState.Ended:
@@ -509,5 +481,7 @@ class detailViewController: UIViewController, UITextViewDelegate, MPCManagerDele
         }
         return true
     }
+    
+
 
 }
