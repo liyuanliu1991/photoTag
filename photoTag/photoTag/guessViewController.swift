@@ -14,7 +14,7 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     var appDelegate = MPCManager()
     
     var isAdvertising: Bool?
-
+    var testNSdata: NSData?
 
     @IBOutlet weak var answerQuestion: UIButton!
     
@@ -24,11 +24,11 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     
     @IBOutlet weak var hintsButton: UIButton!
     
-    @IBOutlet weak var slider: UISlider!
+  //  @IBOutlet weak var slider: UISlider!
     
     @IBOutlet weak var guessImage: UIImageView!
     
-    @IBOutlet weak var shadow: GradientView!
+   // @IBOutlet weak var shadow: GradientView!
     
     
     
@@ -36,11 +36,13 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guessImage.image = UIImage(named: "1.png")
+        
        // let recvButton = UIBarButtonItem(title: "Hide Me", style: .Plain, target: self, action: "stopAdvertising:")
        // navigationItem.rightBarButtonItem = recvButton
 
-        self.shadow.hidden = true
-        slider.hidden = true
+   //     self.shadow.hidden = true
+     //   slider.hidden = true
         
         appDelegate.delegate = self
        // appDelegate.browser?.startBrowsingForPeers()
@@ -84,9 +86,12 @@ class guessViewController: UIViewController,MPCManagerDelegate {
         
     }
     func connectWithPeer(peerID: MCPeerID) {
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+       NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
             print("connected with \(peerID.displayName )")
         }
+       /* dispatch_async(dispatch_get_main_queue()) {
+            print("connected with \(peerID.displayName )")
+        }*/
     }
     
     func handleMPCReceivedDataWithNotification(notification: NSNotification)
@@ -101,10 +106,25 @@ class guessViewController: UIViewController,MPCManagerDelegate {
             self.guessImage.reloadInputViews()
         })*/
         
-        let dataString = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
-        let message = dataString["message"] 
-        print("recv \(message)")
+        let dataString = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, AnyObject>
+        let imageDataString = dataString["imageData"] as! NSData
+        //let imageData = imageDataString.dataUsingEncoding(NSUTF8StringEncoding)
+        //print("recv \(message)")
+      //  self.guessImage.image = UIImage(data: imageDataString)
         
+        
+     //   NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+        //    self.guessImage.reloadInputViews()
+       // }
+        self.testNSdata = imageDataString
+        performSegueWithIdentifier("testSegue", sender: self)
+        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "testSegue"{
+            let test = segue.destinationViewController as! testViewController
+            test.image = UIImage(data: self.testNSdata!)
+        }
     }
 
 

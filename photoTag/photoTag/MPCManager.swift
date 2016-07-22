@@ -98,7 +98,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserDelegate
     func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) { }
     
     // MARK: Custom method implementation
-    func sendData(dataToSend: Dictionary<String,String> ,toPeer: MCPeerID)->Bool{
+    func sendData(dataToSend: Dictionary<String,NSData> ,toPeer: MCPeerID)->Bool{
         
         
         

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC5F0F6C1D41B68200A552A4 /* peerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */; };
+		EC5F0F6E1D4218C900A552A4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F0F6D1D4218C900A552A4 /* testViewController.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peerListViewController.swift; sourceTree = "<group>"; };
+		EC5F0F6D1D4218C900A552A4 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				ECBC62E41D3731AB00E9C9C2 /* detailViewController.swift */,
 				ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */,
 				EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */,
+				EC5F0F6D1D4218C900A552A4 /* testViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */,
 				ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */,
 				ECBC62E51D3731AB00E9C9C2 /* detailViewController.swift in Sources */,
+				EC5F0F6E1D4218C900A552A4 /* testViewController.swift in Sources */,
 				ECBC62BB1D34C12A00E9C9C2 /* WaterfallLayout.swift in Sources */,
 				ECF332091D2B248B00AF4F94 /* albumCellModel.swift in Sources */,
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,

@@ -106,18 +106,21 @@ class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDel
         NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
             print("connected with \(peerID.displayName )")
             
-           let messageDictionary: [String: String] = ["message": "test"]
-            self.appDelegate.sendData(messageDictionary, toPeer: self.selectPeer!)
+           
             
-         /*   var data = Dictionary<String,AnyObject>()
             
-            data["imageData"] = self.dataToSend?.imageData
-            data["clickHideInfo"] = self.dataToSend?.clickHideInfo
-            data["leftInfo"] = self.dataToSend?.leftInfo
-            data["rightInfo"] = self.dataToSend?.rightInfo
-            data["upInfo"] = self.dataToSend?.upInfo
-            data["downInfo"] = self.dataToSend?.downInfo
-            data["sliderInfo"] = self.dataToSend?.sliderInfo
+            var data: Dictionary<String,NSData> = ["imageData":(self.dataToSend?.imageData)!]
+            
+          //  let a = (self.dataToSend?.imageData)!
+            
+           // data["imageData"] = a
+            
+         /*   data!["clickHideInfo"] = self.dataToSend?.clickHideInfo
+            data!["leftInfo"] = self.dataToSend?.leftInfo
+            data!["rightInfo"] = self.dataToSend?.rightInfo
+            data!["upInfo"] = self.dataToSend?.upInfo
+            data!["downInfo"] = self.dataToSend?.downInfo*/
+         /*   data["sliderInfo"] = self.dataToSend?.sliderInfo
             data["textViewArray"] = self.dataToSend?.textViewArray
             data["hints"] = self.dataToSend?.hints
             data["questions"] = self.dataToSend?.questions
@@ -125,6 +128,7 @@ class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDel
             
             
         //    self.appDelegate.sendData(testMsg, toPeer: self.selectPeer!)
+            self.appDelegate.sendData(data, toPeer: self.selectPeer!)
             
         }
     }
