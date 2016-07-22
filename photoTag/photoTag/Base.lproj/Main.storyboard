@@ -272,8 +272,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="baR-bK-yIu">
-                                            <rect key="frame" x="8" y="8" width="574" height="163"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="baR-bK-yIu">
+                                            <rect key="frame" x="18" y="8" width="574" height="163"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wid-aL-Xr9">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="163"/>

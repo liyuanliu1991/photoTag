@@ -29,7 +29,7 @@ class imageCollectionViewController: UICollectionViewController,UINavigationCont
         layout.numberOfColums = 2
         mylayout = layout
         
-        let plusButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: "Add:")
+        let plusButton = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(imageCollectionViewController.Add(_:)))
         navigationItem.rightBarButtonItem = plusButton
         
      //   let takePhotoButton = UIBarButtonItem(title: "Take Photo", style: .Plain, target: self, action: "TakePhoto:")
@@ -137,7 +137,7 @@ class imageCollectionViewController: UICollectionViewController,UINavigationCont
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let  k = photos!.photoSet.count
+       // let  k = photos!.photoSet.count
         if let photos = photos
         {
             return photos.photoSet.count
@@ -151,14 +151,14 @@ class imageCollectionViewController: UICollectionViewController,UINavigationCont
         
         cell.imageView.image = photos?.photoSet[indexPath.row].image
         
-        let i = indexPath.row
+       // let i = indexPath.row
         
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(imageCollectionViewController.respondToSwipe(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(imageCollectionViewController.respondToSwipe(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
       
@@ -239,7 +239,7 @@ extension imageCollectionViewController: WaterfallLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let k = indexPath.row
+       // let k = indexPath.row
         
         let width = CGRectGetWidth(collectionView.bounds) / 2
         let ratio =  (photos?.photoSet[indexPath.row].image?.size.height)! / (photos?.photoSet[indexPath.row].image?.size.width)!
@@ -265,7 +265,7 @@ extension imageCollectionViewController:UIImagePickerControllerDelegate{
             }
             
             
-            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+         //   let indexPath = NSIndexPath(forRow: 0, inSection: 0)
             
             let data = UIImagePNGRepresentation(theImage)
             let newAdd = imageCellModel(imageName: nil, checkIconName: nil,data: data)

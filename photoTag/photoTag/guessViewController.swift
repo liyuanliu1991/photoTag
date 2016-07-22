@@ -36,8 +36,8 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let recvButton = UIBarButtonItem(title: "Hide Me", style: .Plain, target: self, action: "stopAdvertising:")
-        navigationItem.rightBarButtonItem = recvButton
+       // let recvButton = UIBarButtonItem(title: "Hide Me", style: .Plain, target: self, action: "stopAdvertising:")
+       // navigationItem.rightBarButtonItem = recvButton
 
         self.shadow.hidden = true
         slider.hidden = true

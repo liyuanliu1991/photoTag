@@ -65,7 +65,7 @@ class peerListViewController: UIViewController,MPCManagerDelegate,UITableViewDel
     
     func foundPeer() {
         print("all peers:")
-        for (index,peer) in appDelegate.foundPeer.enumerate(){
+        for (_,peer) in appDelegate.foundPeer.enumerate(){
             print("found peer tablew view \( peer.displayName )")
         }
         

@@ -100,7 +100,7 @@ class albumTableViewController: UITableViewController {
             
             
             
-            let third = allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!]
+            _ = allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!]
             
             
             allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.insert(allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!], atIndex: (indexPath?.row)!)
@@ -208,18 +208,18 @@ class albumTableViewController: UITableViewController {
             cell.albumSubtitle.text = album.albumSubtitle
             cell.albumTitle.text = album.albumTitle
             cell.ratingImage.image = album.ratingImage
-            let ratingTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("ratingClick:"))
+            let ratingTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(albumTableViewController.ratingClick(_:)))
             
             cell.ratingImage.userInteractionEnabled = true
             cell.ratingImage.addGestureRecognizer(ratingTapRecognizer)
             
             
             cell.albumTitle.userInteractionEnabled = true
-            let albumTitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("editAlbumTitle:"))
+            let albumTitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(albumTableViewController.editAlbumTitle(_:)))
             cell.albumTitle.addGestureRecognizer(albumTitleTapRecognizer)
             
             cell.albumSubtitle.userInteractionEnabled = true
-            let albumSubtitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("editAlbumSubtitle:"))
+            let albumSubtitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(albumTableViewController.editAlbumSubtitle(_:)))
             cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
             
            /* let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
@@ -374,18 +374,18 @@ class albumTableViewController: UITableViewController {
         cell.rightImage.image = allDataSets.categoryCellSets[section].rightImage
         
         cell.rightImage.userInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("expandCellTap:"))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(albumTableViewController.expandCellTap(_:)))
         cell.rightImage.tag = section
         cell.rightImage.addGestureRecognizer(tapRecognizer)
         
         cell.leftImage.userInteractionEnabled = true
-        let tapRecognizerLeft = UITapGestureRecognizer(target: self, action: Selector("expandCellTapLeftImage:"))
+        let tapRecognizerLeft = UITapGestureRecognizer(target: self, action: #selector(albumTableViewController.expandCellTapLeftImage(_:)))
         cell.leftImage.tag = section
         cell.leftImage.addGestureRecognizer(tapRecognizerLeft)
 
 
         cell.categoryTitle.userInteractionEnabled = true
-        let tapRecognizerLeftTitle = UITapGestureRecognizer(target: self, action: Selector("expandCellTapTitle:"))
+        let tapRecognizerLeftTitle = UITapGestureRecognizer(target: self, action: #selector(albumTableViewController.expandCellTapTitle(_:)))
         cell.categoryTitle.tag = section
         cell.categoryTitle.addGestureRecognizer(tapRecognizerLeftTitle)
         
@@ -396,7 +396,7 @@ class albumTableViewController: UITableViewController {
         
         
         cell.categoryTitle.userInteractionEnabled = true
-        let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: Selector("editCategoryTitle:"))
+        let editCategoryTitle = UILongPressGestureRecognizer(target: self, action: #selector(albumTableViewController.editCategoryTitle(_:)))
         cell.categoryTitle.addGestureRecognizer(editCategoryTitle)
         
        
@@ -527,14 +527,14 @@ class albumTableViewController: UITableViewController {
     {
         tableView.beginUpdates()
         
-        let target = gesture.view! as? UIView
+        let target = gesture.view!
         
         //let tapLocation = gesture.locationInView(self.tableView)
         
         // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
         var whichSectionTapped:Int?
         
-        whichSectionTapped = target?.tag
+        whichSectionTapped = target.tag
         
         
         
@@ -562,14 +562,14 @@ class albumTableViewController: UITableViewController {
     {
         tableView.beginUpdates()
         
-        let target = gesture.view! as? UIView
+        let target = gesture.view! 
         
         //let tapLocation = gesture.locationInView(self.tableView)
         
        // let indexPath = self.tableView.indexPathForRowAtPoint(tapLocation)
         var whichSectionTapped:Int?
      
-        whichSectionTapped = target?.tag
+        whichSectionTapped = target.tag
         
         
         

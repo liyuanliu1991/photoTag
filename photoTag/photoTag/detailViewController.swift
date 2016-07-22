@@ -40,6 +40,8 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     
     var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
     
+    var clickHidenInfo = "Click Hidden Info"
+    
     var infoHideTextView = TextViewArray()
     
     var tapTimes = 0
@@ -114,28 +116,28 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         shadow.hidden = true
         // Do any additional setup after loading the view.
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(detailViewController.respondToSwipe(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(detailViewController.respondToSwipe(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(detailViewController.respondToSwipe(_:)))
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
         
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipe:")
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(detailViewController.respondToSwipe(_:)))
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         self.view.addGestureRecognizer(swipeUp)
         
-        let tapReconginzer = UITapGestureRecognizer(target: self, action: "tapClear:")
+        let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(detailViewController.tapClear(_:)))
         self.view.addGestureRecognizer(tapReconginzer)
         
         
-        let addSecretsRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressSecrets:")
+        let addSecretsRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(detailViewController.longPressSecrets(_:)))
         self.view.addGestureRecognizer(addSecretsRecognizer)
         //detailImageView.userInteractionEnabled = true
     }
@@ -177,10 +179,10 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         mpcManager?.sendData(data, toPeer: self.myselectedPeer!)*/
         
     }
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-      /*  self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
-        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)*/
-    }
+ /*   func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
+        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
+    }*/
     
      
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
@@ -226,11 +228,11 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 //-------------------------------------------------------------
                 
                 //swipe to left is deleteing this one
-                let swipeLeft = UISwipeGestureRecognizer(target: self, action: "deleteTextView:")
+                let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(detailViewController.deleteTextView(_:)))
                 swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
                 newtextView.addGestureRecognizer(swipeLeft)
                 
-                let tapToFind = UITapGestureRecognizer(target: self, action: "tapFind:")
+                let tapToFind = UITapGestureRecognizer(target: self, action: #selector(detailViewController.tapFind(_:)))
                 newtextView.addGestureRecognizer(tapToFind)
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
@@ -374,7 +376,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                     self.detailImageView.alpha = 0.5
                    
                     self.clickShowTextView.hidden = false
-                    self.clickShowTextView.text = "clickShowTextView"
+                    self.clickShowTextView.text = self.clickHidenInfo
                     
                     self.slider.hidden = false
                     self.shadow.hidden = true
@@ -390,7 +392,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                     self.shadow.hidden = true
                     self.detailImageView.alpha = 1.0
                     self.clickShowTextView.hidden = true
-                    self.clickShowTextView.text = "clickShowTextView"
+                    self.clickShowTextView.text = self.clickHidenInfo
                     
                     
                 },
