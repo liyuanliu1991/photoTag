@@ -356,6 +356,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             hideNumLeft.text = "\(infoHideTextView.infoHideTextView.count) eggs"
             switchHaveFun.hidden = true
             addSecretsLabel.hidden = true
+            shareButton.hidden = true
             
         }
         else
@@ -365,6 +366,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             hideNumLeft.hidden = true
             switchHaveFun.hidden = false
             addSecretsLabel.hidden = false
+            shareButton.hidden = false
             //then hide all found view
         }
         
@@ -386,7 +388,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 duration:1,
                 options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                 animations: {
-                    self.detailImageView.alpha = 0.5
+                    self.detailImageView.alpha = 0.2
                    
                     self.clickShowTextView.hidden = false
                     self.clickShowTextView.text = self.clickHidenInfo
