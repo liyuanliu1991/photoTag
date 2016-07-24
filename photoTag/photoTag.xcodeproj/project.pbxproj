@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC5F0F6C1D41B68200A552A4 /* peerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */; };
-		EC5F0F6E1D4218C900A552A4 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F0F6D1D4218C900A552A4 /* testViewController.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -77,7 +75,6 @@
 		ECF3320F1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */; };
 		ECF332151D2C32FD00AF4F94 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF332141D2C32FD00AF4F94 /* rightArrow.png */; };
 		ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF332161D2C37BF00AF4F94 /* enumCommon.swift */; };
-		ECF3D2181D3EF80D0051F889 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3D2171D3EF80D0051F889 /* MPCManager.swift */; };
 		ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */; };
 		ECF5BD931D3B5E0400B4F9C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */; };
 		ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */; };
@@ -101,8 +98,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peerListViewController.swift; sourceTree = "<group>"; };
-		EC5F0F6D1D4218C900A552A4 /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -177,7 +172,6 @@
 		ECF3320E1D2B272F00AF4F94 /* defaulNewAlbumCoverImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaulNewAlbumCoverImage.png; sourceTree = "<group>"; };
 		ECF332141D2C32FD00AF4F94 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		ECF332161D2C37BF00AF4F94 /* enumCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enumCommon.swift; sourceTree = "<group>"; };
-		ECF3D2171D3EF80D0051F889 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gradiantView.swift; sourceTree = "<group>"; };
 		ECF5BD921D3B5E0400B4F9C5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guessViewController.swift; sourceTree = "<group>"; };
@@ -352,8 +346,6 @@
 				ECBC62BC1D34C15900E9C9C2 /* imageCollectionViewController.swift */,
 				ECBC62E41D3731AB00E9C9C2 /* detailViewController.swift */,
 				ECF9C1FE1D3E32A2001B1737 /* guessViewController.swift */,
-				EC5F0F6B1D41B68200A552A4 /* peerListViewController.swift */,
-				EC5F0F6D1D4218C900A552A4 /* testViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,7 +394,6 @@
 		ECF9C1FD1D3E31FB001B1737 /* MPC */ = {
 			isa = PBXGroup;
 			children = (
-				ECF3D2171D3EF80D0051F889 /* MPCManager.swift */,
 			);
 			name = MPC;
 			sourceTree = "<group>";
@@ -595,14 +586,11 @@
 				ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */,
 				ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */,
 				ECBC62E51D3731AB00E9C9C2 /* detailViewController.swift in Sources */,
-				EC5F0F6E1D4218C900A552A4 /* testViewController.swift in Sources */,
 				ECBC62BB1D34C12A00E9C9C2 /* WaterfallLayout.swift in Sources */,
 				ECF332091D2B248B00AF4F94 /* albumCellModel.swift in Sources */,
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
 				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,
-				EC5F0F6C1D41B68200A552A4 /* peerListViewController.swift in Sources */,
-				ECF3D2181D3EF80D0051F889 /* MPCManager.swift in Sources */,
 				ECF9C1FF1D3E32A2001B1737 /* guessViewController.swift in Sources */,
 				ECF3320B1D2B24B100AF4F94 /* addNewAlbumCellModel.swift in Sources */,
 				ECF331FB1D2B177D00AF4F94 /* albumTableViewController.swift in Sources */,

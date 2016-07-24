@@ -8,11 +8,32 @@
 
 import UIKit
 import QuartzCore
+import MultipeerConnectivity
 
+class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDelegate  {
 
-class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDelegate {
-
-
+    let serviceType = "eggPhoto"
+    
+    var browser: MCBrowserViewController?
+   // var assistant: MCAdvertiserAssistant?
+    var session: MCSession?
+    var peerID: MCPeerID?
+    
+    func airdropInit()
+    {
+        self.peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+        self.session = MCSession(peer: peerID!)
+        self.session?.delegate = self
+        
+        self.browser = MCBrowserViewController(serviceType: serviceType, session: self.session!)
+        self.browser?.delegate = self
+        
+      //  self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
+        
+      //  self.assistant?.start()
+        
+    }
+    
     
     @IBOutlet weak var Guess: UISwitch!
     
@@ -49,6 +70,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        airdropInit()
         
         
       /*  detailImageView.clipsToBounds = true
@@ -142,21 +164,16 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         //detailImageView.userInteractionEnabled = true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "shareSegue"
-        {
-            let peerList = segue.destinationViewController as! peerListViewController
-            let imagedata = UIImagePNGRepresentation(detailImage!)
-            
-            
-            
-            let data = dataSend(imageData: imagedata!, clickHideInfo: self.clickHidenInfo , leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, textViewArray: infoHideTextView.infoHideTextView /*locationInfo: */, hints: ["Test Hints"], questions: nil, temptsNum: 10)
-            peerList.dataToSend = data
-        }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.session?.disconnect()
+        
     }
+   
    
     @IBAction func sharePhoto(sender: AnyObject) {
         
+        self.presentViewController(self.browser!, animated: true, completion: nil)
         
         
      /*   mpcManager = MPCManager()
@@ -471,6 +488,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             }
         }
         
+        
     }
     
     @IBAction func sliderChange(sender: UISlider) {
@@ -502,3 +520,75 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
 
 
 }
+
+extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate{
+    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
+        
+    }
+    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
+        
+    }
+    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
+        
+    }
+    func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+        switch state{
+        case MCSessionState.Connected:
+            print("connect")
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+            let msg = UIImageJPEGRepresentation(self.detailImage!, 1.0)
+            do
+            {
+                try self.session?.sendData(msg!, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
+                print("succee")
+            }
+            catch{
+                print("failure")
+            }
+            
+            //then transfering data
+        default:
+            break
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

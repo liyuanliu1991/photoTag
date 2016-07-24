@@ -9,12 +9,13 @@
 import UIKit
 import MultipeerConnectivity
 
-class guessViewController: UIViewController,MPCManagerDelegate {
+class guessViewController: UIViewController {
     
-    var appDelegate = MPCManager()
+    let serviceType = "eggPhoto"
     
-    var isAdvertising: Bool?
-    var testNSdata: NSData?
+    var assistant: MCAdvertiserAssistant?
+    var session: MCSession?
+    var peerID:MCPeerID?
 
     @IBOutlet weak var answerQuestion: UIButton!
     
@@ -24,33 +25,29 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     
     @IBOutlet weak var hintsButton: UIButton!
     
-  //  @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var guessImage: UIImageView!
     
-   // @IBOutlet weak var shadow: GradientView!
-    
-    
-    
+    func airDropInit()
+    {
+        self.peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+        self.session = MCSession(peer: peerID!)
+        self.session?.delegate = self
+        
+        self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
+        self.assistant?.start()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guessImage.image = UIImage(named: "1.png")
+        airDropInit()
+        guessImage.hidden = true
+        loadingIndicator.startAnimating()
         
-       // let recvButton = UIBarButtonItem(title: "Hide Me", style: .Plain, target: self, action: "stopAdvertising:")
-       // navigationItem.rightBarButtonItem = recvButton
-
-   //     self.shadow.hidden = true
-     //   slider.hidden = true
         
-        appDelegate.delegate = self
-       // appDelegate.browser?.startBrowsingForPeers()
-        appDelegate.advertiser?.startAdvertisingPeer()
-        isAdvertising = true
-
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleMPCReceivedDataWithNotification:"), name: "receivedMPCDataNotification", object: nil)
-   
+        
     }
 
     
@@ -60,75 +57,56 @@ class guessViewController: UIViewController,MPCManagerDelegate {
     }
     
     func foundPeer() {
-        print("found p")
+        
     }
     func lostPeer() {
-        print("lost")
+        
     }
     
     func invitationWasReceived(fromPeer: String) {
-        let alert = UIAlertController(title: "", message: "\(fromPeer) wants to send you photo.", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.appDelegate.invitationHandler!(true, self.appDelegate.session!)
-        }
-        
-        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            self.appDelegate.invitationHandler!(false, self.appDelegate.session!)
-        }
-        
-        alert.addAction(acceptAction)
-        alert.addAction(declineAction)
-        
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
         
     }
     func connectWithPeer(peerID: MCPeerID) {
-       NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-            print("connected with \(peerID.displayName )")
-        }
-       /* dispatch_async(dispatch_get_main_queue()) {
-            print("connected with \(peerID.displayName )")
-        }*/
     }
     
     func handleMPCReceivedDataWithNotification(notification: NSNotification)
     {
-        let recvData = notification.object as! Dictionary<String,AnyObject>
-        let data = recvData["data"] as? NSData
-        let fromPeer = recvData["fromPeer"] as! MCPeerID
-      /*  let imageDataString = recvData["imageData"] as? String
-        let imageData = imageDataString?.dataUsingEncoding(NSUTF8StringEncoding)
-        guessImage.image = UIImage(data:imageData!)
-        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-            self.guessImage.reloadInputViews()
-        })*/
-        
-        let dataString = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, AnyObject>
-        let imageDataString = dataString["imageData"] as! NSData
-        //let imageData = imageDataString.dataUsingEncoding(NSUTF8StringEncoding)
-        //print("recv \(message)")
-      //  self.guessImage.image = UIImage(data: imageDataString)
-        
-        
-     //   NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-        //    self.guessImage.reloadInputViews()
-       // }
-        self.testNSdata = imageDataString
-        performSegueWithIdentifier("testSegue", sender: self)
         
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "testSegue"{
-            let test = segue.destinationViewController as! testViewController
-            test.image = UIImage(data: self.testNSdata!)
-        }
-    }
-
+   
 
    
+}
+
+extension guessViewController:MCSessionDelegate{
+    func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+        switch state {
+        case MCSessionState.Connected:
+            print("connected with you")
+        default:
+            break
+        }
+        
+    }
+    func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
+        
+    }
+    func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
+        
+    }
+    func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
+        
+        dispatch_async(dispatch_get_main_queue()){
+           // var msg = NSString(data: data, encoding: NSUTF8StringEncoding)
+            self.loadingIndicator.stopAnimating()
+            self.guessImage.hidden = false
+            self.guessImage.image = UIImage(data: data)
+            self.guessImage.reloadInputViews()
+        }
+    }
 }
 
 
