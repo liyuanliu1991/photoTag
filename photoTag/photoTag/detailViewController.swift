@@ -11,11 +11,11 @@ import QuartzCore
 import MultipeerConnectivity
 
 class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDelegate  {
-
+    
     let serviceType = "eggPhoto"
     
     var browser: MCBrowserViewController?
-   // var assistant: MCAdvertiserAssistant?
+    // var assistant: MCAdvertiserAssistant?
     var session: MCSession?
     var peerID: MCPeerID?
     
@@ -28,9 +28,9 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         self.browser = MCBrowserViewController(serviceType: serviceType, session: self.session!)
         self.browser?.delegate = self
         
-      //  self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
+        //  self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
         
-      //  self.assistant?.start()
+        //  self.assistant?.start()
         
     }
     
@@ -48,7 +48,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     @IBOutlet weak var slider: UISlider!
     
     @IBOutlet weak var switchHaveFun: UISwitch!
-
+    
     @IBOutlet weak var addSecretsLabel: UILabel!
     
     @IBOutlet weak var guessLabel: UILabel!
@@ -73,19 +73,19 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         airdropInit()
         
         
-      /*  detailImageView.clipsToBounds = true
-        
-        detailImageView.layer.cornerRadius = detailImageView.frame.size.height/2;*/
+        /*  detailImageView.clipsToBounds = true
+         
+         detailImageView.layer.cornerRadius = detailImageView.frame.size.height/2;*/
         
         
         
         /*detailImageView.frame = self.view.bounds
-        detailImageView.blurImage()
-        self.view.addSubview(self.detailImageView)*/
+         detailImageView.blurImage()
+         self.view.addSubview(self.detailImageView)*/
         
         detailImageView.image = detailImage
         
-       // let imageData = UIImagePNGRepresentation(detailImage!)
+        // let imageData = UIImagePNGRepresentation(detailImage!)
         
         //detailImageView.image = UIImage(data: imageData!)
         
@@ -110,19 +110,19 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         guessLabel.hidden = false
         
         
-       /* let mask = CALayer()
+        /* let mask = CALayer()
+         
+         let test = UIImage(named: "section.png") as! CGImage
+         mask.contents = test
+         mask.frame = CGRectMake(0, 0, detailImageView.image!.size.width, detailImageView.image!.size.height)
+         detailImageView.layer.mask = mask
+         detailImageView.layer.masksToBounds = true*/
         
-            let test = UIImage(named: "section.png") as! CGImage
-        mask.contents = test
-        mask.frame = CGRectMake(0, 0, detailImageView.image!.size.width, detailImageView.image!.size.height)
-        detailImageView.layer.mask = mask
-        detailImageView.layer.masksToBounds = true*/
-        
-      /*  var aspect = (detailImage?.size.height)! / (self.view.frame.size.width)
-        
-        var newHeight = aspect * detailImageView.frame.width
-        
-        detailImageView.frame = CGRectMake(detailImageView.frame.origin.x, detailImageView.frame.origin.y, self.view.frame.size.width, newHeight)*/
+        /*  var aspect = (detailImage?.size.height)! / (self.view.frame.size.width)
+         
+         var newHeight = aspect * detailImageView.frame.width
+         
+         detailImageView.frame = CGRectMake(detailImageView.frame.origin.x, detailImageView.frame.origin.y, self.view.frame.size.width, newHeight)*/
         
         clickShowTextView.hidden = true
         
@@ -169,52 +169,52 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         self.session?.disconnect()
         
     }
-   
-   
+    
+    
     @IBAction func sharePhoto(sender: AnyObject) {
         
         self.presentViewController(self.browser!, animated: true, completion: nil)
         
         
-     /*   mpcManager = MPCManager()
-        mpcManager?.delegate = self
-        mpcManager?.browser?.startBrowsingForPeers()
-        
-        if mpcManager?.foundPeer.count > 0
-        {
-            
-            selectedPeer.delegate = self
-            selectedPeer.title = "Slect Device to Pair"
-            for each in (mpcManager?.foundPeer)!{
-                selectedPeer.addButtonWithTitle(each.displayName)
-            }
-            selectedPeer.show()
-        }
-        else
-        {
-            print("cannot find peers")
-            return
-        }
-        
-        //shareButton.titleLabel?.text = "Browsering"
-        
-        var test = Dictionary<String,String?>()
-        test["test"] = "test2"
-        
-        var question = Dictionary<String,String?>()
-        question["q1"] = "q2"
-        
-        let data = dataSend(imageData: UIImagePNGRepresentation(detailImage!)!, clickHideInfo: clickShowTextView.text, leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, locationInfo: test, hints: nil, questions: question, temptsNum: 10)
-        
-        mpcManager?.sendData(data, toPeer: self.myselectedPeer!)*/
+        /*   mpcManager = MPCManager()
+         mpcManager?.delegate = self
+         mpcManager?.browser?.startBrowsingForPeers()
+         
+         if mpcManager?.foundPeer.count > 0
+         {
+         
+         selectedPeer.delegate = self
+         selectedPeer.title = "Slect Device to Pair"
+         for each in (mpcManager?.foundPeer)!{
+         selectedPeer.addButtonWithTitle(each.displayName)
+         }
+         selectedPeer.show()
+         }
+         else
+         {
+         print("cannot find peers")
+         return
+         }
+         
+         //shareButton.titleLabel?.text = "Browsering"
+         
+         var test = Dictionary<String,String?>()
+         test["test"] = "test2"
+         
+         var question = Dictionary<String,String?>()
+         question["q1"] = "q2"
+         
+         let data = dataSend(imageData: UIImagePNGRepresentation(detailImage!)!, clickHideInfo: clickShowTextView.text, leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, locationInfo: test, hints: nil, questions: question, temptsNum: 10)
+         
+         mpcManager?.sendData(data, toPeer: self.myselectedPeer!)*/
         
     }
- /*   func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
-        mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
-    }*/
+    /*   func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+     self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
+     mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
+     }*/
     
-     
+    
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
     {
         if switchHaveFun.on{
@@ -225,12 +225,12 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             switch state{
             case UIGestureRecognizerState.Began:
                 let locationView = longPress.locationInView(detailImageView)
-               
+                
                 
                 let location = CGRect(x: locationView.x - 27.5 , y: locationView.y-27.5, width: 55, height: 55)
                 //let location = CGRect(origin: locationView, size: size)
                 
-               
+                
                 //create new text view
                 let newtextView = UITextView(frame: location)
                 self.detailImageView.addSubview(newtextView)
@@ -250,9 +250,9 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 
                 
                 //shadow effects-----------------------------------------------
-              /*  newtextView.layer.shadowOffset = CGSize(width: 10, height: 20)
-                newtextView.layer.shadowOpacity = 0.9
-                newtextView.layer.shadowRadius = 6*/
+                /*  newtextView.layer.shadowOffset = CGSize(width: 10, height: 20)
+                 newtextView.layer.shadowOpacity = 0.9
+                 newtextView.layer.shadowRadius = 6*/
                 
                 
                 //-------------------------------------------------------------
@@ -267,7 +267,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 
                 infoHideTextView.infoHideTextView.append(newtextView)
                 print("begin")
-               
+                
             case UIGestureRecognizerState.Changed:
                 print("change")
             case UIGestureRecognizerState.Ended:
@@ -278,7 +278,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             default:
                 break
             }
-
+            
             
         }
     }
@@ -304,7 +304,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             target?.hidden = false
             target!.editable = false
             target!.selectable = false
-        
+            
             target!.alpha = 0.75
             target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             
@@ -318,20 +318,20 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     func deleteTextView(gesture: UIGestureRecognizer){
         
         if !switchHaveFun.on{
-        return
+            return
         }
         let deleteObject = gesture.view as? UITextView
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
-        switch swipeGesture.direction{
+            switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
                 deleteObject?.removeFromSuperview()
                 infoHideTextView.infoHideTextView.removeObject(deleteObject!)
-            
-            
-        default:
-            break
-
+                
+                
+            default:
+                break
+                
             }
         }
     }
@@ -348,7 +348,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             }
             infoHideTextView.show()
             
-           
+            
         }
         else
         {
@@ -389,7 +389,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         
         
     }
-
+    
     
     
     func tapClear(gesture: UITapGestureRecognizer)
@@ -402,38 +402,38 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         if(tapTimes%2 == 1)
         {
             UIView.transitionWithView(detailImageView ,
-                duration:1,
-                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-                animations: {
-                    self.detailImageView.alpha = 0.2
-                   
-                    self.clickShowTextView.hidden = false
-                    self.clickShowTextView.text = self.clickHidenInfo
-                    
-                    self.slider.hidden = false
-                    self.shadow.hidden = true
+                                      duration:1,
+                                      options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                      animations: {
+                                        self.detailImageView.alpha = 0.2
+                                        
+                                        self.clickShowTextView.hidden = false
+                                        self.clickShowTextView.text = self.clickHidenInfo
+                                        
+                                        self.slider.hidden = false
+                                        self.shadow.hidden = true
                 },
-                completion: nil)
+                                      completion: nil)
         }
         else
         {
             UIView.transitionWithView(shadow,
-                duration:1,
-                options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-                animations: {
-                    self.shadow.hidden = true
-                    self.detailImageView.alpha = 1.0
-                    self.clickShowTextView.hidden = true
-                    self.clickShowTextView.text = self.clickHidenInfo
-                    
-                    
+                                      duration:1,
+                                      options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                      animations: {
+                                        self.shadow.hidden = true
+                                        self.detailImageView.alpha = 1.0
+                                        self.clickShowTextView.hidden = true
+                                        self.clickShowTextView.text = self.clickHidenInfo
+                                        
+                                        
                 },
-                completion: nil)
+                                      completion: nil)
             
             
         }
         
-
+        
     }
     func respondToSwipe(gesture: UIGestureRecognizer)
     {
@@ -444,43 +444,43 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
-
+                
                 UIView.transitionWithView(shadow ,
-                    duration:1,
-                    options:  UIViewAnimationOptions.TransitionCrossDissolve ,
-                    animations: { self.shadow.hidden = false
-                        self.information.text = self.upDownLeftRight[2]
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                          animations: { self.shadow.hidden = false
+                                            self.information.text = self.upDownLeftRight[2]
                     },
-                    completion: nil)
+                                          completion: nil)
                 
             case UISwipeGestureRecognizerDirection.Right:
                 
                 UIView.transitionWithView(shadow ,
-                    duration:1,
-                    options:  UIViewAnimationOptions.TransitionFlipFromRight ,
-                    animations: { self.shadow.hidden = false
-                        self.information.text = self.upDownLeftRight[3]
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionFlipFromRight ,
+                                          animations: { self.shadow.hidden = false
+                                            self.information.text = self.upDownLeftRight[3]
                     },
-                    completion: nil)
+                                          completion: nil)
             case UISwipeGestureRecognizerDirection.Up:
                 
                 UIView.transitionWithView(shadow ,
-                    duration:1,
-                    options:  UIViewAnimationOptions.TransitionCurlUp,
-                    animations: { self.shadow.hidden = false
-                        self.information.text = self.upDownLeftRight[0]
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCurlUp,
+                                          animations: { self.shadow.hidden = false
+                                            self.information.text = self.upDownLeftRight[0]
                     },
-                    completion: nil)
+                                          completion: nil)
             case UISwipeGestureRecognizerDirection.Down:
                 
                 UIView.transitionWithView(shadow ,
-                    duration:1,
-                    options:  UIViewAnimationOptions.TransitionCurlDown,
-                    animations: { self.shadow.hidden = false
-                        self.information.text = self.upDownLeftRight[1]
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCurlDown,
+                                          animations: { self.shadow.hidden = false
+                                            self.information.text = self.upDownLeftRight[1]
                     },
-                    completion: nil)
-
+                                          completion: nil)
+                
                 
             default:
                 break
@@ -501,7 +501,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -517,8 +517,8 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         return true
     }
     
-
-
+    
+    
 }
 
 extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate{
@@ -556,7 +556,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
                 print("failure")
             }
             
-            //then transfering data
+        //then transfering data
         default:
             break
         }

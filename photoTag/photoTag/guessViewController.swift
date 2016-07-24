@@ -17,6 +17,11 @@ class guessViewController: UIViewController {
     var session: MCSession?
     var peerID:MCPeerID?
 
+    @IBOutlet weak var clickShowText: UITextView!
+    
+    
+    
+    @IBOutlet weak var shadow: GradientView!
     @IBOutlet weak var answerQuestion: UIButton!
     
     @IBOutlet weak var temptsLeft: UILabel!
@@ -28,6 +33,9 @@ class guessViewController: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var guessImage: UIImageView!
+    
+    @IBOutlet weak var infoSlider: UISlider!
+    @IBOutlet weak var swipeText: UITextView!
     
     func airDropInit()
     {
@@ -45,8 +53,10 @@ class guessViewController: UIViewController {
         airDropInit()
         guessImage.hidden = true
         loadingIndicator.startAnimating()
-        
-        
+        infoSlider.hidden = true
+        shadow.hidden = true
+        swipeText.hidden = true
+        clickShowText.hidden = true
         
     }
 
@@ -100,7 +110,7 @@ extension guessViewController:MCSessionDelegate{
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         
         dispatch_async(dispatch_get_main_queue()){
-           // var msg = NSString(data: data, encoding: NSUTF8StringEncoding)
+            // var msg = NSString(data: data, encoding: NSUTF8StringEncoding)
             self.loadingIndicator.stopAnimating()
             self.guessImage.hidden = false
             self.guessImage.image = UIImage(data: data)
