@@ -138,6 +138,15 @@ class guessViewController: UIViewController {
         clickShowText.editable = false
         
         
+        
+        
+        SwiftSpinner.show("Waiting For Request.....")
+        
+       // self.demoSpinner()
+        
+    }
+    func addHideInfo()
+    {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.view.addGestureRecognizer(swipeLeft)
@@ -157,14 +166,8 @@ class guessViewController: UIViewController {
         
         
         let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
-        self.guessImage.addGestureRecognizer(tapReconginzer)
-        
-        SwiftSpinner.show("Waiting For Request.....")
-        
-       // self.demoSpinner()
-        
+        self.view.addGestureRecognizer(tapReconginzer)
     }
-    
     func tapClear(gesture: UITapGestureRecognizer)
     {
         self.guessImage.alpha = 1.0
@@ -193,7 +196,7 @@ class guessViewController: UIViewController {
         }
         else
         {
-            UIView.transitionWithView(guessImage,
+            UIView.transitionWithView(shadow,
                                       duration:1,
                                       options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                                       animations: {
@@ -330,9 +333,9 @@ extension guessViewController:MCSessionDelegate{
             
             
         case MCSessionState.Connected:
-            delay(seconds: 1.0, completion: {
-                SwiftSpinner.show("Connected!")
-            })
+           // delay(seconds: 1.0, completion: {
+            SwiftSpinner.show("Connected!")
+           // })
             
             print("connected with you")
           //  SwiftSpinner.hide()
@@ -356,31 +359,26 @@ extension guessViewController:MCSessionDelegate{
     func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
         
     }
+    
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         
        
-        if loadTimes == 0
-        {
-          
-            
-            
-            
-            self.delay(seconds: 1.0, completion: {
-               // SwiftSpinner.show("Loading...")
-                SwiftSpinner.show("Loaded!")
-                SwiftSpinner.hide()
-                self.loadTimes = 2
-            })
-            
-            
-        }
-        else
-        {
-            loadTimes = 0
-        }
+        
         
         dispatch_async(dispatch_get_main_queue()){
             
+            if self.loadTimes == 0
+            {
+                
+                SwiftSpinner.show("Loading Data....")
+                self.loadTimes = 2
+                
+            }
+            else
+            {
+                //SwiftSpinner.show("Loaded!")
+                self.loadTimes = 0
+            }
             
             
             self.guessImage.hidden = false
@@ -396,8 +394,17 @@ extension guessViewController:MCSessionDelegate{
                 self.dataReceived = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Dictionary<String,[String]>
                 
             }
+            if self.loadTimes != 2
+            {
+                self.addHideInfo()
+                SwiftSpinner.showWithDuration(1.0, title: "Loaded!")
+               
+                
+            }
             
         }
+        
+        
     }
 }
 
