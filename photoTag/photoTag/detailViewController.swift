@@ -489,6 +489,20 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         return true
     }
     
+    func getLocationStringArray() -> [String]
+    {
+        var result = [String]()
+        
+        for each in infoHideTextView.infoHideTextView{
+            let frame = each.frame
+            let x = frame.origin.x
+            let y = frame.origin.y
+            
+            result.append(x.description + y.description + each.text)
+        }
+        
+        return result
+    }
     
     
 }
@@ -520,7 +534,10 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             
             let imageData = UIImageJPEGRepresentation(self.detailImage!, 1.0)
           
-            let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":["x1,y1,info","x2,y2,info"],"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
+            let locationArray = self.getLocationStringArray()
+            
+            
+            let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray,"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
             
             
             let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
@@ -543,7 +560,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
                 print("failure")
             }
             
-        //then transfering data
+        
         default:
             break
         }
