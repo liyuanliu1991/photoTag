@@ -138,9 +138,14 @@ class guessViewController: UIViewController {
         clickShowText.editable = false
         
         
+       // delay(seconds: 2.0, completion: {
+            SwiftSpinner.show("Waiting For Request.....").addTapHandler({
+                print("tapped")
+                SwiftSpinner.hide()
+                }, subtitle: "Tap to quit while waiting! This will affect only the current operation.")
+       // })
         
-        
-        SwiftSpinner.show("Waiting For Request.....")
+        //SwiftSpinner.show("Waiting For Request.....")
         
        // self.demoSpinner()
         
@@ -167,6 +172,19 @@ class guessViewController: UIViewController {
         
         let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
         self.view.addGestureRecognizer(tapReconginzer)
+        
+        let temp = dataReceived!["tempts"]![0]
+        if let tempInt = Int(temp)
+        {
+            self.temptsLeft.text = "\(tempInt) tempts left"
+        }
+        let eggs = dataReceived!["locationInfo"]
+        if let eggNum = eggs?.count
+        {
+            self.eggsLeft.text = "\(eggNum) left"
+        }
+        
+        
     }
     func tapClear(gesture: UITapGestureRecognizer)
     {
@@ -224,6 +242,8 @@ class guessViewController: UIViewController {
         {
             return
         }
+        
+        self.clickShowText.hidden = true
         
         let upDownLeftRight = dataReceived!["swipeInfo"]
         
@@ -333,17 +353,12 @@ extension guessViewController:MCSessionDelegate{
             
             
         case MCSessionState.Connected:
-           // delay(seconds: 1.0, completion: {
+           
             SwiftSpinner.show("Connected!")
-           // })
+          
             
             print("connected with you")
-          //  SwiftSpinner.hide()
-          /*  delay(seconds: 0.5, completion: {
-                SwiftSpinner.setTitleFont(nil)
-                SwiftSpinner.showWithDuration(0.5, title: "Connected", animated: false)
-            })*/
-        
+            
             
         default:
             break
