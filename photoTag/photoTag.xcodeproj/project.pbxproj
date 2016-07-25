@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0DB47B1D45886E00555C8C /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -98,6 +99,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 		ECF332181D2C37C800AF4F94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */,
 				ECF332161D2C37BF00AF4F94 /* enumCommon.swift */,
 			);
 			name = Common;
@@ -583,6 +586,7 @@
 				ECBC62BD1D34C15900E9C9C2 /* imageCollectionViewController.swift in Sources */,
 				ECF3320D1D2B24C700AF4F94 /* categoryCellModel.swift in Sources */,
 				ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */,
+				EC0DB47B1D45886E00555C8C /* NSDataExtensions.swift in Sources */,
 				ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */,
 				ECF331C21D2B0BF000AF4F94 /* photoTag.xcdatamodeld in Sources */,
 				ECBC62E51D3731AB00E9C9C2 /* detailViewController.swift in Sources */,

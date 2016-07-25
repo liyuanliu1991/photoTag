@@ -16,6 +16,12 @@ class guessViewController: UIViewController {
     var assistant: MCAdvertiserAssistant?
     var session: MCSession?
     var peerID:MCPeerID?
+    
+    var dataReceived:Dictionary<String,[String]>?
+    
+    var tapTimes = 0
+    
+    var done = true
 
     @IBOutlet weak var clickShowText: UITextView!
     
@@ -46,7 +52,10 @@ class guessViewController: UIViewController {
         self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
         self.assistant?.start()
     }
-    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        assistant?.stop()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,11 +64,157 @@ class guessViewController: UIViewController {
         loadingIndicator.startAnimating()
         infoSlider.hidden = true
         shadow.hidden = true
-        swipeText.hidden = true
+       // swipeText.hidden = true
+        swipeText.editable = false
         clickShowText.hidden = true
+        clickShowText.editable = false
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        
+        let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
+        self.view.addGestureRecognizer(tapReconginzer)
         
     }
+    
+    func tapClear(gesture: UITapGestureRecognizer)
+    {
+        self.guessImage.alpha = 1.0
+        if !done{
+            return
+        }
+        let clickInfo = dataReceived!["clickHidenInfo"]
+        
+        tapTimes = tapTimes + 1
+        
+        if(tapTimes%2 == 1)
+        {
+            UIView.transitionWithView(guessImage ,
+                                      duration:1,
+                                      options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                      animations: {
+                                        self.guessImage.alpha = 0.2
+                                        
+                                        self.clickShowText.hidden = false
+                                        self.clickShowText.text = clickInfo![0]
+                                        
+                                        self.infoSlider.hidden = false
+                                        self.shadow.hidden = true
+                },
+                                      completion: nil)
+        }
+        else
+        {
+            UIView.transitionWithView(guessImage,
+                                      duration:1,
+                                      options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                      animations: {
+                                        self.shadow.hidden = true
+                                        self.guessImage.alpha = 1.0
+                                        self.clickShowText.hidden = true
+                                      //  self.clickShowText.text = clickInfo![0]
+                                        
+                                        
+                },
+                                      completion: nil)
+            
+            
+        }
+        
+        
+    
+    }
 
+    func respondToSwipe(gesture: UIGestureRecognizer)
+    {
+        self.guessImage.alpha = 1.0
+        
+        if !done
+        {
+            return
+        }
+        
+        let upDownLeftRight = dataReceived!["swipeInfo"]
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizerDirection.Left:
+                
+                UIView.transitionWithView(shadow ,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                          animations: { self.shadow.hidden = false
+                                            
+                                            self.swipeText.text = upDownLeftRight![2]
+                    },
+                                          completion: nil)
+                
+            case UISwipeGestureRecognizerDirection.Right:
+                
+                UIView.transitionWithView(shadow ,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionFlipFromRight ,
+                                          animations: { self.shadow.hidden = false
+                                            self.swipeText.text = upDownLeftRight![3]
+                    },
+                                          completion: nil)
+            case UISwipeGestureRecognizerDirection.Up:
+                
+                UIView.transitionWithView(shadow ,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCurlUp,
+                                          animations: { self.shadow.hidden = false
+                                            self.swipeText.text = upDownLeftRight![0]
+                    },
+                                          completion: nil)
+            case UISwipeGestureRecognizerDirection.Down:
+                
+                UIView.transitionWithView(shadow ,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCurlDown,
+                                          animations: { self.shadow.hidden = false
+                                            self.swipeText.text = upDownLeftRight![1]
+                    },
+                                          completion: nil)
+                
+                
+            default:
+                break
+                
+            }
+        }
+
+        
+    }
+    
+    @IBAction func sliderChange(sender: UISlider) {
+        
+        let selectedValue = Float(sender.value)
+        let result = selectedValue / Float(10)
+        guessImage.alpha = CGFloat(result)
+        clickShowText.hidden = false
+        let b = dataReceived!["sliderInfo"]
+        clickShowText.text = b![Int(selectedValue)]
+        
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -110,11 +265,21 @@ extension guessViewController:MCSessionDelegate{
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         
         dispatch_async(dispatch_get_main_queue()){
-            // var msg = NSString(data: data, encoding: NSUTF8StringEncoding)
+            
             self.loadingIndicator.stopAnimating()
             self.guessImage.hidden = false
-            self.guessImage.image = UIImage(data: data)
-            self.guessImage.reloadInputViews()
+           
+            let dict = NSKeyedUnarchiver.unarchiveObjectWithData(data)
+            if dict == nil
+            {
+                self.guessImage.image = UIImage(data: data)
+                self.guessImage.reloadInputViews()
+            }
+            else
+            {
+                self.dataReceived = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Dictionary<String,[String]>
+                
+            }
         }
     }
 }

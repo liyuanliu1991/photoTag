@@ -133,6 +133,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         clickShowTextView.delegate = self
         information.delegate = self
         
+        information.hidden = false
         
         
         shadow.hidden = true
@@ -424,7 +425,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                                         self.shadow.hidden = true
                                         self.detailImageView.alpha = 1.0
                                         self.clickShowTextView.hidden = true
-                                        self.clickShowTextView.text = self.clickHidenInfo
+                                      //  self.clickShowTextView.text = self.clickHidenInfo
                                         
                                         
                 },
@@ -441,6 +442,9 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         if switchHaveFun.on || Guess.on{
             return
         }
+        
+        
+        
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
@@ -546,10 +550,24 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             print("connect")
             self.dismissViewControllerAnimated(true, completion: nil)
             
-            let msg = UIImageJPEGRepresentation(self.detailImage!, 1.0)
+            let imageData = UIImageJPEGRepresentation(self.detailImage!, 1.0)
+          
+            let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":["x1,y1,info","x2,y2,info"],"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["tempts you can use"]]
+            
+            let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
+            
             do
             {
-                try self.session?.sendData(msg!, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
+                try self.session?.sendData(imageData!, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
+                print("succee")
+            }
+            catch{
+                print("failure")
+            }
+            
+            do
+            {
+                try self.session?.sendData(msgData, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
                 print("succee")
             }
             catch{

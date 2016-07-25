@@ -68,12 +68,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1vg-P6-Sei">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="0.0" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="1vg-P6-Sei">
                                 <rect key="frame" x="28" y="571" width="544" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="8cs-4x-331" eventType="valueChanged" id="dLN-Ie-7Ea"/>
+                                </connections>
                             </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-qJ-j6B">
-                                <rect key="frame" x="150" y="254" width="300" height="167"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-qJ-j6B">
+                                <rect key="frame" x="150" y="204" width="300" height="217"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="udO-0L-Wt3"/>
                                 </constraints>
@@ -84,20 +87,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKy-8X-YA7" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104" width="600" height="467"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Eb-2g-pdH">
-                                        <rect key="frame" x="120" y="200" width="360" height="167"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9Eb-2g-pdH">
+                                        <rect key="frame" x="120" y="300" width="360" height="117"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="9Eb-2g-pdH" secondAttribute="trailing" constant="120" id="HZf-ut-4H6"/>
                                     <constraint firstItem="9Eb-2g-pdH" firstAttribute="leading" secondItem="QKy-8X-YA7" secondAttribute="leading" constant="120" id="IvD-V2-7kH"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Eb-2g-pdH" secondAttribute="bottom" constant="100" id="M4E-1i-k2J"/>
-                                    <constraint firstItem="9Eb-2g-pdH" firstAttribute="top" secondItem="QKy-8X-YA7" secondAttribute="top" constant="200" id="mG8-ia-Lbr"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Eb-2g-pdH" secondAttribute="bottom" constant="50" id="M4E-1i-k2J"/>
+                                    <constraint firstItem="9Eb-2g-pdH" firstAttribute="top" secondItem="QKy-8X-YA7" secondAttribute="top" constant="300" id="mG8-ia-Lbr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -109,7 +113,7 @@
                             <constraint firstItem="1h1-Br-cz4" firstAttribute="top" secondItem="OLy-1r-aTU" secondAttribute="bottom" id="EXV-NH-EhR"/>
                             <constraint firstItem="1vg-P6-Sei" firstAttribute="leading" secondItem="VVW-6f-ZsO" secondAttribute="leading" constant="30" id="Hc7-tB-0KB"/>
                             <constraint firstAttribute="trailing" secondItem="1vg-P6-Sei" secondAttribute="trailing" constant="30" id="Ix7-FG-Cn5"/>
-                            <constraint firstItem="I5Y-qJ-j6B" firstAttribute="top" secondItem="1h1-Br-cz4" secondAttribute="bottom" constant="150" id="Jl4-mU-HLj"/>
+                            <constraint firstItem="I5Y-qJ-j6B" firstAttribute="top" secondItem="1h1-Br-cz4" secondAttribute="bottom" constant="100" id="Jl4-mU-HLj"/>
                             <constraint firstItem="j2i-MO-BXS" firstAttribute="top" secondItem="1h1-Br-cz4" secondAttribute="bottom" id="LQR-50-f2j"/>
                             <constraint firstItem="1vg-P6-Sei" firstAttribute="top" secondItem="I5Y-qJ-j6B" secondAttribute="bottom" constant="150" id="bLH-bJ-NcV"/>
                             <constraint firstAttribute="trailing" secondItem="QKy-8X-YA7" secondAttribute="trailing" id="bOn-BA-gKh"/>
@@ -528,11 +532,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-bR-bMQ">
                                 <rect key="frame" x="0.0" y="104" width="600" height="422"/>
                             </imageView>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-zb-0qq" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
+                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QW3-zb-0qq" customClass="GradientView" customModule="photoTag" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="104" width="600" height="452"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Hk-cad">
-                                        <rect key="frame" x="120" y="200" width="360" height="152"/>
+                                        <rect key="frame" x="120" y="300" width="360" height="102"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -540,10 +544,10 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qJW-Hk-cad" secondAttribute="bottom" constant="100" id="4pP-s2-eNQ"/>
-                                    <constraint firstItem="qJW-Hk-cad" firstAttribute="top" secondItem="QW3-zb-0qq" secondAttribute="top" constant="200" id="OQb-PL-X2S"/>
+                                    <constraint firstAttribute="bottom" secondItem="qJW-Hk-cad" secondAttribute="bottom" constant="50" id="4pP-s2-eNQ"/>
+                                    <constraint firstItem="qJW-Hk-cad" firstAttribute="top" secondItem="QW3-zb-0qq" secondAttribute="top" constant="300" id="OQb-PL-X2S"/>
                                     <constraint firstItem="qJW-Hk-cad" firstAttribute="leading" secondItem="QW3-zb-0qq" secondAttribute="leading" constant="120" id="hIb-yb-SVl"/>
                                     <constraint firstAttribute="trailing" secondItem="qJW-Hk-cad" secondAttribute="trailing" constant="120" id="nYd-de-lq2"/>
                                 </constraints>
