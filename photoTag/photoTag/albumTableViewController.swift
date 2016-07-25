@@ -17,22 +17,8 @@ class albumTableViewController: UITableViewController {
     var expandCell = [Int]()
     var initPath: NSIndexPath?
     
-    func test()
-    {
-       /* let msgtext = ["test","my msg"]
-        let msgData = NSKeyedArchiver.archivedDataWithRootObject(msgtext)
-        
-        let dict = NSKeyedUnarchiver.unarchiveObjectWithData(msgData) as! [String]
-        
-        print("dict:\(dict[0])+\(dict[1])")*/
-        
-       // var test = pack(imageDataLength: 10)
-    //    test.imageDataLength = 10
-       // var data = test.archive()
-       // var result = unarchive(data)
-        
-        //print("test rsult:\(result?.imageDataLength)")
-    }
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        // test()

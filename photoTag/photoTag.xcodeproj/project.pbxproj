@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC0DB47B1D45886E00555C8C /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */; };
+		EC35B3561D45FF0400AF3DCB /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC35B3551D45FF0400AF3DCB /* SwiftSpinner.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -100,6 +101,7 @@
 
 /* Begin PBXFileReference section */
 		EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
+		EC35B3551D45FF0400AF3DCB /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		ECF331EE1D2B10A500AF4F94 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC35B3551D45FF0400AF3DCB /* SwiftSpinner.swift */,
 				ECF332021D2B1EA400AF4F94 /* categoryTableViewCell.swift */,
 				ECF331FC1D2B182D00AF4F94 /* albumTableViewCell.swift */,
 				ECF332061D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift */,
@@ -585,6 +588,7 @@
 				ECBC62C11D34C1FA00E9C9C2 /* imageCollectionViewCell.swift in Sources */,
 				ECBC62BD1D34C15900E9C9C2 /* imageCollectionViewController.swift in Sources */,
 				ECF3320D1D2B24C700AF4F94 /* categoryCellModel.swift in Sources */,
+				EC35B3561D45FF0400AF3DCB /* SwiftSpinner.swift in Sources */,
 				ECF42E6E1D38A4D000569DE3 /* gradiantView.swift in Sources */,
 				EC0DB47B1D45886E00555C8C /* NSDataExtensions.swift in Sources */,
 				ECF332071D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift in Sources */,

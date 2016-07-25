@@ -36,34 +36,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-MO-BXS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-MO-BXS">
                                 <rect key="frame" x="0.0" y="104" width="600" height="466"/>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Qdb-5M-o8f">
-                                <rect key="frame" x="150" y="304" width="300" height="96"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-Br-cz4">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-Br-cz4">
                                 <rect key="frame" x="0.0" y="64" width="600" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzS-74-gjU">
-                                        <rect key="frame" x="0.0" y="5" width="147" height="30"/>
-                                        <state key="normal" title="Answer Question"/>
+                                        <rect key="frame" x="0.0" y="5" width="76" height="30"/>
+                                        <state key="normal" title="Q&amp;A"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Tempts Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je3-sg-02m">
-                                        <rect key="frame" x="186" y="10" width="144" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Tempts Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je3-sg-02m">
+                                        <rect key="frame" x="76" y="11" width="241" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Egss Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-j7-RRf">
-                                        <rect key="frame" x="369" y="10" width="117" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Egss Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYw-j7-RRf">
+                                        <rect key="frame" x="317" y="11" width="198" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MoK-Zf-JxG">
-                                        <rect key="frame" x="525" y="5" width="75" height="30"/>
+                                        <rect key="frame" x="515" y="5" width="85" height="30"/>
                                         <state key="normal" title="Hints"/>
                                     </button>
                                 </subviews>
@@ -118,14 +114,10 @@
                             <constraint firstItem="1vg-P6-Sei" firstAttribute="top" secondItem="I5Y-qJ-j6B" secondAttribute="bottom" constant="150" id="bLH-bJ-NcV"/>
                             <constraint firstAttribute="trailing" secondItem="QKy-8X-YA7" secondAttribute="trailing" id="bOn-BA-gKh"/>
                             <constraint firstItem="1h1-Br-cz4" firstAttribute="leading" secondItem="VVW-6f-ZsO" secondAttribute="leading" id="eY0-hv-HAE"/>
-                            <constraint firstItem="OwU-wW-oHO" firstAttribute="top" secondItem="Qdb-5M-o8f" secondAttribute="bottom" constant="200" id="gC7-IX-EQh"/>
-                            <constraint firstItem="Qdb-5M-o8f" firstAttribute="top" secondItem="1h1-Br-cz4" secondAttribute="bottom" constant="200" id="kw2-XX-eud"/>
                             <constraint firstItem="QKy-8X-YA7" firstAttribute="leading" secondItem="VVW-6f-ZsO" secondAttribute="leading" id="lhp-JE-pjv"/>
                             <constraint firstItem="j2i-MO-BXS" firstAttribute="top" secondItem="OLy-1r-aTU" secondAttribute="bottom" constant="40" id="mRg-yo-0bP"/>
                             <constraint firstItem="j2i-MO-BXS" firstAttribute="leading" secondItem="VVW-6f-ZsO" secondAttribute="leading" id="oEm-64-jYu"/>
                             <constraint firstItem="QKy-8X-YA7" firstAttribute="top" secondItem="1h1-Br-cz4" secondAttribute="bottom" id="s1u-Nl-bpf"/>
-                            <constraint firstItem="Qdb-5M-o8f" firstAttribute="leading" secondItem="VVW-6f-ZsO" secondAttribute="leading" constant="150" id="tOY-K0-blf"/>
-                            <constraint firstAttribute="trailing" secondItem="Qdb-5M-o8f" secondAttribute="trailing" constant="150" id="vMV-se-IFk"/>
                             <constraint firstAttribute="trailing" secondItem="1h1-Br-cz4" secondAttribute="trailing" id="vSS-sX-6aa"/>
                             <constraint firstItem="OwU-wW-oHO" firstAttribute="top" secondItem="j2i-MO-BXS" secondAttribute="bottom" constant="30" id="wSq-Ie-mm5"/>
                             <constraint firstItem="1vg-P6-Sei" firstAttribute="top" secondItem="j2i-MO-BXS" secondAttribute="bottom" constant="1" id="xnv-bq-lUd"/>
@@ -138,7 +130,6 @@
                         <outlet property="guessImage" destination="j2i-MO-BXS" id="gVi-Kc-Ddy"/>
                         <outlet property="hintsButton" destination="MoK-Zf-JxG" id="XUO-at-oXU"/>
                         <outlet property="infoSlider" destination="1vg-P6-Sei" id="ETd-ik-Q8t"/>
-                        <outlet property="loadingIndicator" destination="Qdb-5M-o8f" id="Lpk-AW-OGS"/>
                         <outlet property="shadow" destination="QKy-8X-YA7" id="yPk-1z-na5"/>
                         <outlet property="swipeText" destination="9Eb-2g-pdH" id="ZqH-92-wdl"/>
                         <outlet property="temptsLeft" destination="Je3-sg-02m" id="bgA-KD-gh7"/>

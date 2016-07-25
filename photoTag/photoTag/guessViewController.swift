@@ -20,7 +20,7 @@ class guessViewController: UIViewController {
     var dataReceived:Dictionary<String,[String]>?
     
     var tapTimes = 0
-    
+    var loadTimes = 0
     var done = true
 
     @IBOutlet weak var clickShowText: UITextView!
@@ -36,7 +36,7 @@ class guessViewController: UIViewController {
     
     @IBOutlet weak var hintsButton: UIButton!
     
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+   
     
     @IBOutlet weak var guessImage: UIImageView!
     
@@ -56,12 +56,80 @@ class guessViewController: UIViewController {
         super.viewWillDisappear(animated)
         assistant?.stop()
     }
+    func delay(seconds seconds: Double, completion:()->()) {
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+        
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            completion()
+        }
+    
+    }
+    func demoSpinner() {
+        
+      //  SwiftSpinner.showWithDelay(5, title: "Shouldn't see this one", animated: true)
+      //  SwiftSpinner.hide()
+        
+        SwiftSpinner.showWithDelay(1.0, title: "Connecting...", animated: true)
+        
+        delay(seconds: 2.0, completion: {
+            SwiftSpinner.show("Connecting \nto satellite...").addTapHandler({
+                print("tapped")
+                SwiftSpinner.hide()
+                }, subtitle: "Tap to hide while connecting! This will affect only the current operation.")
+        })
+        
+        delay(seconds: 6.0, completion: {
+            SwiftSpinner.show("Authenticating user account")
+        })
+        
+        delay(seconds: 10.0, completion: {
+            SwiftSpinner.show("Failed to connect, waiting...", animated: false)
+        })
+        
+        delay(seconds: 14.0, completion: {
+            SwiftSpinner.setTitleFont(UIFont(name: "Futura", size: 22.0))
+            SwiftSpinner.show("Retrying to authenticate")
+        })
+        
+        delay(seconds: 18.0, completion: {
+            SwiftSpinner.show("Connecting...")
+        })
+        
+        delay(seconds: 21.0, completion: {
+            SwiftSpinner.setTitleFont(nil)
+            SwiftSpinner.showWithDuration(2.0, title: "Connected", animated: false)
+        })
+        
+        delay(seconds: 24.0) {
+            NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(self.timerFire), userInfo: nil, repeats: true)
+        }
+        
+        delay(seconds: 34.0, completion: {
+            self.demoSpinner()
+        })
+    }
+    var progress = 0.0
+    func timerFire(timer: NSTimer) {
+        progress += (timer.timeInterval/5)
+        SwiftSpinner.showWithProgress(progress, title: "Downloading Data...")
+        if progress >= 1 {
+            timer.invalidate()
+            SwiftSpinner.showWithDuration(2.0, title: "Complete!", animated: false)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+      //  SwiftSpinner.showWithDelay(10.0, title: "Waiting For Request....", animated: true)
+        
+        
+        
         airDropInit()
         guessImage.hidden = true
-        loadingIndicator.startAnimating()
+        
+        
+        let lSize = CGSize(width: 300.0, height: 300.0)
         infoSlider.hidden = true
         shadow.hidden = true
        // swipeText.hidden = true
@@ -89,7 +157,11 @@ class guessViewController: UIViewController {
         
         
         let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
-        self.view.addGestureRecognizer(tapReconginzer)
+        self.guessImage.addGestureRecognizer(tapReconginzer)
+        
+        SwiftSpinner.show("Waiting For Request.....")
+        
+       // self.demoSpinner()
         
     }
     
@@ -246,8 +318,30 @@ class guessViewController: UIViewController {
 extension guessViewController:MCSessionDelegate{
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state {
+        case MCSessionState.Connecting:
+          /*  delay(seconds: 1.0, completion: {
+                SwiftSpinner.setTitleFont(nil)
+                SwiftSpinner.showWithDuration(1.0, title: "Connecting", animated: false)
+            })*/
+            delay(seconds: 0.5, completion: {
+                SwiftSpinner.setTitleFont(nil)
+                SwiftSpinner.show("Connecting.....")
+            })
+            
+            
         case MCSessionState.Connected:
+            delay(seconds: 1.0, completion: {
+                SwiftSpinner.show("Connected!")
+            })
+            
             print("connected with you")
+          //  SwiftSpinner.hide()
+          /*  delay(seconds: 0.5, completion: {
+                SwiftSpinner.setTitleFont(nil)
+                SwiftSpinner.showWithDuration(0.5, title: "Connected", animated: false)
+            })*/
+        
+            
         default:
             break
         }
@@ -264,9 +358,31 @@ extension guessViewController:MCSessionDelegate{
     }
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         
+       
+        if loadTimes == 0
+        {
+          
+            
+            
+            
+            self.delay(seconds: 1.0, completion: {
+               // SwiftSpinner.show("Loading...")
+                SwiftSpinner.show("Loaded!")
+                SwiftSpinner.hide()
+                self.loadTimes = 2
+            })
+            
+            
+        }
+        else
+        {
+            loadTimes = 0
+        }
+        
         dispatch_async(dispatch_get_main_queue()){
             
-            self.loadingIndicator.stopAnimating()
+            
+            
             self.guessImage.hidden = false
            
             let dict = NSKeyedUnarchiver.unarchiveObjectWithData(data)
@@ -280,6 +396,7 @@ extension guessViewController:MCSessionDelegate{
                 self.dataReceived = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Dictionary<String,[String]>
                 
             }
+            
         }
     }
 }

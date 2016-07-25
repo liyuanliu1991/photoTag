@@ -175,39 +175,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     @IBAction func sharePhoto(sender: AnyObject) {
         
         self.presentViewController(self.browser!, animated: true, completion: nil)
-        
-        
-        /*   mpcManager = MPCManager()
-         mpcManager?.delegate = self
-         mpcManager?.browser?.startBrowsingForPeers()
-         
-         if mpcManager?.foundPeer.count > 0
-         {
-         
-         selectedPeer.delegate = self
-         selectedPeer.title = "Slect Device to Pair"
-         for each in (mpcManager?.foundPeer)!{
-         selectedPeer.addButtonWithTitle(each.displayName)
-         }
-         selectedPeer.show()
-         }
-         else
-         {
-         print("cannot find peers")
-         return
-         }
-         
-         //shareButton.titleLabel?.text = "Browsering"
-         
-         var test = Dictionary<String,String?>()
-         test["test"] = "test2"
-         
-         var question = Dictionary<String,String?>()
-         question["q1"] = "q2"
-         
-         let data = dataSend(imageData: UIImagePNGRepresentation(detailImage!)!, clickHideInfo: clickShowTextView.text, leftInfo: upDownLeftRight[2], rightInfo: upDownLeftRight[3], upInfo: upDownLeftRight[0], downInfo: upDownLeftRight[1], sliderInfo: slideHiddenInforation, locationInfo: test, hints: nil, questions: question, temptsNum: 10)
-         
-         mpcManager?.sendData(data, toPeer: self.myselectedPeer!)*/
+      
         
     }
     /*   func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -424,7 +392,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                                       animations: {
                                         self.shadow.hidden = true
                                         self.detailImageView.alpha = 1.0
-                                        self.clickShowTextView.hidden = true
+                                      //  self.clickShowTextView.hidden = true
                                       //  self.clickShowTextView.text = self.clickHidenInfo
                                         
                                         
