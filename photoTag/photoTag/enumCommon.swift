@@ -100,6 +100,23 @@ extension UITextView{
     }
 }
 
+extension String{
+    func getLocationAndInfo() -> [String]
+    {
+        var result = [String]()
+        var array = self.componentsSeparatedByString(",")
+        result.append(array[0])
+        result.append(array[1])
+        let a = array[0].characters.count
+        let b = array[1].characters.count
+        let index = self.startIndex.advancedBy(a+b+2)
+        let info = self.substringFromIndex(index)
+        
+        result.append(info)
+        return result
+
+    }
+}
 
 
 

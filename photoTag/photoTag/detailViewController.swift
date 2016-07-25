@@ -522,6 +522,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
           
             let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":["x1,y1,info","x2,y2,info"],"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
             
+            
             let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
             
             do
