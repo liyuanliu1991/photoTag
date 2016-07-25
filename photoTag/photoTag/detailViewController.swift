@@ -498,7 +498,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             let x = frame.origin.x
             let y = frame.origin.y
             
-            result.append(x.description + y.description + each.text)
+            result.append(x.description + "," + y.description + "," + each.text)
         }
         
         return result
@@ -538,6 +538,8 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             
             
             let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray,"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
+            
+           // just encode location array on sender side, but havent decode string to CGFloat on receiver side
             
             
             let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
