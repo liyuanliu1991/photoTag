@@ -44,7 +44,7 @@ class albumTableViewController: UITableViewController {
         }
     }
 
-    func longPressGestureRecognized(gesture:UILongPressGestureRecognizer)
+  /*  func longPressGestureRecognized(gesture:UILongPressGestureRecognizer)
     {
         let longPress = gesture as UILongPressGestureRecognizer
         let state = longPress.state
@@ -118,7 +118,7 @@ class albumTableViewController: UITableViewController {
             break
         }
         
-    }
+    }*/
    
 
     // MARK: - Table view data source

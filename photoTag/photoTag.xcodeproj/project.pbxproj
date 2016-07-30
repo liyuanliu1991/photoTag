@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EC0DB47B1D45886E00555C8C /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */; };
 		EC35B3561D45FF0400AF3DCB /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC35B3551D45FF0400AF3DCB /* SwiftSpinner.swift */; };
+		EC35B3581D49C9CD00AF3DCB /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC35B3571D49C9CD00AF3DCB /* test.swift */; };
 		ECBC62A51D34BCE100E9C9C2 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62911D34BCE100E9C9C2 /* 1.png */; };
 		ECBC62A61D34BCE100E9C9C2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62921D34BCE100E9C9C2 /* 2.png */; };
 		ECBC62A71D34BCE100E9C9C2 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC62931D34BCE100E9C9C2 /* 3.png */; };
@@ -102,6 +103,7 @@
 /* Begin PBXFileReference section */
 		EC0DB47A1D45886E00555C8C /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
 		EC35B3551D45FF0400AF3DCB /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		EC35B3571D49C9CD00AF3DCB /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		ECBC62911D34BCE100E9C9C2 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		ECBC62921D34BCE100E9C9C2 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		ECBC62931D34BCE100E9C9C2 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				ECF332061D2B21B000AF4F94 /* addNewAlbumTableViewCell.swift */,
 				ECBC62C01D34C1FA00E9C9C2 /* imageCollectionViewCell.swift */,
 				ECF42E6D1D38A4D000569DE3 /* gradiantView.swift */,
+				EC35B3571D49C9CD00AF3DCB /* test.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				ECBC62E51D3731AB00E9C9C2 /* detailViewController.swift in Sources */,
 				ECBC62BB1D34C12A00E9C9C2 /* WaterfallLayout.swift in Sources */,
 				ECF332091D2B248B00AF4F94 /* albumCellModel.swift in Sources */,
+				EC35B3581D49C9CD00AF3DCB /* test.swift in Sources */,
 				ECF331BA1D2B0BF000AF4F94 /* AppDelegate.swift in Sources */,
 				ECF332171D2C37BF00AF4F94 /* enumCommon.swift in Sources */,
 				ECF331FD1D2B182D00AF4F94 /* albumTableViewCell.swift in Sources */,

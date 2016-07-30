@@ -22,7 +22,10 @@ class guessViewController: UIViewController {
     var tapTimes = 0
     var loadTimes = 0
     var done = true
-
+    var eggFindNums = 0
+    
+    var infoHideTextView = TextViewArray()
+    
     @IBOutlet weak var clickShowText: UITextView!
     
     
@@ -184,6 +187,8 @@ class guessViewController: UIViewController {
             self.eggsLeft.text = "\(eggNum) left"
         }
         
+         self.performReceivedDataLocationPart()
+        
         
     }
     func tapClear(gesture: UITapGestureRecognizer)
@@ -333,6 +338,90 @@ class guessViewController: UIViewController {
     {
         
     }
+    
+    
+    func performReceivedDataLocationPart()
+    {
+        let data = dataReceived!["locationInfo"]
+        if data == nil
+        {
+            return
+        }
+        for each in data!{
+            let tempText = each.getLocationAndInfo()
+            let location = CGRect(x: (tempText?.x)! - 27.5, y: (tempText?.y)! - 27.5, width: 55, height: 55)
+            let newTextView = UITextView(frame: location)
+            self.guessImage.addSubview(newTextView)
+            
+            newTextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+            newTextView.selectable = false
+            newTextView.text = tempText?.info
+            //newtextView.textColor = UIColor.clearColor()
+            newTextView.increaseFontSize(4)
+            newTextView.editable = false
+            newTextView.userInteractionEnabled = true
+            self.guessImage.userInteractionEnabled = true
+           // newTextView.delegate = self
+            newTextView.layer.cornerRadius = newTextView.frame.size.height/2
+            newTextView.clipsToBounds = true
+            
+            
+            //shadow effects-----------------------------------------------
+            /*  newtextView.layer.shadowOffset = CGSize(width: 10, height: 20)
+             newtextView.layer.shadowOpacity = 0.9
+             newtextView.layer.shadowRadius = 6*/
+            
+            
+            //-------------------------------------------------------------
+            
+            
+            
+            let tapToFind = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapFind(_:)))
+            newTextView.addGestureRecognizer(tapToFind)
+            
+            infoHideTextView.infoHideTextView.append(newTextView)
+            
+        }
+        
+    }
+    func tapFind(gesture: UITapGestureRecognizer)
+    {
+        let target = gesture.view as? UITextView
+        
+        let locationView = gesture.locationInView(guessImage)
+        
+        let hideX = (target?.frame.origin.x)!
+        let hideY = (target?.frame.origin.y)!
+        
+        let tapX = locationView.x
+        let tapY = locationView.y
+        
+        if((tapX >= hideX - 15 && tapX <= hideX + 35) && (tapY >= hideY - 15 && tapY <= hideY + 35))
+        {
+            print("tap location \(locationView.x):\(locationView.y)")
+            print("info location \((target?.frame.origin.x)!)\((target?.frame.origin.y)!)")
+            
+            if(target?.hidden == false)
+            {
+                
+                return
+            }
+            target?.hidden = false
+            target!.editable = false
+            target!.selectable = false
+            
+            target!.alpha = 0.75
+            target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            
+            target!.textColor = UIColor.blackColor()
+            
+            eggFindNums += 1
+            eggsLeft.text = "\((dataReceived!["locationInfo"]?.count)! - eggFindNums)"
+            eggsLeft.reloadInputViews()
+        }
+
+        
+    }
    
 
    
@@ -342,10 +431,7 @@ extension guessViewController:MCSessionDelegate{
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state {
         case MCSessionState.Connecting:
-          /*  delay(seconds: 1.0, completion: {
-                SwiftSpinner.setTitleFont(nil)
-                SwiftSpinner.showWithDuration(1.0, title: "Connecting", animated: false)
-            })*/
+         
             delay(seconds: 0.5, completion: {
                 SwiftSpinner.setTitleFont(nil)
                 SwiftSpinner.show("Connecting.....")
@@ -356,7 +442,7 @@ extension guessViewController:MCSessionDelegate{
            
             SwiftSpinner.show("Connected!")
           
-            
+          
             print("connected with you")
             
             
@@ -407,12 +493,14 @@ extension guessViewController:MCSessionDelegate{
             else
             {
                 self.dataReceived = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Dictionary<String,[String]>
+               
+                
                 
             }
             if self.loadTimes != 2
             {
                 self.addHideInfo()
-                SwiftSpinner.showWithDuration(1.0, title: "Loaded!")
+                SwiftSpinner.showWithDuration(1.0, title: "Loaded!",animated: false)
                
                 
             }

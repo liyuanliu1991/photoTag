@@ -528,6 +528,8 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
     }
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state{
+        case MCSessionState.Connecting:
+                print("connecting")
         case MCSessionState.Connected:
             print("connect")
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -540,7 +542,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray,"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
             
            // just encode location array on sender side, but havent decode string to CGFloat on receiver side
-            
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             
             let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
             

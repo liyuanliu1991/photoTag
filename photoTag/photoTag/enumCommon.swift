@@ -99,23 +99,55 @@ extension UITextView{
         self.clipsToBounds = true
     }
 }
+struct locationInfoStruct{
+    var x:CGFloat
+    var y:CGFloat
+    var info:String?
+}
 
 extension String{
-    func getLocationAndInfo() -> [String]
+    func getCGFloat()->CGFloat
     {
-        var result = [String]()
+        let fl = CGFloat((self as NSString).floatValue)
+        return fl
+    }
+    func getLocationAndInfo() -> locationInfoStruct?
+    {
+        
+       
         var array = self.componentsSeparatedByString(",")
-        result.append(array[0])
-        result.append(array[1])
+        
         let a = array[0].characters.count
         let b = array[1].characters.count
         let index = self.startIndex.advancedBy(a+b+2)
         let info = self.substringFromIndex(index)
+        let tempx = CGFloat((array[0] as NSString).floatValue)
+        let tempy = CGFloat((array[1] as NSString).floatValue)
+       
+        let result = locationInfoStruct(x: tempx, y: tempy, info: info)
         
-        result.append(info)
         return result
 
     }
+  /*  func seperateLocationInfo(seperator:Character)->[String]
+    {
+        var result = [String]()
+        
+        let tempArray = self.characters.split{$0 == seperator}.map(String.init)
+        
+        result.append(tempArray[0])
+        result.append(tempArray[1])
+        
+        let a = result[0].characters.count
+        let b = result[1].characters.count
+        
+        let index = self.startIndex.advancedBy(a+b+2)
+        let info = self.substringFromIndex(index)
+        result.append(info)
+        return result
+        
+        return result
+    }*/
 }
 
 
