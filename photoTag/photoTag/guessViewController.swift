@@ -141,16 +141,11 @@ class guessViewController: UIViewController {
         clickShowText.editable = false
         
         
-       // delay(seconds: 2.0, completion: {
             SwiftSpinner.show("Waiting For Request.....").addTapHandler({
                 print("tapped")
                 SwiftSpinner.hide()
                 }, subtitle: "Tap to quit while waiting! This will affect only the current operation.")
-       // })
-        
-        //SwiftSpinner.show("Waiting For Request.....")
-        
-       // self.demoSpinner()
+      
         
     }
     func addHideInfo()
@@ -349,7 +344,7 @@ class guessViewController: UIViewController {
         }
         for each in data!{
             let tempText = each.getLocationAndInfo()
-            let location = CGRect(x: (tempText?.x)! - 27.5, y: (tempText?.y)! - 27.5, width: 55, height: 55)
+            let location = CGRect(x: (tempText?.x)!, y: (tempText?.y)!, width: 55, height: 55)
             let newTextView = UITextView(frame: location)
             self.guessImage.addSubview(newTextView)
             
