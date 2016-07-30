@@ -21,7 +21,7 @@ class guessViewController: UIViewController {
     
     var tapTimes = 0
     var loadTimes = 0
-    var done = true
+    var done = false
     var eggFindNums = 0
     
     var infoHideTextView = TextViewArray()
@@ -135,7 +135,7 @@ class guessViewController: UIViewController {
         let lSize = CGSize(width: 300.0, height: 300.0)
         infoSlider.hidden = true
         shadow.hidden = true
-       // swipeText.hidden = true
+        swipeText.hidden = true
         swipeText.editable = false
         clickShowText.hidden = true
         clickShowText.editable = false
@@ -351,7 +351,7 @@ class guessViewController: UIViewController {
             newTextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
             newTextView.selectable = false
             newTextView.text = tempText?.info
-            //newtextView.textColor = UIColor.clearColor()
+            newTextView.textColor = UIColor.clearColor()
             newTextView.increaseFontSize(4)
             newTextView.editable = false
             newTextView.userInteractionEnabled = true
@@ -359,6 +359,9 @@ class guessViewController: UIViewController {
            // newTextView.delegate = self
             newTextView.layer.cornerRadius = newTextView.frame.size.height/2
             newTextView.clipsToBounds = true
+            
+            newTextView.alpha = 0.04
+            
             
             
             //shadow effects-----------------------------------------------
@@ -381,6 +384,7 @@ class guessViewController: UIViewController {
     }
     func tapFind(gesture: UITapGestureRecognizer)
     {
+        print("tap!!!!!!")
         let target = gesture.view as? UITextView
         
         let locationView = gesture.locationInView(guessImage)
@@ -396,7 +400,7 @@ class guessViewController: UIViewController {
             print("tap location \(locationView.x):\(locationView.y)")
             print("info location \((target?.frame.origin.x)!)\((target?.frame.origin.y)!)")
             
-            if(target?.hidden == false)
+            if(target?.alpha == 0.75)
             {
                 
                 return
@@ -409,9 +413,10 @@ class guessViewController: UIViewController {
             target!.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             
             target!.textColor = UIColor.blackColor()
+            target?.reloadInputViews()
             
             eggFindNums += 1
-            eggsLeft.text = "\((dataReceived!["locationInfo"]?.count)! - eggFindNums)"
+            eggsLeft.text = "\((dataReceived!["locationInfo"]?.count)! - eggFindNums) eggs left"
             eggsLeft.reloadInputViews()
         }
 
