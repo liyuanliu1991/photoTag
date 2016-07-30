@@ -26,6 +26,8 @@ class guessViewController: UIViewController {
     
     var infoHideTextView = TextViewArray()
     
+    var totalTapsAllowed = 0
+    
     @IBOutlet weak var clickShowText: UITextView!
     
     
@@ -168,13 +170,18 @@ class guessViewController: UIViewController {
         self.view.addGestureRecognizer(swipeUp)
         
         
-        let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
-        self.view.addGestureRecognizer(tapReconginzer)
+      //  let tapReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapClear(_:)))
+        //self.view.addGestureRecognizer(tapReconginzer)
+        
+        let tapTemptsReconginzer = UITapGestureRecognizer(target: self, action: #selector(guessViewController.tapTempts(_:)))
+        self.view.addGestureRecognizer(tapTemptsReconginzer)
+
         
         let temp = dataReceived!["tempts"]![0]
         if let tempInt = Int(temp)
         {
             self.temptsLeft.text = "\(tempInt) tempts left"
+            self.totalTapsAllowed = tempInt
         }
         let eggs = dataReceived!["locationInfo"]
         if let eggNum = eggs?.count
@@ -186,13 +193,77 @@ class guessViewController: UIViewController {
         
         
     }
-    func tapClear(gesture: UITapGestureRecognizer)
+    func tapTempts(gesture: UITapGestureRecognizer)
+    {
+        if totalTapsAllowed == tapTimes
+        {
+            return
+        }
+        
+        if eggFindNums == (dataReceived!["locationInfo"]?.count)!
+        {
+            self.guessImage.alpha = 1.0
+            if !done{
+                return
+            }
+            let clickInfo = dataReceived!["clickHidenInfo"]
+            
+            swipeText.hidden = true
+            self.shadow.hidden = true
+            
+            tapTimes = tapTimes + 1
+            
+            if(tapTimes%2 == 1)
+            {
+                UIView.transitionWithView(guessImage ,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                          animations: {
+                                            self.guessImage.alpha = 0.2
+                                            
+                                            self.clickShowText.hidden = false
+                                            self.clickShowText.text = clickInfo![0]
+                                            
+                                            //   self.infoSlider.hidden = false
+                                            
+                    },
+                                          completion: nil)
+            }
+            else
+            {
+                UIView.transitionWithView(shadow,
+                                          duration:1,
+                                          options:  UIViewAnimationOptions.TransitionCrossDissolve ,
+                                          animations: {
+                                            
+                                            self.guessImage.alpha = 1.0
+                                            self.clickShowText.hidden = true
+                                            //  self.clickShowText.text = clickInfo![0]
+                                            
+                                            
+                    },
+                                          completion: nil)
+                
+                
+            }
+            return
+
+        }
+        
+        tapTimes += 1
+        temptsLeft.text = "\(totalTapsAllowed - tapTimes) tempts left"
+        temptsLeft.reloadInputViews()
+    }
+    /*func tapClear(gesture: UITapGestureRecognizer)
     {
         self.guessImage.alpha = 1.0
         if !done{
             return
         }
         let clickInfo = dataReceived!["clickHidenInfo"]
+        
+        swipeText.hidden = true
+        self.shadow.hidden = true
         
         tapTimes = tapTimes + 1
         
@@ -207,8 +278,8 @@ class guessViewController: UIViewController {
                                         self.clickShowText.hidden = false
                                         self.clickShowText.text = clickInfo![0]
                                         
-                                        self.infoSlider.hidden = false
-                                        self.shadow.hidden = true
+                                     //   self.infoSlider.hidden = false
+                                        
                 },
                                       completion: nil)
         }
@@ -218,7 +289,7 @@ class guessViewController: UIViewController {
                                       duration:1,
                                       options:  UIViewAnimationOptions.TransitionCrossDissolve ,
                                       animations: {
-                                        self.shadow.hidden = true
+                                        
                                         self.guessImage.alpha = 1.0
                                         self.clickShowText.hidden = true
                                       //  self.clickShowText.text = clickInfo![0]
@@ -232,7 +303,7 @@ class guessViewController: UIViewController {
         
         
     
-    }
+    }*/
 
     func respondToSwipe(gesture: UIGestureRecognizer)
     {
@@ -246,7 +317,7 @@ class guessViewController: UIViewController {
         self.clickShowText.hidden = true
         
         let upDownLeftRight = dataReceived!["swipeInfo"]
-        
+        self.swipeText.hidden = false
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction{
             case UISwipeGestureRecognizerDirection.Left:
@@ -299,11 +370,16 @@ class guessViewController: UIViewController {
     }
     
     @IBAction func sliderChange(sender: UISlider) {
-        
+        if !done
+        {
+            return
+        }
         let selectedValue = Float(sender.value)
         let result = selectedValue / Float(10)
         guessImage.alpha = CGFloat(result)
         clickShowText.hidden = false
+        swipeText.hidden = true
+        shadow.hidden = true
         let b = dataReceived!["sliderInfo"]
         clickShowText.text = b![Int(selectedValue)]
         
@@ -382,9 +458,20 @@ class guessViewController: UIViewController {
         }
         
     }
+    
+    
+    
     func tapFind(gesture: UITapGestureRecognizer)
     {
+        if totalTapsAllowed == tapTimes
+        {
+            return
+        }
         print("tap!!!!!!")
+        tapTimes += 1
+        temptsLeft.text = "\(totalTapsAllowed - tapTimes)"
+        temptsLeft.reloadInputViews()
+        
         let target = gesture.view as? UITextView
         
         let locationView = gesture.locationInView(guessImage)
@@ -418,6 +505,12 @@ class guessViewController: UIViewController {
             eggFindNums += 1
             eggsLeft.text = "\((dataReceived!["locationInfo"]?.count)! - eggFindNums) eggs left"
             eggsLeft.reloadInputViews()
+            if ((dataReceived!["locationInfo"]?.count)! == eggFindNums)
+            {
+                self.done = true
+                infoSlider.hidden = false
+                
+            }
         }
 
         
