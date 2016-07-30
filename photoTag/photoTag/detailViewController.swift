@@ -63,6 +63,10 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     
     var clickHidenInfo = "Click Hidden Info"
     
+    var hints: String?
+    var qa = [String]()
+    var temptsString:String?
+    
     var infoHideTextView = TextViewArray()
     
     var tapTimes = 0
@@ -171,17 +175,86 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         
     }
     
+    var hintsTextField: UITextField?
+    var questionTextField:UITextField?
+    var answerTextField:UITextField?
+    var temptsTextField:UITextField?
     
     @IBAction func sharePhoto(sender: AnyObject) {
         
-        self.presentViewController(self.browser!, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Hints,Q&A,tempts",
+                                      message: "Input Hints,Q&A,tempts",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler(addHintsTextFiled)
+        alert.addTextFieldWithConfigurationHandler(addQuestionTextFiled)
+        alert.addTextFieldWithConfigurationHandler(addAnswerTextFiled)
+        alert.addTextFieldWithConfigurationHandler(addTemptsTextFiled)
+        
+        
+        let ok = UIAlertAction(title: "OK",
+                               style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                                
+                                if let hintsData = self.hintsTextField?.text
+                                {
+                                    self.hints = hintsData
+                                }
+                                if let questionData = self.questionTextField?.text
+                                {
+                                    self.qa.append(questionData)
+                                }
+                                if let answerData = self.answerTextField?.text{
+                                    self.qa.append(answerData)
+                                    
+                                }
+                                let t = self.qa
+                                if let temptsData = self.temptsTextField?.text{
+                                    self.temptsString = temptsData
+                                }
+                                else
+                                {
+                                    self.temptsString = "\(self.infoHideTextView.infoHideTextView.count * 3)"
+                                }
+                                self.presentViewController(self.browser!, animated: true, completion: nil)
+                                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+                                   style: UIAlertActionStyle.Cancel,
+                                   handler: nil)
+        
+    
+        
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
       
         
     }
-    /*   func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-     self.myselectedPeer = mpcManager?.foundPeer[buttonIndex]
-     mpcManager?.browser?.invitePeer(self.myselectedPeer!, toSession: (mpcManager?.session)! , withContext: nil, timeout: 20)
-     }*/
+    func addHintsTextFiled(textField:UITextField)
+    {
+        textField.placeholder = "Hints"
+        hintsTextField = textField
+    }
+    func addQuestionTextFiled(textField:UITextField)
+    {
+        textField.placeholder = "Question"
+        questionTextField = textField
+    }
+    func addAnswerTextFiled(textField:UITextField)
+    {
+        textField.placeholder = "Answer"
+        answerTextField = textField
+    }
+    func addTemptsTextFiled(textField:UITextField)
+    {
+        textField.placeholder = "Tempts"
+        temptsTextField = textField
+    }
     
     
     func longPressSecrets(gesture: UILongPressGestureRecognizer)
@@ -539,8 +612,15 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             let locationArray = self.getLocationStringArray()
             
             
-            let msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray,"qa":["what's your name","Jerry"],"hints":["hints I provide"],"tempts":["10"]]
             
+            var msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray]
+            
+            let t = qa
+            
+            msg["qa"] = qa
+            msg["hints"] = [hints!]
+            msg["tempts"] = [temptsString!]
+
 
             
             let msgData = NSKeyedArchiver.archivedDataWithRootObject(msg)
