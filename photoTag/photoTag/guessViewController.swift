@@ -23,10 +23,13 @@ class guessViewController: UIViewController {
     var loadTimes = 0
     var done = false
     var eggFindNums = 0
+    var qa:[String]?
     
     var infoHideTextView = TextViewArray()
     
     var totalTapsAllowed = 0
+    
+    var clickTaps = 0
     
     @IBOutlet weak var clickShowText: UITextView!
     
@@ -150,6 +153,61 @@ class guessViewController: UIViewController {
       
         
     }
+    
+    @IBAction func showHints(sender: AnyObject) {
+        let alert = UIAlertController(title: "Hints:",
+                                      message: "\(dataReceived!["hints"]!)",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",
+                               style: UIAlertActionStyle.Default, handler:nil)
+        
+        
+        alert.addAction(ok)
+        
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func QAAction(sender: AnyObject) {
+        let alert = UIAlertController(title: "Question:",
+                                      message: "\(qa![0])",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",
+                               style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                                
+                                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                                    let answer = alertTextField.text
+                                    if answer == self.qa![1]
+                                    {
+                                        self.done = true
+                                        self.infoSlider.hidden = false
+                                    }
+                                    
+                                }
+                                
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+                                   style: UIAlertActionStyle.Cancel,
+                                   handler: nil)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
+            
+            textField.placeholder = "Answer here"
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+
+        
+    }
     func addHideInfo()
     {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(guessViewController.respondToSwipe(_:)))
@@ -195,6 +253,27 @@ class guessViewController: UIViewController {
     }
     func tapTempts(gesture: UITapGestureRecognizer)
     {
+        self.shadow.hidden = true
+        if totalTapsAllowed == tapTimes && !done
+        {
+            return
+        }
+        if done
+        {
+            if(clickTaps%2 == 0)
+            {
+                self.clickShowText.hidden = false
+                self.guessImage.alpha = 0.75
+                self.clickShowText.text = dataReceived!["clickHidenInfo"]![0]
+            }
+            else
+            {
+                self.clickShowText.hidden = true
+                self.guessImage.alpha = 1.0
+            }
+            
+            clickTaps += 1
+        }
         if totalTapsAllowed == tapTimes
         {
             return
@@ -414,6 +493,7 @@ class guessViewController: UIViewController {
     func performReceivedDataLocationPart()
     {
         let data = dataReceived!["locationInfo"]
+        self.qa = dataReceived!["qa"]
         if data == nil
         {
             return

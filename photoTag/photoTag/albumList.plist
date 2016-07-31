@@ -18,13 +18,14 @@
 					<dict>
 						<key>question</key>
 						<string></string>
+						<key>answer</key>
+						<string></string>
 					</dict>
 					<key>hints</key>
 					<string></string>
 					<key>guessInfo</key>
 					<array>
 						<string>location.x,location.y,info to guess</string>
-						<string></string>
 					</array>
 					<key>photoData</key>
 					<data></data>

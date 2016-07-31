@@ -16,6 +16,7 @@ enum flagType : Int{
 }
 
 
+
 class TextViewArray{
     var infoHideTextView = [UITextView]()
     init()

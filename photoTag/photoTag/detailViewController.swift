@@ -436,6 +436,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     
     func tapClear(gesture: UITapGestureRecognizer)
     {
+        
         if switchHaveFun.on || Guess.on{
             
             return

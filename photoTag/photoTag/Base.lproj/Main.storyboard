@@ -45,6 +45,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzS-74-gjU">
                                         <rect key="frame" x="0.0" y="5" width="76" height="30"/>
                                         <state key="normal" title="Q&amp;A"/>
+                                        <connections>
+                                            <action selector="QAAction:" destination="8cs-4x-331" eventType="touchUpInside" id="Y4G-rU-D8u"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Tempts Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je3-sg-02m">
                                         <rect key="frame" x="76" y="11" width="241" height="18"/>
@@ -61,6 +64,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MoK-Zf-JxG">
                                         <rect key="frame" x="515" y="5" width="85" height="30"/>
                                         <state key="normal" title="Hints"/>
+                                        <connections>
+                                            <action selector="showHints:" destination="8cs-4x-331" eventType="touchUpInside" id="mQz-7t-Me6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -137,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a0-Qn-y0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="311.25"/>
+            <point key="canvasLocation" x="1092" y="311"/>
         </scene>
         <!--Album-->
         <scene sceneID="ztB-zf-thf">
