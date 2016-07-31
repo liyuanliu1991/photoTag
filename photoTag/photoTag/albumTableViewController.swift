@@ -16,12 +16,9 @@ class albumTableViewController: UITableViewController {
     
     var expandCell = [Int]()
     var initPath: NSIndexPath?
-    
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       // test()
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,97 +41,17 @@ class albumTableViewController: UITableViewController {
         }
     }
 
-  /*  func longPressGestureRecognized(gesture:UILongPressGestureRecognizer)
-    {
-        let longPress = gesture as UILongPressGestureRecognizer
-        let state = longPress.state
-        let locationInView = longPress.locationInView(tableView)
-        var indexPath = tableView.indexPathForRowAtPoint(locationInView)
-        
-        switch state{
-        case UIGestureRecognizerState.Began:
-            if(initPath?.section == nil)
-            {
-                if(initPath?.row == nil)
-                {
-                    initPath = NSIndexPath(forRow: 0, inSection: 0)
-                }
-                else
-                {
-                    initPath = NSIndexPath(forRow: (initPath?.row)!, inSection: 0)
-                }
-                
-            }
-            if (initPath?.row == nil)
-            {
-                initPath = NSIndexPath(forRow: 0, inSection: (initPath?.section)!)
-            }
-            if(indexPath?.section == nil)
-            {
-                if(indexPath?.row == nil)
-                {
-                    indexPath = NSIndexPath(forRow: 0, inSection: 0)
-                }
-                else
-                {
-                    indexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: 0)
-                }
-                
-            }
-            if (indexPath?.row == nil)
-            {
-                indexPath = NSIndexPath(forRow: 0, inSection: indexPath!.section)
-            }
-            if (initPath?.section)! >= allDataSets.categoryCellSets.count && (initPath?.section)! != 0
-            {
-                initPath = NSIndexPath(forRow: (initPath?.row)!, inSection: allDataSets.categoryCellSets.count - 1)
-            }
-            if (initPath?.row)! >= allDataSets.categoryCellSets[initPath!.section].albumSets.count && (initPath?.row)! != 0{
-                initPath = NSIndexPath(forRow: allDataSets.categoryCellSets[initPath!.section].albumSets.count - 1, inSection: (initPath?.section)!)
-                
-            }
-            if (indexPath?.section)! >= allDataSets.categoryCellSets.count && (indexPath?.section)! != 0{
-                indexPath = NSIndexPath(forRow: indexPath!.row, inSection: allDataSets.categoryCellSets.count - 1)
-            }
-            if (indexPath?.row)! >= allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.count && (indexPath?.row)! != 0{
-                indexPath = NSIndexPath(forRow: allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.count - 1, inSection: indexPath!.section)
-            }
-            
-            
-            
-            _ = allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!]
-            
-            
-            allDataSets.categoryCellSets[(indexPath?.section)!].albumSets.insert(allDataSets.categoryCellSets[initPath!.section].albumSets[(initPath?.row)!], atIndex: (indexPath?.row)!)
-            
-            allDataSets.categoryCellSets[initPath!.section].albumSets.removeAtIndex(initPath!.row)
-            
-            tableView.moveRowAtIndexPath(initPath!, toIndexPath: indexPath!)
-            initPath = indexPath
-
-        //case UIGestureRecognizerState.Changed:
-            
-            default:
-            break
-        }
-        
-    }*/
-   
-
+ 
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        let m = allDataSets.categoryCellSets.count
-        return m
+        return allDataSets.categoryCellSets.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let  k = allDataSets.categoryCellSets[section].albumSets.count + 2
-        
-        return k
-        
+        return allDataSets.categoryCellSets[section].albumSets.count + 2
         
     }
     
@@ -142,14 +59,12 @@ class albumTableViewController: UITableViewController {
         
         self.tableView.beginUpdates()
         let albums = [albumCellModel]()
-        let newCategory = categoryCellModel(leftImageName: "section.png", categoryTitle: "Click to change title", rightImageName: "rightArrow.png", albumset: albums)
+        let newCategory = categoryCellModel(leftImageName: "section.png", categoryTitle: "Long press to change title", rightImageName: "rightArrow.png", albumset: albums)
         self.allDataSets.categoryCellSets.append(newCategory)
         let indexSet = NSIndexSet(index: self.allDataSets.categoryCellSets.count - 1)
         self.tableView.insertSections(indexSet, withRowAnimation: .Automatic)
         self.tableView.endUpdates()
-        //self.tableView.reloadData()
 
-        
     }
     
 
@@ -196,7 +111,7 @@ class albumTableViewController: UITableViewController {
             {
                 let cell = tableView.dequeueReusableCellWithIdentifier("addNewAlbum") as! addNewAlbumTableViewCell
                 cell.leftImage.image = allDataSets.addNewAlbumCellSets[0].leftImage
-                cell.addNewAlbumLabel.text = "Click me to delete whole section"
+                cell.addNewAlbumLabel.text = "Click to delete the category"
                 return cell
             }
  
@@ -224,10 +139,6 @@ class albumTableViewController: UITableViewController {
             let albumSubtitleTapRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(albumTableViewController.editAlbumSubtitle(_:)))
             cell.albumSubtitle.addGestureRecognizer(albumSubtitleTapRecognizer)
             
-           /* let longpress = UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:")
-            cell.addGestureRecognizer(longpress)*/
-
-            
             return cell
             
         }
@@ -249,29 +160,34 @@ class albumTableViewController: UITableViewController {
             whichSectionTapped = (indexPath?.section)!
         }
         
+        
         var newName: String?
         let alert = UIAlertController(title: "Album Subtitle",
-            message: "Input Name",
-            preferredStyle: UIAlertControllerStyle.Alert)
+                                      message: "Input Name",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
         
         let ok = UIAlertAction(title: "OK",
-            style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
-                
-                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
-                    newName = alertTextField.text
-                    
-                    self.allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].albumSubtitle = newName
-                    
-                    let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
-                    
-                    self.tableView.reloadRowsAtIndexPaths([NSindexPath], withRowAnimation: .None)
-                }
-                
+                               style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
+                                
+                                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                                    newName = alertTextField.text
+                                    if newName == ""
+                                    {
+                                        newName = "Subtitle cannot be null"
+                                    }
+                                    
+                                    self.allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].albumSubtitle = newName
+                                    
+                                    let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
+                                    
+                                    self.tableView.reloadRowsAtIndexPaths([NSindexPath], withRowAnimation: .None)
+                                }
+                                
         }
         
         let cancel = UIAlertAction(title: "Cancel",
-            style: UIAlertActionStyle.Cancel,
-            handler: nil)
+                                   style: UIAlertActionStyle.Cancel,
+                                   handler: nil)
         
         alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
             
@@ -284,7 +200,7 @@ class albumTableViewController: UITableViewController {
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    func editAlbumTitle(gesture:UILongPressGestureRecognizer)
+       func editAlbumTitle(gesture:UILongPressGestureRecognizer)
     {
         let tapLocation = gesture.locationInView(self.tableView)
         
@@ -309,7 +225,10 @@ class albumTableViewController: UITableViewController {
                 
                 if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
                     newName = alertTextField.text
-                    
+                    if newName == ""
+                    {
+                        newName = "Title cannot be null"
+                    }
                     self.allDataSets.categoryCellSets[whichSectionTapped!].albumSets[(indexPath?.row)!].albumTitle = newName
                     
                     let NSindexPath = NSIndexPath(forRow: (indexPath?.row)!, inSection: whichSectionTapped!)
@@ -431,15 +350,14 @@ class albumTableViewController: UITableViewController {
                 
                 if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
                     newName = alertTextField.text
-                    
+                    if newName == ""
+                    {
+                        newName = "Title cannot be null"
+                    }
                     target.text = newName
                     
                     target.reloadInputViews()
-                /*    self.allDataSets.categoryCellSets[whichSectionTapped!].categoryTitle = newName
-                
-                    let indexSet = NSIndexSet(index: whichSectionTapped!)
-                    
-                    self.tableView.reloadSections(indexSet, withRowAnimation: .Automatic)*/
+               
                 }
                 
         }

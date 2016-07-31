@@ -15,7 +15,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     let serviceType = "eggPhoto"
     
     var browser: MCBrowserViewController?
-    // var assistant: MCAdvertiserAssistant?
+  
     var session: MCSession?
     var peerID: MCPeerID?
     
@@ -27,10 +27,6 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
         
         self.browser = MCBrowserViewController(serviceType: serviceType, session: self.session!)
         self.browser?.delegate = self
-        
-        //  self.assistant = MCAdvertiserAssistant(serviceType: serviceType, discoveryInfo: nil, session: self.session!)
-        
-        //  self.assistant?.start()
         
     }
     
@@ -57,11 +53,11 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     
     @IBOutlet weak var shareButton: UIButton!
     
-    var upDownLeftRight = ["upupupupupup","downdowndown","leftleftleft","rightrightright"]
+    var upDownLeftRight = ["Swipe up to hidden info","Swipe down to hidden info","Swipe left to hidden info","Swipe right to hidden info"]
     
-    var slideHiddenInforation = ["000000","11111","22222","33333","44444","55555","666666","777777","888888","9999999"]
+    var slideHiddenInforation = ["Silder level 1 hidden info","Silder level 2 hidden ","Silder level 3 hidden ","Silder level 4 hidden ","Silder level 5 hidden ","Silder level 6 hidden ","Silder level 7 hidden ","Silder level 8 hidden ","Silder level 9 hidden ","Silder level 10 hidden "]
     
-    var clickHidenInfo = "Click Hidden Info"
+    var clickHidenInfo = "Click to show hidden info"
     
     var hints: String?
     var qa = [String]()
@@ -207,7 +203,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                                     self.qa.append(answerData)
                                     
                                 }
-                                let t = self.qa
+                              
                                 if let temptsData = self.temptsTextField?.text{
                                     self.temptsString = temptsData
                                 }
@@ -280,8 +276,8 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 
                 newtextView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
                 newtextView.selectable = true
-                newtextView.text = "tetteteteoooooooooooooooooooooooooooooo"
-                //newtextView.textColor = UIColor.clearColor()
+                newtextView.text = "Your hidden info"
+                newtextView.textColor = UIColor.lightGrayColor()
                 newtextView.increaseFontSize(4)
                 newtextView.editable = true
                 newtextView.userInteractionEnabled = true
@@ -289,7 +285,7 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                 newtextView.delegate = self
                 newtextView.layer.cornerRadius = newtextView.frame.size.height/2
                 newtextView.clipsToBounds = true
-                
+                newtextView.becomeFirstResponder()
                 
                 //shadow effects-----------------------------------------------
                 /*  newtextView.layer.shadowOffset = CGSize(width: 10, height: 20)
@@ -323,6 +319,20 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
             
             
         }
+    }
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+        textView.becomeFirstResponder()
+    }
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Your hidden info"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+        textView.resignFirstResponder()
     }
     func tapFind(gesture: UITapGestureRecognizer){
         if !Guess.on{
@@ -615,8 +625,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             
             
             var msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray]
-            
-            let t = qa
+         
             
             msg["qa"] = qa
             msg["hints"] = [hints!]
