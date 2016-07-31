@@ -746,7 +746,7 @@ extension guessViewController:MCSessionDelegate{
                 self.eggsLeft.hidden = false
                 self.temptsLeft.hidden = false
                 self.temptsLeft.hidden = false
-                
+                self.session!.disconnect()
             }
             
         }

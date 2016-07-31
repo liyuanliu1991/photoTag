@@ -241,22 +241,22 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     }
     func addHintsTextFiled(textField:UITextField)
     {
-        textField.placeholder = "Hints"
+        textField.placeholder = "Optional:Hints"
         hintsTextField = textField
     }
     func addQuestionTextFiled(textField:UITextField)
     {
-        textField.placeholder = "Question"
+        textField.placeholder = "Optional:Question"
         questionTextField = textField
     }
     func addAnswerTextFiled(textField:UITextField)
     {
-        textField.placeholder = "Answer"
+        textField.placeholder = "Optional:Answer"
         answerTextField = textField
     }
     func addTemptsTextFiled(textField:UITextField)
     {
-        textField.placeholder = "Tempts"
+        textField.placeholder = "Optional:Tempts"
         temptsTextField = textField
     }
     
@@ -624,7 +624,7 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
                 print("connecting")
         case MCSessionState.Connected:
             print("connect")
-            self.dismissViewControllerAnimated(true, completion: nil)
+            
             
             let imageData = UIImageJPEGRepresentation(self.detailImage!, 1.0)
           
@@ -672,22 +672,23 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             
             do
             {
-                try self.session?.sendData(imageData!, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
+                try self.session?.sendData(imageData!, toPeers: (self.session?.connectedPeers)!, withMode: .Reliable)
                 print("succee")
             }
             catch{
                 print("failure")
-            }
+                            }
             
             do
             {
-                try self.session?.sendData(msgData, toPeers: (self.session?.connectedPeers)!, withMode: .Unreliable)
+                try self.session?.sendData(msgData, toPeers: (self.session?.connectedPeers)!, withMode: .Reliable)
                 print("succee")
             }
             catch{
                 print("failure")
             }
             
+            self.dismissViewControllerAnimated(true, completion: nil)
         
         default:
             break
