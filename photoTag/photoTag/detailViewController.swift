@@ -67,10 +67,13 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
     
     var tapTimes = 0
     var detailImage: UIImage?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         airdropInit()
+        
         
         
         /*  detailImageView.clipsToBounds = true
@@ -198,11 +201,16 @@ class detailViewController: UIViewController, UITextViewDelegate, UIAlertViewDel
                                 if let questionData = self.questionTextField?.text
                                 {
                                     self.qa.append(questionData)
+                                    if let answerData = self.answerTextField?.text{
+                                        self.qa.append(answerData)
+                                        
+                                    }
+                                    else
+                                    {
+                                        self.qa.append("")
+                                    }
                                 }
-                                if let answerData = self.answerTextField?.text{
-                                    self.qa.append(answerData)
-                                    
-                                }
+                                
                               
                                 if let temptsData = self.temptsTextField?.text{
                                     self.temptsString = temptsData
@@ -624,12 +632,39 @@ extension detailViewController:MCBrowserViewControllerDelegate,MCSessionDelegate
             
             
             
-            var msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation,"locationInfo":locationArray]
-         
+            var msg = ["clickHidenInfo":[clickHidenInfo],"swipeInfo":upDownLeftRight,"sliderInfo":slideHiddenInforation]
             
-            msg["qa"] = qa
-            msg["hints"] = [hints!]
-            msg["tempts"] = [temptsString!]
+            if locationArray.count > 0
+            {
+                msg["locationInfo"] = locationArray
+            }
+         
+            if qa.count > 0
+            {
+                msg["qa"] = qa
+            }
+            else
+            {
+                msg["qa"] = ["",""]
+            }
+            if hints != nil
+            {
+                msg["hints"] = [hints!]
+            }
+            else
+            {
+                msg["hints"] = [""]
+            }
+            
+            if temptsString != nil
+            {
+                msg["tempts"] = [temptsString!]
+            }
+            else
+            {
+                msg["tempts"] = [""]
+            }
+            
 
 
             

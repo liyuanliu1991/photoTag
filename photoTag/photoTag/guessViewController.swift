@@ -51,6 +51,12 @@ class guessViewController: UIViewController {
     @IBOutlet weak var infoSlider: UISlider!
     @IBOutlet weak var swipeText: UITextView!
     
+    
+    func initDataReceived()
+    {
+        self.dataReceived = ["clickHidenInfo":[""],"swipeInfo":["","","",""],"sliderInfo":["","","","","","","","","",""],"qa":["",""],"hints":[""],"tempts":[""]]
+    }
+    
     func airDropInit()
     {
         self.peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
@@ -63,6 +69,11 @@ class guessViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         assistant?.stop()
+        initDataReceived()
+        answerQuestion.hidden = true
+        temptsLeft.hidden = true
+        eggsLeft.hidden = true
+        hintsButton.hidden = true
     }
     func delay(seconds seconds: Double, completion:()->()) {
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
@@ -155,8 +166,9 @@ class guessViewController: UIViewController {
     }
     
     @IBAction func showHints(sender: AnyObject) {
+        
         let alert = UIAlertController(title: "Hints:",
-                                      message: "\(dataReceived!["hints"]!)",
+                                      message: dataReceived!["hints"]![0],
                                       preferredStyle: UIAlertControllerStyle.Alert)
         
         let ok = UIAlertAction(title: "OK",
@@ -172,6 +184,21 @@ class guessViewController: UIViewController {
     
     
     @IBAction func QAAction(sender: AnyObject) {
+        
+        if qa![0] == ""
+        {
+            let alertNo = UIAlertController(title: "No question",
+                                          message: "No question",
+                                          preferredStyle: UIAlertControllerStyle.Alert)
+            let ok = UIAlertAction(title: "OK",
+                                       style: UIAlertActionStyle.Cancel,
+                                       handler: nil)
+            alertNo.addAction(ok)
+            self.presentViewController(alertNo, animated: true, completion: nil)
+            return
+
+        }
+        
         let alert = UIAlertController(title: "Question:",
                                       message: "\(qa![0])",
                                       preferredStyle: UIAlertControllerStyle.Alert)
@@ -236,7 +263,12 @@ class guessViewController: UIViewController {
 
         
         let temp = dataReceived!["tempts"]![0]
-        if let tempInt = Int(temp)
+        if temp == ""
+        {
+            self.temptsLeft.text = "unlimites tempts"
+            self.totalTapsAllowed = -1
+        }
+        else if let tempInt = Int(temp)
         {
             self.temptsLeft.text = "\(tempInt) tempts left"
             self.totalTapsAllowed = tempInt
@@ -246,6 +278,10 @@ class guessViewController: UIViewController {
         {
             self.eggsLeft.text = "\(eggNum) left"
         }
+        else
+        {
+            self.eggsLeft.text = "0 egg left"
+        }
         
          self.performReceivedDataLocationPart()
         
@@ -254,8 +290,31 @@ class guessViewController: UIViewController {
     func tapTempts(gesture: UITapGestureRecognizer)
     {
         self.shadow.hidden = true
+        self.guessImage.alpha = 1
+        
         if totalTapsAllowed == tapTimes && !done
         {
+            return
+        }
+        if totalTapsAllowed == -1
+        {
+            if done
+            {
+                if(clickTaps%2 == 0)
+                {
+                    self.clickShowText.hidden = false
+                    self.guessImage.alpha = 0.75
+                    self.clickShowText.text = dataReceived!["clickHidenInfo"]![0]
+                }
+                else
+                {
+                    self.clickShowText.hidden = true
+                    self.guessImage.alpha = 1.0
+                }
+                
+                clickTaps += 1
+            }
+
             return
         }
         if done
@@ -327,6 +386,11 @@ class guessViewController: UIViewController {
             }
             return
 
+        }
+        
+        if temptsLeft.text == "unlimites tempts"
+        {
+            return
         }
         
         tapTimes += 1
@@ -548,9 +612,13 @@ class guessViewController: UIViewController {
             return
         }
         print("tap!!!!!!")
-        tapTimes += 1
-        temptsLeft.text = "\(totalTapsAllowed - tapTimes)"
-        temptsLeft.reloadInputViews()
+        if temptsLeft.text != "unlimites tempts"
+        {
+            tapTimes += 1
+            temptsLeft.text = "\(totalTapsAllowed - tapTimes)"
+            temptsLeft.reloadInputViews()
+        }
+        
         
         let target = gesture.view as? UITextView
         
@@ -674,7 +742,10 @@ extension guessViewController:MCSessionDelegate{
             {
                 self.addHideInfo()
                 SwiftSpinner.showWithDuration(1.0, title: "Loaded!",animated: false)
-               
+               self.answerQuestion.hidden = false
+                self.eggsLeft.hidden = false
+                self.temptsLeft.hidden = false
+                self.temptsLeft.hidden = false
                 
             }
             
